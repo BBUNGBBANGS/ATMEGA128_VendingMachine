@@ -1,0 +1,183 @@
+13주차 CLCD + UART 복합예제
+
+해당 코드는 Comportmaster 기준 입니다. 터미널 S/W 및  OS에 따라 엔터 값이 다를 수 있습니다.
+
+ 
+
+#include <avr/io.h>
+
+#define F_CPU 14.7456E6
+
+#include <avr/interrupt.h>
+
+#include "lcd.h" // LCD 사용을 위해 본인이 작성한 헤더 파일 참조 또는 CLCD 드바이스 드라이버 코드 기재
+
+ 
+
+#define MAXLEN 16 // LCD 16 문자
+
+#define ENTER 0x0A // ASCII LF, CR(0x0D)+LF(0x0A), ‘/r’ + ‘/n’, 시스템 마다 다르기 때문에 확이이 필요함.
+
+#define enable 1
+
+#define disable 0
+
+ 
+
+unsigned char buffer_count=0, enter_flag=0;
+
+unsigned char str[MAXLEN]={0,};// 임시로 수신된 문자를 저장하기 위한 공간
+
+ 
+
+void putch_USART1(char data)
+
+{
+
+while(!(UCSR1A & (1<<UDRE1)));
+
+UDR1 = data;
+
+}
+
+ 
+
+// 인터럽트 루틴에서의 데이터 수신
+
+ISR(USART1_RX_vect)
+
+{
+
+str[buffer_count] = UDR1;
+
+ 
+
+/*
+
+putch_USART1(str[buffer_count]); 
+
+ 
+
+if(str[buffer_count] == 0x0d)
+
+str[buffer_count]=0;
+
+*/
+
+if(str[buffer_count] == ENTER)
+
+{
+
+enter_flag = enable;
+
+str[buffer_count]=0;
+
+}
+
+else
+
+{
+
+if(buffer_count >= MAXLEN-1)
+
+buffer_count = 0;
+
+else
+
+buffer_count++;
+
+}
+
+}
+
+ 
+
+void Init_USART1_IntCon(void)
+
+{
+
+// RXCIE1=1(수신 인터럽트 허가), RXEN0=1(수신 허가), TXEN0 = 1(송신 허가)
+
+UCSR1B = (1<<RXCIE1)| (1<<RXEN1) | (1 <<TXEN1);
+
+UBRR1L = 0x07; // 115200bps 보오 레이트 설정
+
+sei(); // 전체 인터럽트 허가
+
+}
+
+ 
+
+int main(void)
+
+{
+
+    /* Replace with your application code */
+
+ 
+
+unsigned char USART_test[]="Press Enter...PC";
+
+unsigned char LCD_line_eraser[]="                    ";
+
+unsigned char loop_count=0, display_line=0;
+
+ 
+
+LCD_Init();// LCD 초기화
+
+Init_USART1_IntCon();
+
+ 
+
+LCD_Pos(display_line,0);
+
+LCD_Str(USART_test);
+
+ 
+
+display_line = (~display_line) & 0x01;
+
+buffer_count=0;
+
+ 
+
+    while (1) 
+
+    {
+
+if(enter_flag)
+
+{
+
+display_line = (~display_line) & 0x01;
+
+LCD_Pos(display_line, 0);
+
+LCD_Str(LCD_line_eraser);
+
+ 
+
+buffer_count = enter_flag = 0;
+
+ 
+
+for(loop_count=0; loop_count < MAXLEN; loop_count++)
+
+str[loop_count] = 0; // 문자열 초기화
+
+}
+
+else
+
+{
+
+LCD_Pos(display_line, 0); // LCD에 위치 지정
+
+LCD_Str(str); // 입력된 문자열 출력
+
+}
+
+    }
+
+}
