@@ -145,7 +145,6 @@ void LCD_Transmit_Data(char data);
 void Melody_Update(void);
 void Send_String(char * buf,uint16_t length);
 void Send_Char(char data);
-void Uart1_Init(void);
 /*************************************/
 
 int main(void)
@@ -154,7 +153,6 @@ int main(void)
     LCD_Init();
     Timer1_Init();
     Timer3_Init();
-    Uart1_Init();
     ISR_Init();
     while (1) 
     {
@@ -184,7 +182,7 @@ void Port_Init(void)
     DDRC = 0x0F; // PC0~3 : Output , PC4~7 : Input 설정
     DDRA = 0xFF; // LCD Data line 출력 설정 PA0~PA7
     DDRF = 0xFF; // 재고 LED 출력 설정
-    DDRG = 0x17; // LCD Command line 출력 설정 PG0~PG2,PG4
+    DDRG = 0x17; // LCD Command line 출력 설정 PG0~PG2, Buzzer 출력 설정 PG4
     DDRD = 0x00;
 }
 
@@ -342,8 +340,8 @@ void Switch_Scan(void)
 
     PD0_status = PIND & 0x01;
     PD1_status = PIND & 0x02;
-    PD2_status = 0;//PIND & 0x04;
-    PD3_status = 0;//PIND & 0x08;
+    PD2_status = PIND & 0x04;
+    PD3_status = PIND & 0x08;
 
     if((PD0_status == 0x01)&&(PD0_status_old == 0))
     {
@@ -953,29 +951,5 @@ ISR(TIMER3_COMPA_vect)
         cbi(PORTG,4);
         flag = 0;
     }
-
 }
 
-void Send_String(char * buf,uint16_t length)
-{
-	uint16_t i;
-    for(i = 0;i<length;i++)
-    {
-        Send_Char(buf[i]);
-    }
-}
-
- void Send_Char(char data)
-{
-    while((UCSR1A & 0x20) == 0x0); 
-    UDR1 = data;
-}
-
-void Uart1_Init(void)
-{
-    UCSR1A = 0x0;
-    UCSR1B = 0b00011000; //Uart1 Rx/Tx Enable
-    UCSR1C = 0b00000110; //Uart1 8bit character size
-    UBRR1H = 0;                                                  
-    UBRR1L = 8; //Uart1 115200 bps        
-}
