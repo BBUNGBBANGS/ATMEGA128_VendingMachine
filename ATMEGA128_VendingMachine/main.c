@@ -343,19 +343,19 @@ void Switch_Scan(void)
     PD2_status = PIND & 0x04;
     PD3_status = PIND & 0x08;
 
-    if((PD0_status == 0x01)&&(PD0_status_old == 0))
+    if((PD0_status == 0)&&(PD0_status_old == 0x01))
     {
         Coin_100++;
     }
-    if((PD1_status == 0x02)&&(PD1_status_old == 0))
+    if((PD1_status == 0)&&(PD1_status_old == 0x02))
     {
         Coin_500++;
     }    
-    if((PD2_status == 0x04)&&(PD2_status_old == 0))
+    if((PD2_status == 0)&&(PD2_status_old == 0x04))
     {
         Coin_1000++;
     }    
-    if((PD3_status == 0x08)&&(PD3_status_old == 0))
+    if((PD3_status == 0)&&(PD3_status_old == 0x08))
     {
         Coin_5000++;
     }
@@ -425,8 +425,12 @@ void Vending_Machine_Mode(void)
             {
                 if(Selected_item_flag == 1)
                 {
-                    Coin_Inserted = Coin_Inserted - Vending_Machine_Price[Selected_Num - 1];
-                    Selected_item_flag = 0;
+                    if(Coin_Inserted >= Vending_Machine_Price[Selected_Num - 1])
+                    {
+                        Coin_Inserted = Coin_Inserted - Vending_Machine_Price[Selected_Num - 1];
+                        Selected_item_flag = 0;
+                        Vending_Machine_Count[Selected_Num-1]--; // 재고 감소
+                    }
                 }
 
                 if((Coin_Inserted == 0)&&(Melody_status == MELODY_STATUS_FINISHED))
@@ -903,11 +907,11 @@ void LED_Output(void)
     {
         if(Vending_Machine_Count[i]>0)
         {
-            sbi(PORTF,i);
+            cbi(PORTF,i);
         }
         else
         {
-            cbi(PORTF,i);
+            sbi(PORTF,i);
         }
     }
 }

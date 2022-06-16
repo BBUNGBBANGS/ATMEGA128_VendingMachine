@@ -3,31 +3,31 @@ ATMEGA128_VendingMachine.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         0000008e  00800100  0000117e  00001212  2**0
+  0 .data         0000008e  00800100  00001192  00001226  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         0000117e  00000000  00000000  00000094  2**1
+  1 .text         00001192  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .bss          0000003d  0080018e  0080018e  000012a0  2**0
+  2 .bss          0000003d  0080018e  0080018e  000012b4  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  000012a0  2**0
+  3 .comment      00000030  00000000  00000000  000012b4  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000012d0  2**2
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000012e4  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 000000b0  00000000  00000000  0000130c  2**0
+  5 .debug_aranges 000000b0  00000000  00000000  00001320  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   00001357  00000000  00000000  000013bc  2**0
+  6 .debug_info   00001357  00000000  00000000  000013d0  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 00000974  00000000  00000000  00002713  2**0
+  7 .debug_abbrev 00000974  00000000  00000000  00002727  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00000eee  00000000  00000000  00003087  2**0
+  8 .debug_line   00000efa  00000000  00000000  0000309b  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000190  00000000  00000000  00003f78  2**2
+  9 .debug_frame  00000190  00000000  00000000  00003f98  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    00000712  00000000  00000000  00004108  2**0
+ 10 .debug_str    00000712  00000000  00000000  00004128  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    00000629  00000000  00000000  0000481a  2**0
+ 11 .debug_loc    00000629  00000000  00000000  0000483a  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 000000a0  00000000  00000000  00004e43  2**0
+ 12 .debug_ranges 000000a0  00000000  00000000  00004e63  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -57,7 +57,7 @@ Disassembly of section .text:
       2a:	00 00       	nop
       2c:	66 c0       	rjmp	.+204    	; 0xfa <__bad_interrupt>
       2e:	00 00       	nop
-      30:	0c 94 54 08 	jmp	0x10a8	; 0x10a8 <__vector_12>
+      30:	0c 94 5e 08 	jmp	0x10bc	; 0x10bc <__vector_12>
       34:	62 c0       	rjmp	.+196    	; 0xfa <__bad_interrupt>
       36:	00 00       	nop
       38:	60 c0       	rjmp	.+192    	; 0xfa <__bad_interrupt>
@@ -84,7 +84,7 @@ Disassembly of section .text:
       62:	00 00       	nop
       64:	4a c0       	rjmp	.+148    	; 0xfa <__bad_interrupt>
       66:	00 00       	nop
-      68:	0c 94 6f 08 	jmp	0x10de	; 0x10de <__vector_26>
+      68:	0c 94 79 08 	jmp	0x10f2	; 0x10f2 <__vector_26>
       6c:	46 c0       	rjmp	.+140    	; 0xfa <__bad_interrupt>
       6e:	00 00       	nop
       70:	44 c0       	rjmp	.+136    	; 0xfa <__bad_interrupt>
@@ -105,27 +105,27 @@ Disassembly of section .text:
       8e:	ea 02       	muls	r30, r26
       90:	00 03       	mulsu	r16, r16
       92:	0f 03       	fmul	r16, r23
-      94:	4f 03       	fmul	r20, r23
-      96:	57 03       	mulsu	r21, r23
-      98:	6f 03       	fmul	r22, r23
-      9a:	78 04       	cpc	r7, r8
-      9c:	28 05       	cpc	r18, r8
-      9e:	0c 05       	cpc	r16, r12
-      a0:	f0 04       	cpc	r15, r0
-      a2:	d4 04       	cpc	r13, r4
-      a4:	b8 04       	cpc	r11, r8
-      a6:	9c 04       	cpc	r9, r12
-      a8:	80 04       	cpc	r8, r0
-      aa:	44 05       	cpc	r20, r4
-      ac:	5e 05       	cpc	r21, r14
-      ae:	66 05       	cpc	r22, r6
-      b0:	82 05       	cpc	r24, r2
-      b2:	9e 05       	cpc	r25, r14
-      b4:	ba 05       	cpc	r27, r10
-      b6:	d6 05       	cpc	r29, r6
-      b8:	f2 05       	cpc	r31, r2
-      ba:	0d 06       	cpc	r0, r29
-      bc:	28 06       	cpc	r2, r24
+      94:	59 03       	fmul	r21, r17
+      96:	61 03       	mulsu	r22, r17
+      98:	79 03       	fmul	r23, r17
+      9a:	82 04       	cpc	r8, r2
+      9c:	32 05       	cpc	r19, r2
+      9e:	16 05       	cpc	r17, r6
+      a0:	fa 04       	cpc	r15, r10
+      a2:	de 04       	cpc	r13, r14
+      a4:	c2 04       	cpc	r12, r2
+      a6:	a6 04       	cpc	r10, r6
+      a8:	8a 04       	cpc	r8, r10
+      aa:	4e 05       	cpc	r20, r14
+      ac:	68 05       	cpc	r22, r8
+      ae:	70 05       	cpc	r23, r0
+      b0:	8c 05       	cpc	r24, r12
+      b2:	a8 05       	cpc	r26, r8
+      b4:	c4 05       	cpc	r28, r4
+      b6:	e0 05       	cpc	r30, r0
+      b8:	fc 05       	cpc	r31, r12
+      ba:	17 06       	cpc	r1, r23
+      bc:	32 06       	cpc	r3, r18
 
 000000be <__ctors_end>:
       be:	11 24       	eor	r1, r1
@@ -139,7 +139,7 @@ Disassembly of section .text:
       ca:	11 e0       	ldi	r17, 0x01	; 1
       cc:	a0 e0       	ldi	r26, 0x00	; 0
       ce:	b1 e0       	ldi	r27, 0x01	; 1
-      d0:	ee e7       	ldi	r30, 0x7E	; 126
+      d0:	e2 e9       	ldi	r30, 0x92	; 146
       d2:	f1 e1       	ldi	r31, 0x11	; 17
       d4:	00 e0       	ldi	r16, 0x00	; 0
       d6:	0b bf       	out	0x3b, r16	; 59
@@ -163,8 +163,8 @@ Disassembly of section .text:
       ee:	ab 3c       	cpi	r26, 0xCB	; 203
       f0:	b2 07       	cpc	r27, r18
       f2:	e1 f7       	brne	.-8      	; 0xec <.do_clear_bss_loop>
-      f4:	c0 d7       	rcall	.+3968   	; 0x1076 <main>
-      f6:	0c 94 bd 08 	jmp	0x117a	; 0x117a <_exit>
+      f4:	ca d7       	rcall	.+3988   	; 0x108a <main>
+      f6:	0c 94 c7 08 	jmp	0x118e	; 0x118e <_exit>
 
 000000fa <__bad_interrupt>:
       fa:	82 cf       	rjmp	.-252    	; 0x0 <__vectors>
@@ -517,50 +517,50 @@ void Switch_Scan(void)
      294:	e0 b3       	in	r30, 0x10	; 16
      296:	e8 70       	andi	r30, 0x08	; 8
 
-    if((PD0_status == 0x01)&&(PD0_status_old == 0))
+    if((PD0_status == 0)&&(PD0_status_old == 0x01))
      298:	d8 2f       	mov	r29, r24
      29a:	d1 70       	andi	r29, 0x01	; 1
-     29c:	80 ff       	sbrs	r24, 0
+     29c:	80 fd       	sbrc	r24, 0
      29e:	09 c0       	rjmp	.+18     	; 0x2b2 <Switch_Scan+0x30>
      2a0:	80 91 95 01 	lds	r24, 0x0195	; 0x800195 <PD0_status_old.2162>
-     2a4:	81 11       	cpse	r24, r1
-     2a6:	05 c0       	rjmp	.+10     	; 0x2b2 <Switch_Scan+0x30>
+     2a4:	81 30       	cpi	r24, 0x01	; 1
+     2a6:	29 f4       	brne	.+10     	; 0x2b2 <Switch_Scan+0x30>
     {
         Coin_100++;
      2a8:	80 91 c1 01 	lds	r24, 0x01C1	; 0x8001c1 <Coin_100>
      2ac:	8f 5f       	subi	r24, 0xFF	; 255
      2ae:	80 93 c1 01 	sts	0x01C1, r24	; 0x8001c1 <Coin_100>
     }
-    if((PD1_status == 0x02)&&(PD1_status_old == 0))
-     2b2:	c2 30       	cpi	r28, 0x02	; 2
-     2b4:	49 f4       	brne	.+18     	; 0x2c8 <Switch_Scan+0x46>
+    if((PD1_status == 0)&&(PD1_status_old == 0x02))
+     2b2:	c1 11       	cpse	r28, r1
+     2b4:	09 c0       	rjmp	.+18     	; 0x2c8 <Switch_Scan+0x46>
      2b6:	80 91 94 01 	lds	r24, 0x0194	; 0x800194 <PD1_status_old.2163>
-     2ba:	81 11       	cpse	r24, r1
-     2bc:	05 c0       	rjmp	.+10     	; 0x2c8 <Switch_Scan+0x46>
+     2ba:	82 30       	cpi	r24, 0x02	; 2
+     2bc:	29 f4       	brne	.+10     	; 0x2c8 <Switch_Scan+0x46>
     {
         Coin_500++;
      2be:	80 91 9c 01 	lds	r24, 0x019C	; 0x80019c <Coin_500>
      2c2:	8f 5f       	subi	r24, 0xFF	; 255
      2c4:	80 93 9c 01 	sts	0x019C, r24	; 0x80019c <Coin_500>
     }    
-    if((PD2_status == 0x04)&&(PD2_status_old == 0))
-     2c8:	f4 30       	cpi	r31, 0x04	; 4
-     2ca:	49 f4       	brne	.+18     	; 0x2de <Switch_Scan+0x5c>
+    if((PD2_status == 0)&&(PD2_status_old == 0x04))
+     2c8:	f1 11       	cpse	r31, r1
+     2ca:	09 c0       	rjmp	.+18     	; 0x2de <Switch_Scan+0x5c>
      2cc:	80 91 93 01 	lds	r24, 0x0193	; 0x800193 <PD2_status_old.2164>
-     2d0:	81 11       	cpse	r24, r1
-     2d2:	05 c0       	rjmp	.+10     	; 0x2de <Switch_Scan+0x5c>
+     2d0:	84 30       	cpi	r24, 0x04	; 4
+     2d2:	29 f4       	brne	.+10     	; 0x2de <Switch_Scan+0x5c>
     {
         Coin_1000++;
      2d4:	80 91 c4 01 	lds	r24, 0x01C4	; 0x8001c4 <Coin_1000>
      2d8:	8f 5f       	subi	r24, 0xFF	; 255
      2da:	80 93 c4 01 	sts	0x01C4, r24	; 0x8001c4 <Coin_1000>
     }    
-    if((PD3_status == 0x08)&&(PD3_status_old == 0))
-     2de:	e8 30       	cpi	r30, 0x08	; 8
-     2e0:	49 f4       	brne	.+18     	; 0x2f4 <Switch_Scan+0x72>
+    if((PD3_status == 0)&&(PD3_status_old == 0x08))
+     2de:	e1 11       	cpse	r30, r1
+     2e0:	09 c0       	rjmp	.+18     	; 0x2f4 <Switch_Scan+0x72>
      2e2:	80 91 92 01 	lds	r24, 0x0192	; 0x800192 <PD3_status_old.2165>
-     2e6:	81 11       	cpse	r24, r1
-     2e8:	05 c0       	rjmp	.+10     	; 0x2f4 <Switch_Scan+0x72>
+     2e6:	88 30       	cpi	r24, 0x08	; 8
+     2e8:	29 f4       	brne	.+10     	; 0x2f4 <Switch_Scan+0x72>
     {
         Coin_5000++;
      2ea:	80 91 c6 01 	lds	r24, 0x01C6	; 0x8001c6 <Coin_5000>
@@ -620,7 +620,7 @@ void Switch_Scan(void)
      35e:	9a 01       	movw	r18, r20
      360:	ad ec       	ldi	r26, 0xCD	; 205
      362:	bc ec       	ldi	r27, 0xCC	; 204
-     364:	fb d6       	rcall	.+3574   	; 0x115c <__umulhisi3>
+     364:	05 d7       	rcall	.+3594   	; 0x1170 <__umulhisi3>
      366:	96 95       	lsr	r25
      368:	87 95       	ror	r24
      36a:	96 95       	lsr	r25
@@ -644,7 +644,7 @@ void Switch_Scan(void)
      38e:	20 93 c3 01 	sts	0x01C3, r18	; 0x8001c3 <Coin_n1>
         Coin_n10 = (Coin_Inserted / 10) % 10; //두번째 자리 취득 
      392:	9a 01       	movw	r18, r20
-     394:	e3 d6       	rcall	.+3526   	; 0x115c <__umulhisi3>
+     394:	ed d6       	rcall	.+3546   	; 0x1170 <__umulhisi3>
      396:	8c 01       	movw	r16, r24
      398:	16 95       	lsr	r17
      39a:	07 95       	ror	r16
@@ -653,7 +653,7 @@ void Switch_Scan(void)
      3a0:	16 95       	lsr	r17
      3a2:	07 95       	ror	r16
      3a4:	98 01       	movw	r18, r16
-     3a6:	da d6       	rcall	.+3508   	; 0x115c <__umulhisi3>
+     3a6:	e4 d6       	rcall	.+3528   	; 0x1170 <__umulhisi3>
      3a8:	96 95       	lsr	r25
      3aa:	87 95       	ror	r24
      3ac:	96 95       	lsr	r25
@@ -683,14 +683,14 @@ void Switch_Scan(void)
      3dc:	27 95       	ror	r18
      3de:	ab e7       	ldi	r26, 0x7B	; 123
      3e0:	b4 e1       	ldi	r27, 0x14	; 20
-     3e2:	bc d6       	rcall	.+3448   	; 0x115c <__umulhisi3>
+     3e2:	c6 d6       	rcall	.+3468   	; 0x1170 <__umulhisi3>
      3e4:	8c 01       	movw	r16, r24
      3e6:	16 95       	lsr	r17
      3e8:	07 95       	ror	r16
      3ea:	98 01       	movw	r18, r16
      3ec:	ad ec       	ldi	r26, 0xCD	; 205
      3ee:	bc ec       	ldi	r27, 0xCC	; 204
-     3f0:	b5 d6       	rcall	.+3434   	; 0x115c <__umulhisi3>
+     3f0:	bf d6       	rcall	.+3454   	; 0x1170 <__umulhisi3>
      3f2:	96 95       	lsr	r25
      3f4:	87 95       	ror	r24
      3f6:	96 95       	lsr	r25
@@ -722,7 +722,7 @@ void Switch_Scan(void)
      42a:	27 95       	ror	r18
      42c:	a5 ec       	ldi	r26, 0xC5	; 197
      42e:	b0 e2       	ldi	r27, 0x20	; 32
-     430:	95 d6       	rcall	.+3370   	; 0x115c <__umulhisi3>
+     430:	9f d6       	rcall	.+3390   	; 0x1170 <__umulhisi3>
      432:	ac 01       	movw	r20, r24
      434:	52 95       	swap	r21
      436:	42 95       	swap	r20
@@ -733,7 +733,7 @@ void Switch_Scan(void)
      440:	9a 01       	movw	r18, r20
      442:	ad ec       	ldi	r26, 0xCD	; 205
      444:	bc ec       	ldi	r27, 0xCC	; 204
-     446:	8a d6       	rcall	.+3348   	; 0x115c <__umulhisi3>
+     446:	94 d6       	rcall	.+3368   	; 0x1170 <__umulhisi3>
      448:	96 95       	lsr	r25
      44a:	87 95       	ror	r24
      44c:	96 95       	lsr	r25
@@ -763,7 +763,7 @@ void Switch_Scan(void)
      476:	9a 01       	movw	r18, r20
      478:	ad ec       	ldi	r26, 0xCD	; 205
      47a:	bc ec       	ldi	r27, 0xCC	; 204
-     47c:	6f d6       	rcall	.+3294   	; 0x115c <__umulhisi3>
+     47c:	79 d6       	rcall	.+3314   	; 0x1170 <__umulhisi3>
      47e:	96 95       	lsr	r25
      480:	87 95       	ror	r24
      482:	96 95       	lsr	r25
@@ -787,7 +787,7 @@ void Switch_Scan(void)
      4a6:	20 93 c3 01 	sts	0x01C3, r18	; 0x8001c3 <Coin_n1>
         Coin_n10 = (Coin_Total / 10) % 10; //두번째 자리 취득 
      4aa:	9a 01       	movw	r18, r20
-     4ac:	57 d6       	rcall	.+3246   	; 0x115c <__umulhisi3>
+     4ac:	61 d6       	rcall	.+3266   	; 0x1170 <__umulhisi3>
      4ae:	8c 01       	movw	r16, r24
      4b0:	16 95       	lsr	r17
      4b2:	07 95       	ror	r16
@@ -796,7 +796,7 @@ void Switch_Scan(void)
      4b8:	16 95       	lsr	r17
      4ba:	07 95       	ror	r16
      4bc:	98 01       	movw	r18, r16
-     4be:	4e d6       	rcall	.+3228   	; 0x115c <__umulhisi3>
+     4be:	58 d6       	rcall	.+3248   	; 0x1170 <__umulhisi3>
      4c0:	96 95       	lsr	r25
      4c2:	87 95       	ror	r24
      4c4:	96 95       	lsr	r25
@@ -826,14 +826,14 @@ void Switch_Scan(void)
      4f4:	27 95       	ror	r18
      4f6:	ab e7       	ldi	r26, 0x7B	; 123
      4f8:	b4 e1       	ldi	r27, 0x14	; 20
-     4fa:	30 d6       	rcall	.+3168   	; 0x115c <__umulhisi3>
+     4fa:	3a d6       	rcall	.+3188   	; 0x1170 <__umulhisi3>
      4fc:	8c 01       	movw	r16, r24
      4fe:	16 95       	lsr	r17
      500:	07 95       	ror	r16
      502:	98 01       	movw	r18, r16
      504:	ad ec       	ldi	r26, 0xCD	; 205
      506:	bc ec       	ldi	r27, 0xCC	; 204
-     508:	29 d6       	rcall	.+3154   	; 0x115c <__umulhisi3>
+     508:	33 d6       	rcall	.+3174   	; 0x1170 <__umulhisi3>
      50a:	96 95       	lsr	r25
      50c:	87 95       	ror	r24
      50e:	96 95       	lsr	r25
@@ -865,7 +865,7 @@ void Switch_Scan(void)
      542:	27 95       	ror	r18
      544:	a5 ec       	ldi	r26, 0xC5	; 197
      546:	b0 e2       	ldi	r27, 0x20	; 32
-     548:	09 d6       	rcall	.+3090   	; 0x115c <__umulhisi3>
+     548:	13 d6       	rcall	.+3110   	; 0x1170 <__umulhisi3>
      54a:	ac 01       	movw	r20, r24
      54c:	52 95       	swap	r21
      54e:	42 95       	swap	r20
@@ -876,7 +876,7 @@ void Switch_Scan(void)
      558:	9a 01       	movw	r18, r20
      55a:	ad ec       	ldi	r26, 0xCD	; 205
      55c:	bc ec       	ldi	r27, 0xCC	; 204
-     55e:	fe d5       	rcall	.+3068   	; 0x115c <__umulhisi3>
+     55e:	08 d6       	rcall	.+3088   	; 0x1170 <__umulhisi3>
      560:	96 95       	lsr	r25
      562:	87 95       	ror	r24
      564:	96 95       	lsr	r25
@@ -927,11 +927,11 @@ void Vending_Machine_Mode(void)
      5ae:	87 30       	cpi	r24, 0x07	; 7
      5b0:	91 05       	cpc	r25, r1
      5b2:	08 f0       	brcs	.+2      	; 0x5b6 <Vending_Machine_Mode+0x10>
-     5b4:	ab c0       	rjmp	.+342    	; 0x70c <Vending_Machine_Mode+0x166>
+     5b4:	b5 c0       	rjmp	.+362    	; 0x720 <Vending_Machine_Mode+0x17a>
      5b6:	fc 01       	movw	r30, r24
      5b8:	ea 5b       	subi	r30, 0xBA	; 186
      5ba:	ff 4f       	sbci	r31, 0xFF	; 255
-     5bc:	c6 c5       	rjmp	.+2956   	; 0x114a <__tablejump2__>
+     5bc:	d0 c5       	rjmp	.+2976   	; 0x115e <__tablejump2__>
     {
         case VENDING_MACHINE_IDLE :
             if(Coin_Total > 0)
@@ -939,7 +939,7 @@ void Vending_Machine_Mode(void)
      5c2:	90 91 99 01 	lds	r25, 0x0199	; 0x800199 <Coin_Total+0x1>
      5c6:	89 2b       	or	r24, r25
      5c8:	09 f4       	brne	.+2      	; 0x5cc <Vending_Machine_Mode+0x26>
-     5ca:	a0 c0       	rjmp	.+320    	; 0x70c <Vending_Machine_Mode+0x166>
+     5ca:	aa c0       	rjmp	.+340    	; 0x720 <Vending_Machine_Mode+0x17a>
             {
                 Vending_Machine_status = VENDING_MACHINE_INSERT_COIN; //코인 입력이 들어왔을 경우 Insert Coin 모드로 변경
      5cc:	81 e0       	ldi	r24, 0x01	; 1
@@ -954,7 +954,7 @@ void Vending_Machine_Mode(void)
      5da:	98 0f       	add	r25, r24
      5dc:	98 30       	cpi	r25, 0x08	; 8
      5de:	08 f0       	brcs	.+2      	; 0x5e2 <Vending_Machine_Mode+0x3c>
-     5e0:	95 c0       	rjmp	.+298    	; 0x70c <Vending_Machine_Mode+0x166>
+     5e0:	9f c0       	rjmp	.+318    	; 0x720 <Vending_Machine_Mode+0x17a>
             {
                 Selected_Num = Keypad_Num - 0x30; // ASCII -> 숫자로 변환
      5e2:	80 53       	subi	r24, 0x30	; 48
@@ -984,7 +984,7 @@ void Vending_Machine_Mode(void)
             else if(Keypad_Num == 'D')
      610:	84 34       	cpi	r24, 0x44	; 68
      612:	09 f0       	breq	.+2      	; 0x616 <Vending_Machine_Mode+0x70>
-     614:	7b c0       	rjmp	.+246    	; 0x70c <Vending_Machine_Mode+0x166>
+     614:	85 c0       	rjmp	.+266    	; 0x720 <Vending_Machine_Mode+0x17a>
             {
                 Vending_Machine_status = VENDING_MACHINE_CANCEL; //'D' 키패드 버튼이 입력될 경우, Cancel 모드로 변경
      616:	86 e0       	ldi	r24, 0x06	; 6
@@ -994,1549 +994,1550 @@ void Vending_Machine_Mode(void)
         break;
         case VENDING_MACHINE_ITEM_SELECTED :
             if((Coin_Inserted < Vending_Machine_Price[Selected_Num - 1])&&(Melody_status == MELODY_STATUS_FINISHED)&&(Selected_item_flag==1))
-     61e:	e0 91 01 01 	lds	r30, 0x0101	; 0x800101 <Selected_Num>
-     622:	f0 e0       	ldi	r31, 0x00	; 0
-     624:	31 97       	sbiw	r30, 0x01	; 1
-     626:	ee 0f       	add	r30, r30
-     628:	ff 1f       	adc	r31, r31
-     62a:	ef 5e       	subi	r30, 0xEF	; 239
-     62c:	fe 4f       	sbci	r31, 0xFE	; 254
-     62e:	20 81       	ld	r18, Z
-     630:	31 81       	ldd	r19, Z+1	; 0x01
-     632:	80 91 c9 01 	lds	r24, 0x01C9	; 0x8001c9 <Coin_Inserted>
-     636:	90 91 ca 01 	lds	r25, 0x01CA	; 0x8001ca <Coin_Inserted+0x1>
-     63a:	82 17       	cp	r24, r18
-     63c:	93 07       	cpc	r25, r19
-     63e:	60 f4       	brcc	.+24     	; 0x658 <Vending_Machine_Mode+0xb2>
-     640:	40 91 c7 01 	lds	r20, 0x01C7	; 0x8001c7 <Melody_status>
-     644:	48 30       	cpi	r20, 0x08	; 8
-     646:	41 f4       	brne	.+16     	; 0x658 <Vending_Machine_Mode+0xb2>
-     648:	40 91 00 01 	lds	r20, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
-     64c:	41 30       	cpi	r20, 0x01	; 1
-     64e:	21 f4       	brne	.+8      	; 0x658 <Vending_Machine_Mode+0xb2>
+     61e:	80 91 01 01 	lds	r24, 0x0101	; 0x800101 <Selected_Num>
+     622:	90 e0       	ldi	r25, 0x00	; 0
+     624:	01 97       	sbiw	r24, 0x01	; 1
+     626:	fc 01       	movw	r30, r24
+     628:	ee 0f       	add	r30, r30
+     62a:	ff 1f       	adc	r31, r31
+     62c:	ef 5e       	subi	r30, 0xEF	; 239
+     62e:	fe 4f       	sbci	r31, 0xFE	; 254
+     630:	40 81       	ld	r20, Z
+     632:	51 81       	ldd	r21, Z+1	; 0x01
+     634:	20 91 c9 01 	lds	r18, 0x01C9	; 0x8001c9 <Coin_Inserted>
+     638:	30 91 ca 01 	lds	r19, 0x01CA	; 0x8001ca <Coin_Inserted+0x1>
+     63c:	24 17       	cp	r18, r20
+     63e:	35 07       	cpc	r19, r21
+     640:	60 f4       	brcc	.+24     	; 0x65a <Vending_Machine_Mode+0xb4>
+     642:	60 91 c7 01 	lds	r22, 0x01C7	; 0x8001c7 <Melody_status>
+     646:	68 30       	cpi	r22, 0x08	; 8
+     648:	41 f4       	brne	.+16     	; 0x65a <Vending_Machine_Mode+0xb4>
+     64a:	60 91 00 01 	lds	r22, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+     64e:	61 30       	cpi	r22, 0x01	; 1
+     650:	21 f4       	brne	.+8      	; 0x65a <Vending_Machine_Mode+0xb4>
             {
                 Vending_Machine_status = VENDING_MACHINE_MONEY_ERROR;
-     650:	84 e0       	ldi	r24, 0x04	; 4
-     652:	80 93 97 01 	sts	0x0197, r24	; 0x800197 <Vending_Machine_status>
-     656:	08 95       	ret
+     652:	84 e0       	ldi	r24, 0x04	; 4
+     654:	80 93 97 01 	sts	0x0197, r24	; 0x800197 <Vending_Machine_status>
+     658:	08 95       	ret
             }            
             else if(Keypad_Num == 'D')
-     658:	40 91 02 01 	lds	r20, 0x0102	; 0x800102 <Keypad_Num>
-     65c:	44 34       	cpi	r20, 0x44	; 68
-     65e:	21 f4       	brne	.+8      	; 0x668 <Vending_Machine_Mode+0xc2>
+     65a:	60 91 02 01 	lds	r22, 0x0102	; 0x800102 <Keypad_Num>
+     65e:	64 34       	cpi	r22, 0x44	; 68
+     660:	21 f4       	brne	.+8      	; 0x66a <Vending_Machine_Mode+0xc4>
             {
                 Vending_Machine_status = VENDING_MACHINE_CANCEL; //'D' 키패드 버튼이 입력될 경우, Cancel 모드로 변경
-     660:	86 e0       	ldi	r24, 0x06	; 6
-     662:	80 93 97 01 	sts	0x0197, r24	; 0x800197 <Vending_Machine_status>
-     666:	08 95       	ret
+     662:	86 e0       	ldi	r24, 0x06	; 6
+     664:	80 93 97 01 	sts	0x0197, r24	; 0x800197 <Vending_Machine_status>
+     668:	08 95       	ret
             }
             else
             {
                 if(Selected_item_flag == 1)
-     668:	40 91 00 01 	lds	r20, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
-     66c:	41 30       	cpi	r20, 0x01	; 1
-     66e:	41 f4       	brne	.+16     	; 0x680 <Vending_Machine_Mode+0xda>
+     66a:	60 91 00 01 	lds	r22, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+     66e:	61 30       	cpi	r22, 0x01	; 1
+     670:	89 f4       	brne	.+34     	; 0x694 <Vending_Machine_Mode+0xee>
                 {
-                    Coin_Inserted = Coin_Inserted - Vending_Machine_Price[Selected_Num - 1];
-     670:	82 1b       	sub	r24, r18
-     672:	93 0b       	sbc	r25, r19
-     674:	90 93 ca 01 	sts	0x01CA, r25	; 0x8001ca <Coin_Inserted+0x1>
-     678:	80 93 c9 01 	sts	0x01C9, r24	; 0x8001c9 <Coin_Inserted>
-                    Selected_item_flag = 0;
-     67c:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__DATA_REGION_ORIGIN__>
+                    if(Coin_Inserted >= Vending_Machine_Price[Selected_Num - 1])
+     672:	24 17       	cp	r18, r20
+     674:	35 07       	cpc	r19, r21
+     676:	70 f0       	brcs	.+28     	; 0x694 <Vending_Machine_Mode+0xee>
+                    {
+                        Coin_Inserted = Coin_Inserted - Vending_Machine_Price[Selected_Num - 1];
+     678:	24 1b       	sub	r18, r20
+     67a:	35 0b       	sbc	r19, r21
+     67c:	30 93 ca 01 	sts	0x01CA, r19	; 0x8001ca <Coin_Inserted+0x1>
+     680:	20 93 c9 01 	sts	0x01C9, r18	; 0x8001c9 <Coin_Inserted>
+                        Selected_item_flag = 0;
+     684:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__DATA_REGION_ORIGIN__>
+                        Vending_Machine_Count[Selected_Num-1]--; // 재고 감소
+     688:	fc 01       	movw	r30, r24
+     68a:	ef 5d       	subi	r30, 0xDF	; 223
+     68c:	fe 4f       	sbci	r31, 0xFE	; 254
+     68e:	80 81       	ld	r24, Z
+     690:	81 50       	subi	r24, 0x01	; 1
+     692:	80 83       	st	Z, r24
+                    }
                 }
 
                 if((Coin_Inserted == 0)&&(Melody_status == MELODY_STATUS_FINISHED))
-     680:	80 91 c9 01 	lds	r24, 0x01C9	; 0x8001c9 <Coin_Inserted>
-     684:	90 91 ca 01 	lds	r25, 0x01CA	; 0x8001ca <Coin_Inserted+0x1>
-     688:	89 2b       	or	r24, r25
-     68a:	09 f0       	breq	.+2      	; 0x68e <Vending_Machine_Mode+0xe8>
-     68c:	3f c0       	rjmp	.+126    	; 0x70c <Vending_Machine_Mode+0x166>
-     68e:	80 91 c7 01 	lds	r24, 0x01C7	; 0x8001c7 <Melody_status>
-     692:	88 30       	cpi	r24, 0x08	; 8
-     694:	d9 f5       	brne	.+118    	; 0x70c <Vending_Machine_Mode+0x166>
+     694:	80 91 c9 01 	lds	r24, 0x01C9	; 0x8001c9 <Coin_Inserted>
+     698:	90 91 ca 01 	lds	r25, 0x01CA	; 0x8001ca <Coin_Inserted+0x1>
+     69c:	89 2b       	or	r24, r25
+     69e:	09 f0       	breq	.+2      	; 0x6a2 <Vending_Machine_Mode+0xfc>
+     6a0:	3f c0       	rjmp	.+126    	; 0x720 <Vending_Machine_Mode+0x17a>
+     6a2:	80 91 c7 01 	lds	r24, 0x01C7	; 0x8001c7 <Melody_status>
+     6a6:	88 30       	cpi	r24, 0x08	; 8
+     6a8:	d9 f5       	brne	.+118    	; 0x720 <Vending_Machine_Mode+0x17a>
                 {
                     Vending_Machine_status = VENDING_MACHINE_MONEY_FINISH;
-     696:	85 e0       	ldi	r24, 0x05	; 5
-     698:	80 93 97 01 	sts	0x0197, r24	; 0x800197 <Vending_Machine_status>
-     69c:	08 95       	ret
+     6aa:	85 e0       	ldi	r24, 0x05	; 5
+     6ac:	80 93 97 01 	sts	0x0197, r24	; 0x800197 <Vending_Machine_status>
+     6b0:	08 95       	ret
                 }
             }
         break;
         case VENDING_MACHINE_MONEY_ERROR :
             if(Keypad_Num == 'D')
-     69e:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <Keypad_Num>
-     6a2:	84 34       	cpi	r24, 0x44	; 68
-     6a4:	99 f5       	brne	.+102    	; 0x70c <Vending_Machine_Mode+0x166>
+     6b2:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <Keypad_Num>
+     6b6:	84 34       	cpi	r24, 0x44	; 68
+     6b8:	99 f5       	brne	.+102    	; 0x720 <Vending_Machine_Mode+0x17a>
             {
                 Vending_Machine_status = VENDING_MACHINE_CANCEL; //'D' 키패드 버튼이 입력될 경우, Cancel 모드로 변경
-     6a6:	86 e0       	ldi	r24, 0x06	; 6
-     6a8:	80 93 97 01 	sts	0x0197, r24	; 0x800197 <Vending_Machine_status>
-     6ac:	08 95       	ret
+     6ba:	86 e0       	ldi	r24, 0x06	; 6
+     6bc:	80 93 97 01 	sts	0x0197, r24	; 0x800197 <Vending_Machine_status>
+     6c0:	08 95       	ret
             }
         break;
         case VENDING_MACHINE_MONEY_FINISH :
             /* 멜로디 출력 이후 초기 모드로 복귀 */
             if(Melody_status == MELODY_STATUS_FINISHED)
-     6ae:	80 91 c7 01 	lds	r24, 0x01C7	; 0x8001c7 <Melody_status>
-     6b2:	88 30       	cpi	r24, 0x08	; 8
-     6b4:	59 f5       	brne	.+86     	; 0x70c <Vending_Machine_Mode+0x166>
+     6c2:	80 91 c7 01 	lds	r24, 0x01C7	; 0x8001c7 <Melody_status>
+     6c6:	88 30       	cpi	r24, 0x08	; 8
+     6c8:	59 f5       	brne	.+86     	; 0x720 <Vending_Machine_Mode+0x17a>
             {
                 Vending_Machine_status = VENDING_MACHINE_IDLE;
-     6b6:	10 92 97 01 	sts	0x0197, r1	; 0x800197 <Vending_Machine_status>
+     6ca:	10 92 97 01 	sts	0x0197, r1	; 0x800197 <Vending_Machine_status>
                 Melody_status = MELODY_STATUS_START;
-     6ba:	10 92 c7 01 	sts	0x01C7, r1	; 0x8001c7 <Melody_status>
+     6ce:	10 92 c7 01 	sts	0x01C7, r1	; 0x8001c7 <Melody_status>
                 Selected_item_flag = 1;
-     6be:	81 e0       	ldi	r24, 0x01	; 1
-     6c0:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+     6d2:	81 e0       	ldi	r24, 0x01	; 1
+     6d4:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
                 Coin_Total = 0;
-     6c4:	10 92 99 01 	sts	0x0199, r1	; 0x800199 <Coin_Total+0x1>
-     6c8:	10 92 98 01 	sts	0x0198, r1	; 0x800198 <Coin_Total>
+     6d8:	10 92 99 01 	sts	0x0199, r1	; 0x800199 <Coin_Total+0x1>
+     6dc:	10 92 98 01 	sts	0x0198, r1	; 0x800198 <Coin_Total>
                 Coin_100 = 0;
-     6cc:	10 92 c1 01 	sts	0x01C1, r1	; 0x8001c1 <Coin_100>
+     6e0:	10 92 c1 01 	sts	0x01C1, r1	; 0x8001c1 <Coin_100>
                 Coin_500 = 0;
-     6d0:	10 92 9c 01 	sts	0x019C, r1	; 0x80019c <Coin_500>
+     6e4:	10 92 9c 01 	sts	0x019C, r1	; 0x80019c <Coin_500>
                 Coin_1000 = 0; 
-     6d4:	10 92 c4 01 	sts	0x01C4, r1	; 0x8001c4 <Coin_1000>
+     6e8:	10 92 c4 01 	sts	0x01C4, r1	; 0x8001c4 <Coin_1000>
                 Coin_5000 = 0;;
-     6d8:	10 92 c6 01 	sts	0x01C6, r1	; 0x8001c6 <Coin_5000>
-     6dc:	08 95       	ret
+     6ec:	10 92 c6 01 	sts	0x01C6, r1	; 0x8001c6 <Coin_5000>
+     6f0:	08 95       	ret
             }
         break;
         case VENDING_MACHINE_CANCEL :
             /* 멜로디 출력 이후 초기 모드로 복귀 */
             if(Melody_status == MELODY_STATUS_FINISHED)
-     6de:	80 91 c7 01 	lds	r24, 0x01C7	; 0x8001c7 <Melody_status>
-     6e2:	88 30       	cpi	r24, 0x08	; 8
-     6e4:	99 f4       	brne	.+38     	; 0x70c <Vending_Machine_Mode+0x166>
+     6f2:	80 91 c7 01 	lds	r24, 0x01C7	; 0x8001c7 <Melody_status>
+     6f6:	88 30       	cpi	r24, 0x08	; 8
+     6f8:	99 f4       	brne	.+38     	; 0x720 <Vending_Machine_Mode+0x17a>
             {
                 Vending_Machine_status = VENDING_MACHINE_IDLE;
-     6e6:	10 92 97 01 	sts	0x0197, r1	; 0x800197 <Vending_Machine_status>
+     6fa:	10 92 97 01 	sts	0x0197, r1	; 0x800197 <Vending_Machine_status>
                 Melody_status = MELODY_STATUS_START;
-     6ea:	10 92 c7 01 	sts	0x01C7, r1	; 0x8001c7 <Melody_status>
+     6fe:	10 92 c7 01 	sts	0x01C7, r1	; 0x8001c7 <Melody_status>
                 Selected_item_flag = 1;
-     6ee:	81 e0       	ldi	r24, 0x01	; 1
-     6f0:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+     702:	81 e0       	ldi	r24, 0x01	; 1
+     704:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
                 Coin_Total = 0;
-     6f4:	10 92 99 01 	sts	0x0199, r1	; 0x800199 <Coin_Total+0x1>
-     6f8:	10 92 98 01 	sts	0x0198, r1	; 0x800198 <Coin_Total>
+     708:	10 92 99 01 	sts	0x0199, r1	; 0x800199 <Coin_Total+0x1>
+     70c:	10 92 98 01 	sts	0x0198, r1	; 0x800198 <Coin_Total>
                 Coin_100 = 0;
-     6fc:	10 92 c1 01 	sts	0x01C1, r1	; 0x8001c1 <Coin_100>
+     710:	10 92 c1 01 	sts	0x01C1, r1	; 0x8001c1 <Coin_100>
                 Coin_500 = 0;
-     700:	10 92 9c 01 	sts	0x019C, r1	; 0x80019c <Coin_500>
+     714:	10 92 9c 01 	sts	0x019C, r1	; 0x80019c <Coin_500>
                 Coin_1000 = 0; 
-     704:	10 92 c4 01 	sts	0x01C4, r1	; 0x8001c4 <Coin_1000>
+     718:	10 92 c4 01 	sts	0x01C4, r1	; 0x8001c4 <Coin_1000>
                 Coin_5000 = 0;;
-     708:	10 92 c6 01 	sts	0x01C6, r1	; 0x8001c6 <Coin_5000>
-     70c:	08 95       	ret
+     71c:	10 92 c6 01 	sts	0x01C6, r1	; 0x8001c6 <Coin_5000>
+     720:	08 95       	ret
 
-0000070e <Melody_Update>:
+00000722 <Melody_Update>:
 
 }
 
 void Melody_Update(void)
 {
     switch(Vending_Machine_status)
-     70e:	80 91 97 01 	lds	r24, 0x0197	; 0x800197 <Vending_Machine_status>
-     712:	84 30       	cpi	r24, 0x04	; 4
-     714:	09 f4       	brne	.+2      	; 0x718 <Melody_Update+0xa>
-     716:	84 c0       	rjmp	.+264    	; 0x820 <Melody_Update+0x112>
-     718:	18 f4       	brcc	.+6      	; 0x720 <Melody_Update+0x12>
-     71a:	83 30       	cpi	r24, 0x03	; 3
-     71c:	41 f0       	breq	.+16     	; 0x72e <Melody_Update+0x20>
-     71e:	a6 c2       	rjmp	.+1356   	; 0xc6c <Melody_Update+0x55e>
-     720:	85 30       	cpi	r24, 0x05	; 5
-     722:	09 f4       	brne	.+2      	; 0x726 <Melody_Update+0x18>
-     724:	d9 c0       	rjmp	.+434    	; 0x8d8 <Melody_Update+0x1ca>
-     726:	86 30       	cpi	r24, 0x06	; 6
-     728:	09 f4       	brne	.+2      	; 0x72c <Melody_Update+0x1e>
-     72a:	bc c1       	rjmp	.+888    	; 0xaa4 <Melody_Update+0x396>
-     72c:	9f c2       	rjmp	.+1342   	; 0xc6c <Melody_Update+0x55e>
+     722:	80 91 97 01 	lds	r24, 0x0197	; 0x800197 <Vending_Machine_status>
+     726:	84 30       	cpi	r24, 0x04	; 4
+     728:	09 f4       	brne	.+2      	; 0x72c <Melody_Update+0xa>
+     72a:	84 c0       	rjmp	.+264    	; 0x834 <Melody_Update+0x112>
+     72c:	18 f4       	brcc	.+6      	; 0x734 <Melody_Update+0x12>
+     72e:	83 30       	cpi	r24, 0x03	; 3
+     730:	41 f0       	breq	.+16     	; 0x742 <Melody_Update+0x20>
+     732:	a6 c2       	rjmp	.+1356   	; 0xc80 <Melody_Update+0x55e>
+     734:	85 30       	cpi	r24, 0x05	; 5
+     736:	09 f4       	brne	.+2      	; 0x73a <Melody_Update+0x18>
+     738:	d9 c0       	rjmp	.+434    	; 0x8ec <Melody_Update+0x1ca>
+     73a:	86 30       	cpi	r24, 0x06	; 6
+     73c:	09 f4       	brne	.+2      	; 0x740 <Melody_Update+0x1e>
+     73e:	bc c1       	rjmp	.+888    	; 0xab8 <Melody_Update+0x396>
+     740:	9f c2       	rjmp	.+1342   	; 0xc80 <Melody_Update+0x55e>
     {
         case VENDING_MACHINE_ITEM_SELECTED :
             switch(Melody_status)
-     72e:	80 91 c7 01 	lds	r24, 0x01C7	; 0x8001c7 <Melody_status>
-     732:	83 30       	cpi	r24, 0x03	; 3
-     734:	89 f1       	breq	.+98     	; 0x798 <Melody_Update+0x8a>
-     736:	28 f4       	brcc	.+10     	; 0x742 <Melody_Update+0x34>
-     738:	88 23       	and	r24, r24
-     73a:	51 f0       	breq	.+20     	; 0x750 <Melody_Update+0x42>
-     73c:	81 30       	cpi	r24, 0x01	; 1
-     73e:	81 f0       	breq	.+32     	; 0x760 <Melody_Update+0x52>
-     740:	69 c0       	rjmp	.+210    	; 0x814 <Melody_Update+0x106>
-     742:	85 30       	cpi	r24, 0x05	; 5
-     744:	09 f4       	brne	.+2      	; 0x748 <Melody_Update+0x3a>
-     746:	44 c0       	rjmp	.+136    	; 0x7d0 <Melody_Update+0xc2>
-     748:	88 30       	cpi	r24, 0x08	; 8
-     74a:	09 f4       	brne	.+2      	; 0x74e <Melody_Update+0x40>
-     74c:	5d c0       	rjmp	.+186    	; 0x808 <Melody_Update+0xfa>
-     74e:	62 c0       	rjmp	.+196    	; 0x814 <Melody_Update+0x106>
+     742:	80 91 c7 01 	lds	r24, 0x01C7	; 0x8001c7 <Melody_status>
+     746:	83 30       	cpi	r24, 0x03	; 3
+     748:	89 f1       	breq	.+98     	; 0x7ac <Melody_Update+0x8a>
+     74a:	28 f4       	brcc	.+10     	; 0x756 <Melody_Update+0x34>
+     74c:	88 23       	and	r24, r24
+     74e:	51 f0       	breq	.+20     	; 0x764 <Melody_Update+0x42>
+     750:	81 30       	cpi	r24, 0x01	; 1
+     752:	81 f0       	breq	.+32     	; 0x774 <Melody_Update+0x52>
+     754:	69 c0       	rjmp	.+210    	; 0x828 <Melody_Update+0x106>
+     756:	85 30       	cpi	r24, 0x05	; 5
+     758:	09 f4       	brne	.+2      	; 0x75c <Melody_Update+0x3a>
+     75a:	44 c0       	rjmp	.+136    	; 0x7e4 <Melody_Update+0xc2>
+     75c:	88 30       	cpi	r24, 0x08	; 8
+     75e:	09 f4       	brne	.+2      	; 0x762 <Melody_Update+0x40>
+     760:	5d c0       	rjmp	.+186    	; 0x81c <Melody_Update+0xfa>
+     762:	62 c0       	rjmp	.+196    	; 0x828 <Melody_Update+0x106>
             {
                 case MELODY_STATUS_START : 
                     Melody_status = MELODY_STATUS_DO;
-     750:	81 e0       	ldi	r24, 0x01	; 1
-     752:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
+     764:	81 e0       	ldi	r24, 0x01	; 1
+     766:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
                     Melody_timer = 0;
-     756:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
-     75a:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
+     76a:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
+     76e:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
                 break;
-     75e:	08 95       	ret
+     772:	08 95       	ret
                 case MELODY_STATUS_DO:
                     OCR3A = Melody_value[MELODY_STATUS_DO-1];
-     760:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <Melody_value>
-     764:	90 91 04 01 	lds	r25, 0x0104	; 0x800104 <Melody_value+0x1>
-     768:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
-     76c:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
+     774:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <Melody_value>
+     778:	90 91 04 01 	lds	r25, 0x0104	; 0x800104 <Melody_value+0x1>
+     77c:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
+     780:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
                     Melody_timer++;
-     770:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
-     774:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
-     778:	01 96       	adiw	r24, 0x01	; 1
-     77a:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
-     77e:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
+     784:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
+     788:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
+     78c:	01 96       	adiw	r24, 0x01	; 1
+     78e:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
+     792:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
                     if(Melody_timer>=50)
-     782:	c2 97       	sbiw	r24, 0x32	; 50
-     784:	08 f4       	brcc	.+2      	; 0x788 <Melody_Update+0x7a>
-     786:	77 c2       	rjmp	.+1262   	; 0xc76 <Melody_Update+0x568>
+     796:	c2 97       	sbiw	r24, 0x32	; 50
+     798:	08 f4       	brcc	.+2      	; 0x79c <Melody_Update+0x7a>
+     79a:	77 c2       	rjmp	.+1262   	; 0xc8a <Melody_Update+0x568>
                     {
                         Melody_timer = 0;
-     788:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
-     78c:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
+     79c:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
+     7a0:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
                         Melody_status = MELODY_STATUS_MI;
-     790:	83 e0       	ldi	r24, 0x03	; 3
-     792:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
-     796:	08 95       	ret
+     7a4:	83 e0       	ldi	r24, 0x03	; 3
+     7a6:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
+     7aa:	08 95       	ret
                     }
                 break;
                 case MELODY_STATUS_MI:
                     OCR3A = Melody_value[MELODY_STATUS_MI-1];
-     798:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <Melody_value+0x4>
-     79c:	90 91 08 01 	lds	r25, 0x0108	; 0x800108 <Melody_value+0x5>
-     7a0:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
-     7a4:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
+     7ac:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <Melody_value+0x4>
+     7b0:	90 91 08 01 	lds	r25, 0x0108	; 0x800108 <Melody_value+0x5>
+     7b4:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
+     7b8:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
                     Melody_timer++;
-     7a8:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
-     7ac:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
-     7b0:	01 96       	adiw	r24, 0x01	; 1
-     7b2:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
-     7b6:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
+     7bc:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
+     7c0:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
+     7c4:	01 96       	adiw	r24, 0x01	; 1
+     7c6:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
+     7ca:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
                     if(Melody_timer>=50)
-     7ba:	c2 97       	sbiw	r24, 0x32	; 50
-     7bc:	08 f4       	brcc	.+2      	; 0x7c0 <Melody_Update+0xb2>
-     7be:	5b c2       	rjmp	.+1206   	; 0xc76 <Melody_Update+0x568>
+     7ce:	c2 97       	sbiw	r24, 0x32	; 50
+     7d0:	08 f4       	brcc	.+2      	; 0x7d4 <Melody_Update+0xb2>
+     7d2:	5b c2       	rjmp	.+1206   	; 0xc8a <Melody_Update+0x568>
                     {
                         Melody_timer = 0;
-     7c0:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
-     7c4:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
+     7d4:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
+     7d8:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
                         Melody_status = MELODY_STATUS_SOL;
-     7c8:	85 e0       	ldi	r24, 0x05	; 5
-     7ca:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
-     7ce:	08 95       	ret
+     7dc:	85 e0       	ldi	r24, 0x05	; 5
+     7de:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
+     7e2:	08 95       	ret
                     }
                 break;                
                 case MELODY_STATUS_SOL:
                     OCR3A = Melody_value[MELODY_STATUS_SOL-1];
-     7d0:	80 91 0b 01 	lds	r24, 0x010B	; 0x80010b <Melody_value+0x8>
-     7d4:	90 91 0c 01 	lds	r25, 0x010C	; 0x80010c <Melody_value+0x9>
-     7d8:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
-     7dc:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
+     7e4:	80 91 0b 01 	lds	r24, 0x010B	; 0x80010b <Melody_value+0x8>
+     7e8:	90 91 0c 01 	lds	r25, 0x010C	; 0x80010c <Melody_value+0x9>
+     7ec:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
+     7f0:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
                     Melody_timer++;
-     7e0:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
-     7e4:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
-     7e8:	01 96       	adiw	r24, 0x01	; 1
-     7ea:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
-     7ee:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
+     7f4:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
+     7f8:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
+     7fc:	01 96       	adiw	r24, 0x01	; 1
+     7fe:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
+     802:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
                     if(Melody_timer>=50)
-     7f2:	c2 97       	sbiw	r24, 0x32	; 50
-     7f4:	08 f4       	brcc	.+2      	; 0x7f8 <Melody_Update+0xea>
-     7f6:	3f c2       	rjmp	.+1150   	; 0xc76 <Melody_Update+0x568>
+     806:	c2 97       	sbiw	r24, 0x32	; 50
+     808:	08 f4       	brcc	.+2      	; 0x80c <Melody_Update+0xea>
+     80a:	3f c2       	rjmp	.+1150   	; 0xc8a <Melody_Update+0x568>
                     {
                         Melody_timer = 0;
-     7f8:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
-     7fc:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
+     80c:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
+     810:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
                         Melody_status = MELODY_STATUS_FINISHED;
-     800:	88 e0       	ldi	r24, 0x08	; 8
-     802:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
-     806:	08 95       	ret
+     814:	88 e0       	ldi	r24, 0x08	; 8
+     816:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
+     81a:	08 95       	ret
                     }
                 break;
                 case MELODY_STATUS_FINISHED:
                     //Melody_status = MELODY_STATUS_START;
                     cbi(PORTG,4); // PG4 출력 차단
-     808:	e5 e6       	ldi	r30, 0x65	; 101
-     80a:	f0 e0       	ldi	r31, 0x00	; 0
-     80c:	80 81       	ld	r24, Z
-     80e:	8f 7e       	andi	r24, 0xEF	; 239
-     810:	80 83       	st	Z, r24
+     81c:	e5 e6       	ldi	r30, 0x65	; 101
+     81e:	f0 e0       	ldi	r31, 0x00	; 0
+     820:	80 81       	ld	r24, Z
+     822:	8f 7e       	andi	r24, 0xEF	; 239
+     824:	80 83       	st	Z, r24
                 break;
-     812:	08 95       	ret
+     826:	08 95       	ret
                 default :
                     cbi(PORTG,4); // PG4 출력 차단
-     814:	e5 e6       	ldi	r30, 0x65	; 101
-     816:	f0 e0       	ldi	r31, 0x00	; 0
-     818:	80 81       	ld	r24, Z
-     81a:	8f 7e       	andi	r24, 0xEF	; 239
-     81c:	80 83       	st	Z, r24
+     828:	e5 e6       	ldi	r30, 0x65	; 101
+     82a:	f0 e0       	ldi	r31, 0x00	; 0
+     82c:	80 81       	ld	r24, Z
+     82e:	8f 7e       	andi	r24, 0xEF	; 239
+     830:	80 83       	st	Z, r24
                 break;
-     81e:	08 95       	ret
+     832:	08 95       	ret
             }
         break;        
         case VENDING_MACHINE_MONEY_ERROR :
             switch(Melody_status)
-     820:	80 91 c7 01 	lds	r24, 0x01C7	; 0x8001c7 <Melody_status>
-     824:	83 30       	cpi	r24, 0x03	; 3
-     826:	91 f0       	breq	.+36     	; 0x84c <Melody_Update+0x13e>
-     828:	18 f4       	brcc	.+6      	; 0x830 <Melody_Update+0x122>
-     82a:	88 23       	and	r24, r24
-     82c:	39 f0       	breq	.+14     	; 0x83c <Melody_Update+0x12e>
-     82e:	4e c0       	rjmp	.+156    	; 0x8cc <Melody_Update+0x1be>
-     830:	87 30       	cpi	r24, 0x07	; 7
-     832:	41 f1       	breq	.+80     	; 0x884 <Melody_Update+0x176>
-     834:	88 30       	cpi	r24, 0x08	; 8
-     836:	09 f4       	brne	.+2      	; 0x83a <Melody_Update+0x12c>
-     838:	41 c0       	rjmp	.+130    	; 0x8bc <Melody_Update+0x1ae>
-     83a:	48 c0       	rjmp	.+144    	; 0x8cc <Melody_Update+0x1be>
+     834:	80 91 c7 01 	lds	r24, 0x01C7	; 0x8001c7 <Melody_status>
+     838:	83 30       	cpi	r24, 0x03	; 3
+     83a:	91 f0       	breq	.+36     	; 0x860 <Melody_Update+0x13e>
+     83c:	18 f4       	brcc	.+6      	; 0x844 <Melody_Update+0x122>
+     83e:	88 23       	and	r24, r24
+     840:	39 f0       	breq	.+14     	; 0x850 <Melody_Update+0x12e>
+     842:	4e c0       	rjmp	.+156    	; 0x8e0 <Melody_Update+0x1be>
+     844:	87 30       	cpi	r24, 0x07	; 7
+     846:	41 f1       	breq	.+80     	; 0x898 <Melody_Update+0x176>
+     848:	88 30       	cpi	r24, 0x08	; 8
+     84a:	09 f4       	brne	.+2      	; 0x84e <Melody_Update+0x12c>
+     84c:	41 c0       	rjmp	.+130    	; 0x8d0 <Melody_Update+0x1ae>
+     84e:	48 c0       	rjmp	.+144    	; 0x8e0 <Melody_Update+0x1be>
             {
                 case MELODY_STATUS_START : 
                     Melody_status = MELODY_STATUS_MI;
-     83c:	83 e0       	ldi	r24, 0x03	; 3
-     83e:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
+     850:	83 e0       	ldi	r24, 0x03	; 3
+     852:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
                     Melody_timer = 0;
-     842:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
-     846:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
+     856:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
+     85a:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
                 break;
-     84a:	08 95       	ret
+     85e:	08 95       	ret
                 case MELODY_STATUS_MI:
                     OCR3A = Melody_value[MELODY_STATUS_MI-1];
-     84c:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <Melody_value+0x4>
-     850:	90 91 08 01 	lds	r25, 0x0108	; 0x800108 <Melody_value+0x5>
-     854:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
-     858:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
+     860:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <Melody_value+0x4>
+     864:	90 91 08 01 	lds	r25, 0x0108	; 0x800108 <Melody_value+0x5>
+     868:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
+     86c:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
                     Melody_timer++;
-     85c:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
-     860:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
-     864:	01 96       	adiw	r24, 0x01	; 1
-     866:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
-     86a:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
+     870:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
+     874:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
+     878:	01 96       	adiw	r24, 0x01	; 1
+     87a:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
+     87e:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
                     if(Melody_timer>=50)
-     86e:	c2 97       	sbiw	r24, 0x32	; 50
-     870:	08 f4       	brcc	.+2      	; 0x874 <Melody_Update+0x166>
-     872:	01 c2       	rjmp	.+1026   	; 0xc76 <Melody_Update+0x568>
+     882:	c2 97       	sbiw	r24, 0x32	; 50
+     884:	08 f4       	brcc	.+2      	; 0x888 <Melody_Update+0x166>
+     886:	01 c2       	rjmp	.+1026   	; 0xc8a <Melody_Update+0x568>
                     {
                         Melody_timer = 0;
-     874:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
-     878:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
+     888:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
+     88c:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
                         Melody_status = MELODY_STATUS_SI;
-     87c:	87 e0       	ldi	r24, 0x07	; 7
-     87e:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
-     882:	08 95       	ret
+     890:	87 e0       	ldi	r24, 0x07	; 7
+     892:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
+     896:	08 95       	ret
                     }
                 break;                
                 case MELODY_STATUS_SI:
                     OCR3A = Melody_value[MELODY_STATUS_SI-1];
-     884:	80 91 0f 01 	lds	r24, 0x010F	; 0x80010f <Melody_value+0xc>
-     888:	90 91 10 01 	lds	r25, 0x0110	; 0x800110 <Melody_value+0xd>
-     88c:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
-     890:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
+     898:	80 91 0f 01 	lds	r24, 0x010F	; 0x80010f <Melody_value+0xc>
+     89c:	90 91 10 01 	lds	r25, 0x0110	; 0x800110 <Melody_value+0xd>
+     8a0:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
+     8a4:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
                     Melody_timer++;
-     894:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
-     898:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
-     89c:	01 96       	adiw	r24, 0x01	; 1
-     89e:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
-     8a2:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
+     8a8:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
+     8ac:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
+     8b0:	01 96       	adiw	r24, 0x01	; 1
+     8b2:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
+     8b6:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
                     if(Melody_timer>=50)
-     8a6:	c2 97       	sbiw	r24, 0x32	; 50
-     8a8:	08 f4       	brcc	.+2      	; 0x8ac <Melody_Update+0x19e>
-     8aa:	e5 c1       	rjmp	.+970    	; 0xc76 <Melody_Update+0x568>
+     8ba:	c2 97       	sbiw	r24, 0x32	; 50
+     8bc:	08 f4       	brcc	.+2      	; 0x8c0 <Melody_Update+0x19e>
+     8be:	e5 c1       	rjmp	.+970    	; 0xc8a <Melody_Update+0x568>
                     {
                         Melody_timer = 0;
-     8ac:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
-     8b0:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
+     8c0:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
+     8c4:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
                         Melody_status = MELODY_STATUS_FINISHED;
-     8b4:	88 e0       	ldi	r24, 0x08	; 8
-     8b6:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
-     8ba:	08 95       	ret
+     8c8:	88 e0       	ldi	r24, 0x08	; 8
+     8ca:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
+     8ce:	08 95       	ret
                     }
                 break;
                 case MELODY_STATUS_FINISHED:
                     Melody_status = MELODY_STATUS_START;
-     8bc:	10 92 c7 01 	sts	0x01C7, r1	; 0x8001c7 <Melody_status>
+     8d0:	10 92 c7 01 	sts	0x01C7, r1	; 0x8001c7 <Melody_status>
                     cbi(PORTG,4); // PG4 출력 차단
-     8c0:	e5 e6       	ldi	r30, 0x65	; 101
-     8c2:	f0 e0       	ldi	r31, 0x00	; 0
-     8c4:	80 81       	ld	r24, Z
-     8c6:	8f 7e       	andi	r24, 0xEF	; 239
-     8c8:	80 83       	st	Z, r24
+     8d4:	e5 e6       	ldi	r30, 0x65	; 101
+     8d6:	f0 e0       	ldi	r31, 0x00	; 0
+     8d8:	80 81       	ld	r24, Z
+     8da:	8f 7e       	andi	r24, 0xEF	; 239
+     8dc:	80 83       	st	Z, r24
                 break;
-     8ca:	08 95       	ret
+     8de:	08 95       	ret
                 default :
                     cbi(PORTG,4); // PG4 출력 차단
-     8cc:	e5 e6       	ldi	r30, 0x65	; 101
-     8ce:	f0 e0       	ldi	r31, 0x00	; 0
-     8d0:	80 81       	ld	r24, Z
-     8d2:	8f 7e       	andi	r24, 0xEF	; 239
-     8d4:	80 83       	st	Z, r24
+     8e0:	e5 e6       	ldi	r30, 0x65	; 101
+     8e2:	f0 e0       	ldi	r31, 0x00	; 0
+     8e4:	80 81       	ld	r24, Z
+     8e6:	8f 7e       	andi	r24, 0xEF	; 239
+     8e8:	80 83       	st	Z, r24
                 break;
-     8d6:	08 95       	ret
+     8ea:	08 95       	ret
             }
         break;        
         case VENDING_MACHINE_MONEY_FINISH :
             switch(Melody_status)
-     8d8:	e0 91 c7 01 	lds	r30, 0x01C7	; 0x8001c7 <Melody_status>
-     8dc:	8e 2f       	mov	r24, r30
-     8de:	90 e0       	ldi	r25, 0x00	; 0
-     8e0:	89 30       	cpi	r24, 0x09	; 9
-     8e2:	91 05       	cpc	r25, r1
-     8e4:	08 f0       	brcs	.+2      	; 0x8e8 <Melody_Update+0x1da>
-     8e6:	d8 c0       	rjmp	.+432    	; 0xa98 <Melody_Update+0x38a>
-     8e8:	fc 01       	movw	r30, r24
-     8ea:	e3 5b       	subi	r30, 0xB3	; 179
-     8ec:	ff 4f       	sbci	r31, 0xFF	; 255
-     8ee:	2d c4       	rjmp	.+2138   	; 0x114a <__tablejump2__>
+     8ec:	e0 91 c7 01 	lds	r30, 0x01C7	; 0x8001c7 <Melody_status>
+     8f0:	8e 2f       	mov	r24, r30
+     8f2:	90 e0       	ldi	r25, 0x00	; 0
+     8f4:	89 30       	cpi	r24, 0x09	; 9
+     8f6:	91 05       	cpc	r25, r1
+     8f8:	08 f0       	brcs	.+2      	; 0x8fc <Melody_Update+0x1da>
+     8fa:	d8 c0       	rjmp	.+432    	; 0xaac <Melody_Update+0x38a>
+     8fc:	fc 01       	movw	r30, r24
+     8fe:	e3 5b       	subi	r30, 0xB3	; 179
+     900:	ff 4f       	sbci	r31, 0xFF	; 255
+     902:	2d c4       	rjmp	.+2138   	; 0x115e <__tablejump2__>
             {
                 case MELODY_STATUS_START : 
                     Melody_status = MELODY_STATUS_SI;
-     8f0:	87 e0       	ldi	r24, 0x07	; 7
-     8f2:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
+     904:	87 e0       	ldi	r24, 0x07	; 7
+     906:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
                     Melody_timer = 0;
-     8f6:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
-     8fa:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
+     90a:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
+     90e:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
                 break;
-     8fe:	08 95       	ret
+     912:	08 95       	ret
                 case MELODY_STATUS_SI:
                     OCR3A = Melody_value[MELODY_STATUS_SI-1];
-     900:	80 91 0f 01 	lds	r24, 0x010F	; 0x80010f <Melody_value+0xc>
-     904:	90 91 10 01 	lds	r25, 0x0110	; 0x800110 <Melody_value+0xd>
-     908:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
-     90c:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
+     914:	80 91 0f 01 	lds	r24, 0x010F	; 0x80010f <Melody_value+0xc>
+     918:	90 91 10 01 	lds	r25, 0x0110	; 0x800110 <Melody_value+0xd>
+     91c:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
+     920:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
                     Melody_timer++;
-     910:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
-     914:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
-     918:	01 96       	adiw	r24, 0x01	; 1
-     91a:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
-     91e:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
+     924:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
+     928:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
+     92c:	01 96       	adiw	r24, 0x01	; 1
+     92e:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
+     932:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
                     if(Melody_timer>=50)
-     922:	c2 97       	sbiw	r24, 0x32	; 50
-     924:	08 f4       	brcc	.+2      	; 0x928 <Melody_Update+0x21a>
-     926:	a7 c1       	rjmp	.+846    	; 0xc76 <Melody_Update+0x568>
+     936:	c2 97       	sbiw	r24, 0x32	; 50
+     938:	08 f4       	brcc	.+2      	; 0x93c <Melody_Update+0x21a>
+     93a:	a7 c1       	rjmp	.+846    	; 0xc8a <Melody_Update+0x568>
                     {
                         Melody_timer = 0;
-     928:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
-     92c:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
+     93c:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
+     940:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
                         Melody_status = MELODY_STATUS_LA;
-     930:	86 e0       	ldi	r24, 0x06	; 6
-     932:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
-     936:	08 95       	ret
+     944:	86 e0       	ldi	r24, 0x06	; 6
+     946:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
+     94a:	08 95       	ret
                     }
                 break;                
                 case MELODY_STATUS_LA:
                     OCR3A = Melody_value[MELODY_STATUS_LA-1];
-     938:	80 91 0d 01 	lds	r24, 0x010D	; 0x80010d <Melody_value+0xa>
-     93c:	90 91 0e 01 	lds	r25, 0x010E	; 0x80010e <Melody_value+0xb>
-     940:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
-     944:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
+     94c:	80 91 0d 01 	lds	r24, 0x010D	; 0x80010d <Melody_value+0xa>
+     950:	90 91 0e 01 	lds	r25, 0x010E	; 0x80010e <Melody_value+0xb>
+     954:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
+     958:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
                     Melody_timer++;
-     948:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
-     94c:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
-     950:	01 96       	adiw	r24, 0x01	; 1
-     952:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
-     956:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
+     95c:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
+     960:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
+     964:	01 96       	adiw	r24, 0x01	; 1
+     966:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
+     96a:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
                     if(Melody_timer>=50)
-     95a:	c2 97       	sbiw	r24, 0x32	; 50
-     95c:	08 f4       	brcc	.+2      	; 0x960 <Melody_Update+0x252>
-     95e:	8b c1       	rjmp	.+790    	; 0xc76 <Melody_Update+0x568>
+     96e:	c2 97       	sbiw	r24, 0x32	; 50
+     970:	08 f4       	brcc	.+2      	; 0x974 <Melody_Update+0x252>
+     972:	8b c1       	rjmp	.+790    	; 0xc8a <Melody_Update+0x568>
                     {
                         Melody_timer = 0;
-     960:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
-     964:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
+     974:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
+     978:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
                         Melody_status = MELODY_STATUS_SOL;
-     968:	85 e0       	ldi	r24, 0x05	; 5
-     96a:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
-     96e:	08 95       	ret
+     97c:	85 e0       	ldi	r24, 0x05	; 5
+     97e:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
+     982:	08 95       	ret
                     }
                 break;
                 case MELODY_STATUS_SOL:
                     OCR3A = Melody_value[MELODY_STATUS_SOL-1];
-     970:	80 91 0b 01 	lds	r24, 0x010B	; 0x80010b <Melody_value+0x8>
-     974:	90 91 0c 01 	lds	r25, 0x010C	; 0x80010c <Melody_value+0x9>
-     978:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
-     97c:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
+     984:	80 91 0b 01 	lds	r24, 0x010B	; 0x80010b <Melody_value+0x8>
+     988:	90 91 0c 01 	lds	r25, 0x010C	; 0x80010c <Melody_value+0x9>
+     98c:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
+     990:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
                     Melody_timer++;
-     980:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
-     984:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
-     988:	01 96       	adiw	r24, 0x01	; 1
-     98a:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
-     98e:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
+     994:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
+     998:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
+     99c:	01 96       	adiw	r24, 0x01	; 1
+     99e:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
+     9a2:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
                     if(Melody_timer>=50)
-     992:	c2 97       	sbiw	r24, 0x32	; 50
-     994:	08 f4       	brcc	.+2      	; 0x998 <Melody_Update+0x28a>
-     996:	6f c1       	rjmp	.+734    	; 0xc76 <Melody_Update+0x568>
+     9a6:	c2 97       	sbiw	r24, 0x32	; 50
+     9a8:	08 f4       	brcc	.+2      	; 0x9ac <Melody_Update+0x28a>
+     9aa:	6f c1       	rjmp	.+734    	; 0xc8a <Melody_Update+0x568>
                     {
                         Melody_timer = 0;
-     998:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
-     99c:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
+     9ac:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
+     9b0:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
                         Melody_status = MELODY_STATUS_FA;
-     9a0:	84 e0       	ldi	r24, 0x04	; 4
-     9a2:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
-     9a6:	08 95       	ret
+     9b4:	84 e0       	ldi	r24, 0x04	; 4
+     9b6:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
+     9ba:	08 95       	ret
                     }
                 break;
                 case MELODY_STATUS_FA:
                     OCR3A = Melody_value[MELODY_STATUS_FA-1];
-     9a8:	80 91 09 01 	lds	r24, 0x0109	; 0x800109 <Melody_value+0x6>
-     9ac:	90 91 0a 01 	lds	r25, 0x010A	; 0x80010a <Melody_value+0x7>
-     9b0:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
-     9b4:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
+     9bc:	80 91 09 01 	lds	r24, 0x0109	; 0x800109 <Melody_value+0x6>
+     9c0:	90 91 0a 01 	lds	r25, 0x010A	; 0x80010a <Melody_value+0x7>
+     9c4:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
+     9c8:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
                     Melody_timer++;
-     9b8:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
-     9bc:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
-     9c0:	01 96       	adiw	r24, 0x01	; 1
-     9c2:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
-     9c6:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
+     9cc:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
+     9d0:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
+     9d4:	01 96       	adiw	r24, 0x01	; 1
+     9d6:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
+     9da:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
                     if(Melody_timer>=50)
-     9ca:	c2 97       	sbiw	r24, 0x32	; 50
-     9cc:	08 f4       	brcc	.+2      	; 0x9d0 <Melody_Update+0x2c2>
-     9ce:	53 c1       	rjmp	.+678    	; 0xc76 <Melody_Update+0x568>
+     9de:	c2 97       	sbiw	r24, 0x32	; 50
+     9e0:	08 f4       	brcc	.+2      	; 0x9e4 <Melody_Update+0x2c2>
+     9e2:	53 c1       	rjmp	.+678    	; 0xc8a <Melody_Update+0x568>
                     {
                         Melody_timer = 0;
-     9d0:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
-     9d4:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
+     9e4:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
+     9e8:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
                         Melody_status = MELODY_STATUS_MI;
-     9d8:	83 e0       	ldi	r24, 0x03	; 3
-     9da:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
-     9de:	08 95       	ret
+     9ec:	83 e0       	ldi	r24, 0x03	; 3
+     9ee:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
+     9f2:	08 95       	ret
                     }
                 break;                
                 case MELODY_STATUS_MI:
                     OCR3A = Melody_value[MELODY_STATUS_MI-1];
-     9e0:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <Melody_value+0x4>
-     9e4:	90 91 08 01 	lds	r25, 0x0108	; 0x800108 <Melody_value+0x5>
-     9e8:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
-     9ec:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
+     9f4:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <Melody_value+0x4>
+     9f8:	90 91 08 01 	lds	r25, 0x0108	; 0x800108 <Melody_value+0x5>
+     9fc:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
+     a00:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
                     Melody_timer++;
-     9f0:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
-     9f4:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
-     9f8:	01 96       	adiw	r24, 0x01	; 1
-     9fa:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
-     9fe:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
+     a04:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
+     a08:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
+     a0c:	01 96       	adiw	r24, 0x01	; 1
+     a0e:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
+     a12:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
                     if(Melody_timer>=50)
-     a02:	c2 97       	sbiw	r24, 0x32	; 50
-     a04:	08 f4       	brcc	.+2      	; 0xa08 <Melody_Update+0x2fa>
-     a06:	37 c1       	rjmp	.+622    	; 0xc76 <Melody_Update+0x568>
+     a16:	c2 97       	sbiw	r24, 0x32	; 50
+     a18:	08 f4       	brcc	.+2      	; 0xa1c <Melody_Update+0x2fa>
+     a1a:	37 c1       	rjmp	.+622    	; 0xc8a <Melody_Update+0x568>
                     {
                         Melody_timer = 0;
-     a08:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
-     a0c:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
+     a1c:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
+     a20:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
                         Melody_status = MELODY_STATUS_RE;
-     a10:	82 e0       	ldi	r24, 0x02	; 2
-     a12:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
-     a16:	08 95       	ret
+     a24:	82 e0       	ldi	r24, 0x02	; 2
+     a26:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
+     a2a:	08 95       	ret
                     }
                 break;              
                 case MELODY_STATUS_RE:
                     OCR3A = Melody_value[MELODY_STATUS_RE-1];
-     a18:	80 91 05 01 	lds	r24, 0x0105	; 0x800105 <Melody_value+0x2>
-     a1c:	90 91 06 01 	lds	r25, 0x0106	; 0x800106 <Melody_value+0x3>
-     a20:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
-     a24:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
+     a2c:	80 91 05 01 	lds	r24, 0x0105	; 0x800105 <Melody_value+0x2>
+     a30:	90 91 06 01 	lds	r25, 0x0106	; 0x800106 <Melody_value+0x3>
+     a34:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
+     a38:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
                     Melody_timer++;
-     a28:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
-     a2c:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
-     a30:	01 96       	adiw	r24, 0x01	; 1
-     a32:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
-     a36:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
+     a3c:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
+     a40:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
+     a44:	01 96       	adiw	r24, 0x01	; 1
+     a46:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
+     a4a:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
                     if(Melody_timer>=50)
-     a3a:	c2 97       	sbiw	r24, 0x32	; 50
-     a3c:	08 f4       	brcc	.+2      	; 0xa40 <Melody_Update+0x332>
-     a3e:	1b c1       	rjmp	.+566    	; 0xc76 <Melody_Update+0x568>
+     a4e:	c2 97       	sbiw	r24, 0x32	; 50
+     a50:	08 f4       	brcc	.+2      	; 0xa54 <Melody_Update+0x332>
+     a52:	1b c1       	rjmp	.+566    	; 0xc8a <Melody_Update+0x568>
                     {
                         Melody_timer = 0;
-     a40:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
-     a44:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
+     a54:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
+     a58:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
                         Melody_status = MELODY_STATUS_DO;
-     a48:	81 e0       	ldi	r24, 0x01	; 1
-     a4a:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
-     a4e:	08 95       	ret
+     a5c:	81 e0       	ldi	r24, 0x01	; 1
+     a5e:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
+     a62:	08 95       	ret
                     }
                 break;              
                 case MELODY_STATUS_DO:
                     OCR3A = Melody_value[MELODY_STATUS_DO-1];
-     a50:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <Melody_value>
-     a54:	90 91 04 01 	lds	r25, 0x0104	; 0x800104 <Melody_value+0x1>
-     a58:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
-     a5c:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
+     a64:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <Melody_value>
+     a68:	90 91 04 01 	lds	r25, 0x0104	; 0x800104 <Melody_value+0x1>
+     a6c:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
+     a70:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
                     Melody_timer++;
-     a60:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
-     a64:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
-     a68:	01 96       	adiw	r24, 0x01	; 1
-     a6a:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
-     a6e:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
+     a74:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
+     a78:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
+     a7c:	01 96       	adiw	r24, 0x01	; 1
+     a7e:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
+     a82:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
                     if(Melody_timer>=50)
-     a72:	c2 97       	sbiw	r24, 0x32	; 50
-     a74:	08 f4       	brcc	.+2      	; 0xa78 <Melody_Update+0x36a>
-     a76:	ff c0       	rjmp	.+510    	; 0xc76 <Melody_Update+0x568>
+     a86:	c2 97       	sbiw	r24, 0x32	; 50
+     a88:	08 f4       	brcc	.+2      	; 0xa8c <Melody_Update+0x36a>
+     a8a:	ff c0       	rjmp	.+510    	; 0xc8a <Melody_Update+0x568>
                     {
                         Melody_timer = 0;
-     a78:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
-     a7c:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
+     a8c:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
+     a90:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
                         Melody_status = MELODY_STATUS_FINISHED;
-     a80:	88 e0       	ldi	r24, 0x08	; 8
-     a82:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
-     a86:	08 95       	ret
+     a94:	88 e0       	ldi	r24, 0x08	; 8
+     a96:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
+     a9a:	08 95       	ret
                     }
                 break;
                 case MELODY_STATUS_FINISHED:
                     Melody_status = MELODY_STATUS_START;
-     a88:	10 92 c7 01 	sts	0x01C7, r1	; 0x8001c7 <Melody_status>
+     a9c:	10 92 c7 01 	sts	0x01C7, r1	; 0x8001c7 <Melody_status>
                     cbi(PORTG,4); // PG4 출력 차단
-     a8c:	e5 e6       	ldi	r30, 0x65	; 101
-     a8e:	f0 e0       	ldi	r31, 0x00	; 0
-     a90:	80 81       	ld	r24, Z
-     a92:	8f 7e       	andi	r24, 0xEF	; 239
-     a94:	80 83       	st	Z, r24
+     aa0:	e5 e6       	ldi	r30, 0x65	; 101
+     aa2:	f0 e0       	ldi	r31, 0x00	; 0
+     aa4:	80 81       	ld	r24, Z
+     aa6:	8f 7e       	andi	r24, 0xEF	; 239
+     aa8:	80 83       	st	Z, r24
                 break;
-     a96:	08 95       	ret
+     aaa:	08 95       	ret
                 default :
                     cbi(PORTG,4); // PG4 출력 차단
-     a98:	e5 e6       	ldi	r30, 0x65	; 101
-     a9a:	f0 e0       	ldi	r31, 0x00	; 0
-     a9c:	80 81       	ld	r24, Z
-     a9e:	8f 7e       	andi	r24, 0xEF	; 239
-     aa0:	80 83       	st	Z, r24
+     aac:	e5 e6       	ldi	r30, 0x65	; 101
+     aae:	f0 e0       	ldi	r31, 0x00	; 0
+     ab0:	80 81       	ld	r24, Z
+     ab2:	8f 7e       	andi	r24, 0xEF	; 239
+     ab4:	80 83       	st	Z, r24
                 break;
-     aa2:	08 95       	ret
+     ab6:	08 95       	ret
             }
         break;        
         case VENDING_MACHINE_CANCEL :
             switch(Melody_status)
-     aa4:	e0 91 c7 01 	lds	r30, 0x01C7	; 0x8001c7 <Melody_status>
-     aa8:	8e 2f       	mov	r24, r30
-     aaa:	90 e0       	ldi	r25, 0x00	; 0
-     aac:	89 30       	cpi	r24, 0x09	; 9
-     aae:	91 05       	cpc	r25, r1
-     ab0:	08 f0       	brcs	.+2      	; 0xab4 <Melody_Update+0x3a6>
-     ab2:	d6 c0       	rjmp	.+428    	; 0xc60 <Melody_Update+0x552>
-     ab4:	fc 01       	movw	r30, r24
-     ab6:	ea 5a       	subi	r30, 0xAA	; 170
-     ab8:	ff 4f       	sbci	r31, 0xFF	; 255
-     aba:	47 c3       	rjmp	.+1678   	; 0x114a <__tablejump2__>
+     ab8:	e0 91 c7 01 	lds	r30, 0x01C7	; 0x8001c7 <Melody_status>
+     abc:	8e 2f       	mov	r24, r30
+     abe:	90 e0       	ldi	r25, 0x00	; 0
+     ac0:	89 30       	cpi	r24, 0x09	; 9
+     ac2:	91 05       	cpc	r25, r1
+     ac4:	08 f0       	brcs	.+2      	; 0xac8 <Melody_Update+0x3a6>
+     ac6:	d6 c0       	rjmp	.+428    	; 0xc74 <Melody_Update+0x552>
+     ac8:	fc 01       	movw	r30, r24
+     aca:	ea 5a       	subi	r30, 0xAA	; 170
+     acc:	ff 4f       	sbci	r31, 0xFF	; 255
+     ace:	47 c3       	rjmp	.+1678   	; 0x115e <__tablejump2__>
             {
                 case MELODY_STATUS_START : 
                     Melody_status = MELODY_STATUS_DO;
-     abc:	81 e0       	ldi	r24, 0x01	; 1
-     abe:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
+     ad0:	81 e0       	ldi	r24, 0x01	; 1
+     ad2:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
                     Melody_timer = 0;
-     ac2:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
-     ac6:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
+     ad6:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
+     ada:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
                 break;
-     aca:	08 95       	ret
+     ade:	08 95       	ret
                 case MELODY_STATUS_DO:
                     OCR3A = Melody_value[MELODY_STATUS_DO-1];
-     acc:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <Melody_value>
-     ad0:	90 91 04 01 	lds	r25, 0x0104	; 0x800104 <Melody_value+0x1>
-     ad4:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
-     ad8:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
+     ae0:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <Melody_value>
+     ae4:	90 91 04 01 	lds	r25, 0x0104	; 0x800104 <Melody_value+0x1>
+     ae8:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
+     aec:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
                     Melody_timer++;
-     adc:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
-     ae0:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
-     ae4:	01 96       	adiw	r24, 0x01	; 1
-     ae6:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
-     aea:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
+     af0:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
+     af4:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
+     af8:	01 96       	adiw	r24, 0x01	; 1
+     afa:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
+     afe:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
                     if(Melody_timer>=50)
-     aee:	c2 97       	sbiw	r24, 0x32	; 50
-     af0:	08 f4       	brcc	.+2      	; 0xaf4 <Melody_Update+0x3e6>
-     af2:	c1 c0       	rjmp	.+386    	; 0xc76 <Melody_Update+0x568>
+     b02:	c2 97       	sbiw	r24, 0x32	; 50
+     b04:	08 f4       	brcc	.+2      	; 0xb08 <Melody_Update+0x3e6>
+     b06:	c1 c0       	rjmp	.+386    	; 0xc8a <Melody_Update+0x568>
                     {
                         Melody_timer = 0;
-     af4:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
-     af8:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
+     b08:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
+     b0c:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
                         Melody_status = MELODY_STATUS_RE;
-     afc:	82 e0       	ldi	r24, 0x02	; 2
-     afe:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
-     b02:	08 95       	ret
+     b10:	82 e0       	ldi	r24, 0x02	; 2
+     b12:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
+     b16:	08 95       	ret
                     }
                 break;                
                 case MELODY_STATUS_RE:
                     OCR3A = Melody_value[MELODY_STATUS_RE-1];
-     b04:	80 91 05 01 	lds	r24, 0x0105	; 0x800105 <Melody_value+0x2>
-     b08:	90 91 06 01 	lds	r25, 0x0106	; 0x800106 <Melody_value+0x3>
-     b0c:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
-     b10:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
+     b18:	80 91 05 01 	lds	r24, 0x0105	; 0x800105 <Melody_value+0x2>
+     b1c:	90 91 06 01 	lds	r25, 0x0106	; 0x800106 <Melody_value+0x3>
+     b20:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
+     b24:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
                     Melody_timer++;
-     b14:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
-     b18:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
-     b1c:	01 96       	adiw	r24, 0x01	; 1
-     b1e:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
-     b22:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
+     b28:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
+     b2c:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
+     b30:	01 96       	adiw	r24, 0x01	; 1
+     b32:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
+     b36:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
                     if(Melody_timer>=50)
-     b26:	c2 97       	sbiw	r24, 0x32	; 50
-     b28:	08 f4       	brcc	.+2      	; 0xb2c <Melody_Update+0x41e>
-     b2a:	a5 c0       	rjmp	.+330    	; 0xc76 <Melody_Update+0x568>
+     b3a:	c2 97       	sbiw	r24, 0x32	; 50
+     b3c:	08 f4       	brcc	.+2      	; 0xb40 <Melody_Update+0x41e>
+     b3e:	a5 c0       	rjmp	.+330    	; 0xc8a <Melody_Update+0x568>
                     {
                         Melody_timer = 0;
-     b2c:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
-     b30:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
+     b40:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
+     b44:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
                         Melody_status = MELODY_STATUS_MI;
-     b34:	83 e0       	ldi	r24, 0x03	; 3
-     b36:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
-     b3a:	08 95       	ret
+     b48:	83 e0       	ldi	r24, 0x03	; 3
+     b4a:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
+     b4e:	08 95       	ret
                     }
                 break;
                 case MELODY_STATUS_MI:
                     OCR3A = Melody_value[MELODY_STATUS_MI-1];
-     b3c:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <Melody_value+0x4>
-     b40:	90 91 08 01 	lds	r25, 0x0108	; 0x800108 <Melody_value+0x5>
-     b44:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
-     b48:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
+     b50:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <Melody_value+0x4>
+     b54:	90 91 08 01 	lds	r25, 0x0108	; 0x800108 <Melody_value+0x5>
+     b58:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
+     b5c:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
                     Melody_timer++;
-     b4c:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
-     b50:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
-     b54:	01 96       	adiw	r24, 0x01	; 1
-     b56:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
-     b5a:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
+     b60:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
+     b64:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
+     b68:	01 96       	adiw	r24, 0x01	; 1
+     b6a:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
+     b6e:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
                     if(Melody_timer>=50)
-     b5e:	c2 97       	sbiw	r24, 0x32	; 50
-     b60:	08 f4       	brcc	.+2      	; 0xb64 <Melody_Update+0x456>
-     b62:	89 c0       	rjmp	.+274    	; 0xc76 <Melody_Update+0x568>
+     b72:	c2 97       	sbiw	r24, 0x32	; 50
+     b74:	08 f4       	brcc	.+2      	; 0xb78 <Melody_Update+0x456>
+     b76:	89 c0       	rjmp	.+274    	; 0xc8a <Melody_Update+0x568>
                     {
                         Melody_timer = 0;
-     b64:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
-     b68:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
+     b78:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
+     b7c:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
                         Melody_status = MELODY_STATUS_FA;
-     b6c:	84 e0       	ldi	r24, 0x04	; 4
-     b6e:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
-     b72:	08 95       	ret
+     b80:	84 e0       	ldi	r24, 0x04	; 4
+     b82:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
+     b86:	08 95       	ret
                     }
                 break;
                 case MELODY_STATUS_FA:
                     OCR3A = Melody_value[MELODY_STATUS_FA-1];
-     b74:	80 91 09 01 	lds	r24, 0x0109	; 0x800109 <Melody_value+0x6>
-     b78:	90 91 0a 01 	lds	r25, 0x010A	; 0x80010a <Melody_value+0x7>
-     b7c:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
-     b80:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
+     b88:	80 91 09 01 	lds	r24, 0x0109	; 0x800109 <Melody_value+0x6>
+     b8c:	90 91 0a 01 	lds	r25, 0x010A	; 0x80010a <Melody_value+0x7>
+     b90:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
+     b94:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
                     Melody_timer++;
-     b84:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
-     b88:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
-     b8c:	01 96       	adiw	r24, 0x01	; 1
-     b8e:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
-     b92:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
+     b98:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
+     b9c:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
+     ba0:	01 96       	adiw	r24, 0x01	; 1
+     ba2:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
+     ba6:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
                     if(Melody_timer>=50)
-     b96:	c2 97       	sbiw	r24, 0x32	; 50
-     b98:	08 f4       	brcc	.+2      	; 0xb9c <Melody_Update+0x48e>
-     b9a:	6d c0       	rjmp	.+218    	; 0xc76 <Melody_Update+0x568>
+     baa:	c2 97       	sbiw	r24, 0x32	; 50
+     bac:	08 f4       	brcc	.+2      	; 0xbb0 <Melody_Update+0x48e>
+     bae:	6d c0       	rjmp	.+218    	; 0xc8a <Melody_Update+0x568>
                     {
                         Melody_timer = 0;
-     b9c:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
-     ba0:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
+     bb0:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
+     bb4:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
                         Melody_status = MELODY_STATUS_SOL;
-     ba4:	85 e0       	ldi	r24, 0x05	; 5
-     ba6:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
-     baa:	08 95       	ret
+     bb8:	85 e0       	ldi	r24, 0x05	; 5
+     bba:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
+     bbe:	08 95       	ret
                     }
                 break;                
                 case MELODY_STATUS_SOL:
                     OCR3A = Melody_value[MELODY_STATUS_SOL-1];
-     bac:	80 91 0b 01 	lds	r24, 0x010B	; 0x80010b <Melody_value+0x8>
-     bb0:	90 91 0c 01 	lds	r25, 0x010C	; 0x80010c <Melody_value+0x9>
-     bb4:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
-     bb8:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
+     bc0:	80 91 0b 01 	lds	r24, 0x010B	; 0x80010b <Melody_value+0x8>
+     bc4:	90 91 0c 01 	lds	r25, 0x010C	; 0x80010c <Melody_value+0x9>
+     bc8:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
+     bcc:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
                     Melody_timer++;
-     bbc:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
-     bc0:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
-     bc4:	01 96       	adiw	r24, 0x01	; 1
-     bc6:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
-     bca:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
+     bd0:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
+     bd4:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
+     bd8:	01 96       	adiw	r24, 0x01	; 1
+     bda:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
+     bde:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
                     if(Melody_timer>=50)
-     bce:	c2 97       	sbiw	r24, 0x32	; 50
-     bd0:	08 f4       	brcc	.+2      	; 0xbd4 <Melody_Update+0x4c6>
-     bd2:	51 c0       	rjmp	.+162    	; 0xc76 <Melody_Update+0x568>
+     be2:	c2 97       	sbiw	r24, 0x32	; 50
+     be4:	08 f4       	brcc	.+2      	; 0xbe8 <Melody_Update+0x4c6>
+     be6:	51 c0       	rjmp	.+162    	; 0xc8a <Melody_Update+0x568>
                     {
                         Melody_timer = 0;
-     bd4:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
-     bd8:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
+     be8:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
+     bec:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
                         Melody_status = MELODY_STATUS_LA;
-     bdc:	86 e0       	ldi	r24, 0x06	; 6
-     bde:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
-     be2:	08 95       	ret
+     bf0:	86 e0       	ldi	r24, 0x06	; 6
+     bf2:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
+     bf6:	08 95       	ret
                     }
                 break;              
                 case MELODY_STATUS_LA:
                     OCR3A = Melody_value[MELODY_STATUS_LA-1];
-     be4:	80 91 0d 01 	lds	r24, 0x010D	; 0x80010d <Melody_value+0xa>
-     be8:	90 91 0e 01 	lds	r25, 0x010E	; 0x80010e <Melody_value+0xb>
-     bec:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
-     bf0:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
+     bf8:	80 91 0d 01 	lds	r24, 0x010D	; 0x80010d <Melody_value+0xa>
+     bfc:	90 91 0e 01 	lds	r25, 0x010E	; 0x80010e <Melody_value+0xb>
+     c00:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
+     c04:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
                     Melody_timer++;
-     bf4:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
-     bf8:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
-     bfc:	01 96       	adiw	r24, 0x01	; 1
-     bfe:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
-     c02:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
+     c08:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
+     c0c:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
+     c10:	01 96       	adiw	r24, 0x01	; 1
+     c12:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
+     c16:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
                     if(Melody_timer>=50)
-     c06:	c2 97       	sbiw	r24, 0x32	; 50
-     c08:	b0 f1       	brcs	.+108    	; 0xc76 <Melody_Update+0x568>
+     c1a:	c2 97       	sbiw	r24, 0x32	; 50
+     c1c:	b0 f1       	brcs	.+108    	; 0xc8a <Melody_Update+0x568>
                     {
                         Melody_timer = 0;
-     c0a:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
-     c0e:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
+     c1e:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
+     c22:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
                         Melody_status = MELODY_STATUS_SI;
-     c12:	87 e0       	ldi	r24, 0x07	; 7
-     c14:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
-     c18:	08 95       	ret
+     c26:	87 e0       	ldi	r24, 0x07	; 7
+     c28:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
+     c2c:	08 95       	ret
                     }
                 break;              
                 case MELODY_STATUS_SI:
                     OCR3A = Melody_value[MELODY_STATUS_SI-1];
-     c1a:	80 91 0f 01 	lds	r24, 0x010F	; 0x80010f <Melody_value+0xc>
-     c1e:	90 91 10 01 	lds	r25, 0x0110	; 0x800110 <Melody_value+0xd>
-     c22:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
-     c26:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
+     c2e:	80 91 0f 01 	lds	r24, 0x010F	; 0x80010f <Melody_value+0xc>
+     c32:	90 91 10 01 	lds	r25, 0x0110	; 0x800110 <Melody_value+0xd>
+     c36:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
+     c3a:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
                     Melody_timer++;
-     c2a:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
-     c2e:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
-     c32:	01 96       	adiw	r24, 0x01	; 1
-     c34:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
-     c38:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
+     c3e:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <Melody_timer>
+     c42:	90 91 9e 01 	lds	r25, 0x019E	; 0x80019e <Melody_timer+0x1>
+     c46:	01 96       	adiw	r24, 0x01	; 1
+     c48:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <Melody_timer+0x1>
+     c4c:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <Melody_timer>
                     if(Melody_timer>=50)
-     c3c:	c2 97       	sbiw	r24, 0x32	; 50
-     c3e:	d8 f0       	brcs	.+54     	; 0xc76 <Melody_Update+0x568>
+     c50:	c2 97       	sbiw	r24, 0x32	; 50
+     c52:	d8 f0       	brcs	.+54     	; 0xc8a <Melody_Update+0x568>
                     {
                         Melody_timer = 0;
-     c40:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
-     c44:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
+     c54:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <Melody_timer+0x1>
+     c58:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <Melody_timer>
                         Melody_status = MELODY_STATUS_FINISHED;
-     c48:	88 e0       	ldi	r24, 0x08	; 8
-     c4a:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
-     c4e:	08 95       	ret
+     c5c:	88 e0       	ldi	r24, 0x08	; 8
+     c5e:	80 93 c7 01 	sts	0x01C7, r24	; 0x8001c7 <Melody_status>
+     c62:	08 95       	ret
                     }
                 break;
                 case MELODY_STATUS_FINISHED:
                     Melody_status = MELODY_STATUS_START;
-     c50:	10 92 c7 01 	sts	0x01C7, r1	; 0x8001c7 <Melody_status>
+     c64:	10 92 c7 01 	sts	0x01C7, r1	; 0x8001c7 <Melody_status>
                     cbi(PORTG,4); // PG4 출력 차단
-     c54:	e5 e6       	ldi	r30, 0x65	; 101
-     c56:	f0 e0       	ldi	r31, 0x00	; 0
-     c58:	80 81       	ld	r24, Z
-     c5a:	8f 7e       	andi	r24, 0xEF	; 239
-     c5c:	80 83       	st	Z, r24
+     c68:	e5 e6       	ldi	r30, 0x65	; 101
+     c6a:	f0 e0       	ldi	r31, 0x00	; 0
+     c6c:	80 81       	ld	r24, Z
+     c6e:	8f 7e       	andi	r24, 0xEF	; 239
+     c70:	80 83       	st	Z, r24
                 break;
-     c5e:	08 95       	ret
+     c72:	08 95       	ret
                 default :
                     cbi(PORTG,4); // PG4 출력 차단
-     c60:	e5 e6       	ldi	r30, 0x65	; 101
-     c62:	f0 e0       	ldi	r31, 0x00	; 0
-     c64:	80 81       	ld	r24, Z
-     c66:	8f 7e       	andi	r24, 0xEF	; 239
-     c68:	80 83       	st	Z, r24
+     c74:	e5 e6       	ldi	r30, 0x65	; 101
+     c76:	f0 e0       	ldi	r31, 0x00	; 0
+     c78:	80 81       	ld	r24, Z
+     c7a:	8f 7e       	andi	r24, 0xEF	; 239
+     c7c:	80 83       	st	Z, r24
                 break;
-     c6a:	08 95       	ret
+     c7e:	08 95       	ret
             }
         break;
         default :
             cbi(PORTG,4); // PG4 출력 차단
-     c6c:	e5 e6       	ldi	r30, 0x65	; 101
-     c6e:	f0 e0       	ldi	r31, 0x00	; 0
-     c70:	80 81       	ld	r24, Z
-     c72:	8f 7e       	andi	r24, 0xEF	; 239
-     c74:	80 83       	st	Z, r24
-     c76:	08 95       	ret
+     c80:	e5 e6       	ldi	r30, 0x65	; 101
+     c82:	f0 e0       	ldi	r31, 0x00	; 0
+     c84:	80 81       	ld	r24, Z
+     c86:	8f 7e       	andi	r24, 0xEF	; 239
+     c88:	80 83       	st	Z, r24
+     c8a:	08 95       	ret
 
-00000c78 <Clear_Tx_Buffer>:
+00000c8c <Clear_Tx_Buffer>:
     }
 }
 
 void Clear_Tx_Buffer(void)
 {
     for(uint8_t i = 0;i<32;i++)
-     c78:	80 e0       	ldi	r24, 0x00	; 0
-     c7a:	07 c0       	rjmp	.+14     	; 0xc8a <Clear_Tx_Buffer+0x12>
+     c8c:	80 e0       	ldi	r24, 0x00	; 0
+     c8e:	07 c0       	rjmp	.+14     	; 0xc9e <Clear_Tx_Buffer+0x12>
     {
         LCD_Tx_Data[i] = ' ';
-     c7c:	e8 2f       	mov	r30, r24
-     c7e:	f0 e0       	ldi	r31, 0x00	; 0
-     c80:	e0 56       	subi	r30, 0x60	; 96
-     c82:	fe 4f       	sbci	r31, 0xFE	; 254
-     c84:	90 e2       	ldi	r25, 0x20	; 32
-     c86:	90 83       	st	Z, r25
+     c90:	e8 2f       	mov	r30, r24
+     c92:	f0 e0       	ldi	r31, 0x00	; 0
+     c94:	e0 56       	subi	r30, 0x60	; 96
+     c96:	fe 4f       	sbci	r31, 0xFE	; 254
+     c98:	90 e2       	ldi	r25, 0x20	; 32
+     c9a:	90 83       	st	Z, r25
     }
 }
 
 void Clear_Tx_Buffer(void)
 {
     for(uint8_t i = 0;i<32;i++)
-     c88:	8f 5f       	subi	r24, 0xFF	; 255
-     c8a:	80 32       	cpi	r24, 0x20	; 32
-     c8c:	b8 f3       	brcs	.-18     	; 0xc7c <Clear_Tx_Buffer+0x4>
+     c9c:	8f 5f       	subi	r24, 0xFF	; 255
+     c9e:	80 32       	cpi	r24, 0x20	; 32
+     ca0:	b8 f3       	brcs	.-18     	; 0xc90 <Clear_Tx_Buffer+0x4>
     {
         LCD_Tx_Data[i] = ' ';
     }
 }
-     c8e:	08 95       	ret
+     ca2:	08 95       	ret
 
-00000c90 <LCD_Transmit_Command>:
+00000ca4 <LCD_Transmit_Command>:
 
 void LCD_Transmit_Command(char cmd)
 {
 	cbi(LCD_CON, LCD_RS); // 0번 비트 클리어, RS = 0, 명령
-     c90:	e5 e6       	ldi	r30, 0x65	; 101
-     c92:	f0 e0       	ldi	r31, 0x00	; 0
-     c94:	90 81       	ld	r25, Z
-     c96:	9b 7f       	andi	r25, 0xFB	; 251
-     c98:	90 83       	st	Z, r25
+     ca4:	e5 e6       	ldi	r30, 0x65	; 101
+     ca6:	f0 e0       	ldi	r31, 0x00	; 0
+     ca8:	90 81       	ld	r25, Z
+     caa:	9b 7f       	andi	r25, 0xFB	; 251
+     cac:	90 83       	st	Z, r25
 	cbi(LCD_CON, LCD_RW); // 1번 비트 클리어, RW = 0, 쓰기
-     c9a:	90 81       	ld	r25, Z
-     c9c:	9d 7f       	andi	r25, 0xFD	; 253
-     c9e:	90 83       	st	Z, r25
+     cae:	90 81       	ld	r25, Z
+     cb0:	9d 7f       	andi	r25, 0xFD	; 253
+     cb2:	90 83       	st	Z, r25
 	sbi(LCD_CON, LCD_E);  // 2번 비트 설정, E = 1
-     ca0:	90 81       	ld	r25, Z
-     ca2:	91 60       	ori	r25, 0x01	; 1
-     ca4:	90 83       	st	Z, r25
-     ca6:	95 e0       	ldi	r25, 0x05	; 5
-     ca8:	9a 95       	dec	r25
-     caa:	f1 f7       	brne	.-4      	; 0xca8 <LCD_Transmit_Command+0x18>
+     cb4:	90 81       	ld	r25, Z
+     cb6:	91 60       	ori	r25, 0x01	; 1
+     cb8:	90 83       	st	Z, r25
+     cba:	95 e0       	ldi	r25, 0x05	; 5
+     cbc:	9a 95       	dec	r25
+     cbe:	f1 f7       	brne	.-4      	; 0xcbc <LCD_Transmit_Command+0x18>
 	_delay_us(1);
 	PORTA = cmd;          // 명령 출력
-     cac:	8b bb       	out	0x1b, r24	; 27
+     cc0:	8b bb       	out	0x1b, r24	; 27
 	cbi(LCD_CON, LCD_E);  // 명령 쓰기 동작 끝
-     cae:	80 81       	ld	r24, Z
-     cb0:	8e 7f       	andi	r24, 0xFE	; 254
-     cb2:	80 83       	st	Z, r24
-     cb4:	85 e0       	ldi	r24, 0x05	; 5
-     cb6:	8a 95       	dec	r24
-     cb8:	f1 f7       	brne	.-4      	; 0xcb6 <LCD_Transmit_Command+0x26>
-     cba:	08 95       	ret
+     cc2:	80 81       	ld	r24, Z
+     cc4:	8e 7f       	andi	r24, 0xFE	; 254
+     cc6:	80 83       	st	Z, r24
+     cc8:	85 e0       	ldi	r24, 0x05	; 5
+     cca:	8a 95       	dec	r24
+     ccc:	f1 f7       	brne	.-4      	; 0xcca <LCD_Transmit_Command+0x26>
+     cce:	08 95       	ret
 
-00000cbc <LCD_Init>:
+00000cd0 <LCD_Init>:
     DDRD = 0x00;
 }
 
 void LCD_Init(void)
 {
 	LCD_Transmit_Command(0x38); // Function Set , 2-Line Mode
-     cbc:	88 e3       	ldi	r24, 0x38	; 56
-     cbe:	e8 df       	rcall	.-48     	; 0xc90 <LCD_Transmit_Command>
+     cd0:	88 e3       	ldi	r24, 0x38	; 56
+     cd2:	e8 df       	rcall	.-48     	; 0xca4 <LCD_Transmit_Command>
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
-     cc0:	86 e6       	ldi	r24, 0x66	; 102
-     cc2:	9e e0       	ldi	r25, 0x0E	; 14
-     cc4:	01 97       	sbiw	r24, 0x01	; 1
-     cc6:	f1 f7       	brne	.-4      	; 0xcc4 <LCD_Init+0x8>
-     cc8:	00 00       	nop
+     cd4:	86 e6       	ldi	r24, 0x66	; 102
+     cd6:	9e e0       	ldi	r25, 0x0E	; 14
+     cd8:	01 97       	sbiw	r24, 0x01	; 1
+     cda:	f1 f7       	brne	.-4      	; 0xcd8 <LCD_Init+0x8>
+     cdc:	00 00       	nop
 	_delay_ms(1);		
 	LCD_Transmit_Command(0x38); // Function Set , 2-Line Mode
-     cca:	88 e3       	ldi	r24, 0x38	; 56
-     ccc:	e1 df       	rcall	.-62     	; 0xc90 <LCD_Transmit_Command>
-     cce:	86 e6       	ldi	r24, 0x66	; 102
-     cd0:	9e e0       	ldi	r25, 0x0E	; 14
-     cd2:	01 97       	sbiw	r24, 0x01	; 1
-     cd4:	f1 f7       	brne	.-4      	; 0xcd2 <LCD_Init+0x16>
+     cde:	88 e3       	ldi	r24, 0x38	; 56
+     ce0:	e1 df       	rcall	.-62     	; 0xca4 <LCD_Transmit_Command>
+     ce2:	86 e6       	ldi	r24, 0x66	; 102
+     ce4:	9e e0       	ldi	r25, 0x0E	; 14
+     ce6:	01 97       	sbiw	r24, 0x01	; 1
+     ce8:	f1 f7       	brne	.-4      	; 0xce6 <LCD_Init+0x16>
 	_delay_ms(1);	
 	LCD_Transmit_Command(0x38); // Function Set , 2-Line Mode
-     cd6:	00 00       	nop
-     cd8:	88 e3       	ldi	r24, 0x38	; 56
-     cda:	da df       	rcall	.-76     	; 0xc90 <LCD_Transmit_Command>
-     cdc:	86 e6       	ldi	r24, 0x66	; 102
-     cde:	9e e0       	ldi	r25, 0x0E	; 14
-     ce0:	01 97       	sbiw	r24, 0x01	; 1
-     ce2:	f1 f7       	brne	.-4      	; 0xce0 <LCD_Init+0x24>
+     cea:	00 00       	nop
+     cec:	88 e3       	ldi	r24, 0x38	; 56
+     cee:	da df       	rcall	.-76     	; 0xca4 <LCD_Transmit_Command>
+     cf0:	86 e6       	ldi	r24, 0x66	; 102
+     cf2:	9e e0       	ldi	r25, 0x0E	; 14
+     cf4:	01 97       	sbiw	r24, 0x01	; 1
+     cf6:	f1 f7       	brne	.-4      	; 0xcf4 <LCD_Init+0x24>
 	_delay_ms(1);	
 	LCD_Transmit_Command(0x0C); // Display ON
-     ce4:	00 00       	nop
-     ce6:	8c e0       	ldi	r24, 0x0C	; 12
-     ce8:	d3 df       	rcall	.-90     	; 0xc90 <LCD_Transmit_Command>
-     cea:	8f ef       	ldi	r24, 0xFF	; 255
-     cec:	9f e8       	ldi	r25, 0x8F	; 143
-     cee:	01 97       	sbiw	r24, 0x01	; 1
-     cf0:	f1 f7       	brne	.-4      	; 0xcee <LCD_Init+0x32>
-     cf2:	00 c0       	rjmp	.+0      	; 0xcf4 <LCD_Init+0x38>
+     cf8:	00 00       	nop
+     cfa:	8c e0       	ldi	r24, 0x0C	; 12
+     cfc:	d3 df       	rcall	.-90     	; 0xca4 <LCD_Transmit_Command>
+     cfe:	8f ef       	ldi	r24, 0xFF	; 255
+     d00:	9f e8       	ldi	r25, 0x8F	; 143
+     d02:	01 97       	sbiw	r24, 0x01	; 1
+     d04:	f1 f7       	brne	.-4      	; 0xd02 <LCD_Init+0x32>
+     d06:	00 c0       	rjmp	.+0      	; 0xd08 <LCD_Init+0x38>
 	_delay_ms(10);
 	LCD_Transmit_Command(0x06); // Increment Mode
-     cf4:	00 00       	nop
-     cf6:	86 e0       	ldi	r24, 0x06	; 6
-     cf8:	cb df       	rcall	.-106    	; 0xc90 <LCD_Transmit_Command>
-     cfa:	8f ef       	ldi	r24, 0xFF	; 255
-     cfc:	9f e8       	ldi	r25, 0x8F	; 143
-     cfe:	01 97       	sbiw	r24, 0x01	; 1
-     d00:	f1 f7       	brne	.-4      	; 0xcfe <LCD_Init+0x42>
-     d02:	00 c0       	rjmp	.+0      	; 0xd04 <LCD_Init+0x48>
+     d08:	00 00       	nop
+     d0a:	86 e0       	ldi	r24, 0x06	; 6
+     d0c:	cb df       	rcall	.-106    	; 0xca4 <LCD_Transmit_Command>
+     d0e:	8f ef       	ldi	r24, 0xFF	; 255
+     d10:	9f e8       	ldi	r25, 0x8F	; 143
+     d12:	01 97       	sbiw	r24, 0x01	; 1
+     d14:	f1 f7       	brne	.-4      	; 0xd12 <LCD_Init+0x42>
+     d16:	00 c0       	rjmp	.+0      	; 0xd18 <LCD_Init+0x48>
 	_delay_ms(10);
 	LCD_Transmit_Command(0x01); // Display Clear
-     d04:	00 00       	nop
-     d06:	81 e0       	ldi	r24, 0x01	; 1
-     d08:	c3 df       	rcall	.-122    	; 0xc90 <LCD_Transmit_Command>
-     d0a:	8f ef       	ldi	r24, 0xFF	; 255
-     d0c:	9f e8       	ldi	r25, 0x8F	; 143
-     d0e:	01 97       	sbiw	r24, 0x01	; 1
-     d10:	f1 f7       	brne	.-4      	; 0xd0e <LCD_Init+0x52>
-     d12:	00 c0       	rjmp	.+0      	; 0xd14 <LCD_Init+0x58>
-     d14:	00 00       	nop
-     d16:	08 95       	ret
+     d18:	00 00       	nop
+     d1a:	81 e0       	ldi	r24, 0x01	; 1
+     d1c:	c3 df       	rcall	.-122    	; 0xca4 <LCD_Transmit_Command>
+     d1e:	8f ef       	ldi	r24, 0xFF	; 255
+     d20:	9f e8       	ldi	r25, 0x8F	; 143
+     d22:	01 97       	sbiw	r24, 0x01	; 1
+     d24:	f1 f7       	brne	.-4      	; 0xd22 <LCD_Init+0x52>
+     d26:	00 c0       	rjmp	.+0      	; 0xd28 <LCD_Init+0x58>
+     d28:	00 00       	nop
+     d2a:	08 95       	ret
 
-00000d18 <LCD_Cursor>:
+00000d2c <LCD_Cursor>:
 	_delay_us(1);
 }
 
 void LCD_Cursor(char col, char row)
 {
 	LCD_Transmit_Command(0x80 | (row + col * 0x40));
-     d18:	90 e4       	ldi	r25, 0x40	; 64
-     d1a:	89 9f       	mul	r24, r25
-     d1c:	60 0d       	add	r22, r0
-     d1e:	11 24       	eor	r1, r1
-     d20:	86 2f       	mov	r24, r22
-     d22:	80 68       	ori	r24, 0x80	; 128
-     d24:	b5 cf       	rjmp	.-150    	; 0xc90 <LCD_Transmit_Command>
-     d26:	08 95       	ret
+     d2c:	90 e4       	ldi	r25, 0x40	; 64
+     d2e:	89 9f       	mul	r24, r25
+     d30:	60 0d       	add	r22, r0
+     d32:	11 24       	eor	r1, r1
+     d34:	86 2f       	mov	r24, r22
+     d36:	80 68       	ori	r24, 0x80	; 128
+     d38:	b5 cf       	rjmp	.-150    	; 0xca4 <LCD_Transmit_Command>
+     d3a:	08 95       	ret
 
-00000d28 <LCD_Transmit_Data>:
+00000d3c <LCD_Transmit_Data>:
 }
 
 void LCD_Transmit_Data(char data)
 {
 	sbi(LCD_CON, LCD_RS);
-     d28:	e5 e6       	ldi	r30, 0x65	; 101
-     d2a:	f0 e0       	ldi	r31, 0x00	; 0
-     d2c:	90 81       	ld	r25, Z
-     d2e:	94 60       	ori	r25, 0x04	; 4
-     d30:	90 83       	st	Z, r25
+     d3c:	e5 e6       	ldi	r30, 0x65	; 101
+     d3e:	f0 e0       	ldi	r31, 0x00	; 0
+     d40:	90 81       	ld	r25, Z
+     d42:	94 60       	ori	r25, 0x04	; 4
+     d44:	90 83       	st	Z, r25
 	cbi(LCD_CON, LCD_RW);
-     d32:	90 81       	ld	r25, Z
-     d34:	9d 7f       	andi	r25, 0xFD	; 253
-     d36:	90 83       	st	Z, r25
+     d46:	90 81       	ld	r25, Z
+     d48:	9d 7f       	andi	r25, 0xFD	; 253
+     d4a:	90 83       	st	Z, r25
 	sbi(LCD_CON, LCD_E);
-     d38:	90 81       	ld	r25, Z
-     d3a:	91 60       	ori	r25, 0x01	; 1
-     d3c:	90 83       	st	Z, r25
+     d4c:	90 81       	ld	r25, Z
+     d4e:	91 60       	ori	r25, 0x01	; 1
+     d50:	90 83       	st	Z, r25
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
-     d3e:	95 e0       	ldi	r25, 0x05	; 5
-     d40:	9a 95       	dec	r25
-     d42:	f1 f7       	brne	.-4      	; 0xd40 <LCD_Transmit_Data+0x18>
+     d52:	95 e0       	ldi	r25, 0x05	; 5
+     d54:	9a 95       	dec	r25
+     d56:	f1 f7       	brne	.-4      	; 0xd54 <LCD_Transmit_Data+0x18>
 	_delay_us(1);
 	LCD_DATA = data;
-     d44:	8b bb       	out	0x1b, r24	; 27
+     d58:	8b bb       	out	0x1b, r24	; 27
 	cbi(LCD_CON, LCD_E);
-     d46:	80 81       	ld	r24, Z
-     d48:	8e 7f       	andi	r24, 0xFE	; 254
-     d4a:	80 83       	st	Z, r24
-     d4c:	85 e0       	ldi	r24, 0x05	; 5
-     d4e:	8a 95       	dec	r24
-     d50:	f1 f7       	brne	.-4      	; 0xd4e <LCD_Transmit_Data+0x26>
-     d52:	08 95       	ret
+     d5a:	80 81       	ld	r24, Z
+     d5c:	8e 7f       	andi	r24, 0xFE	; 254
+     d5e:	80 83       	st	Z, r24
+     d60:	85 e0       	ldi	r24, 0x05	; 5
+     d62:	8a 95       	dec	r24
+     d64:	f1 f7       	brne	.-4      	; 0xd62 <LCD_Transmit_Data+0x26>
+     d66:	08 95       	ret
 
-00000d54 <LCD_Print>:
+00000d68 <LCD_Print>:
             }
         break;
     }
 }
 void LCD_Print(void)
 {
-     d54:	cf 93       	push	r28
-     d56:	df 93       	push	r29
+     d68:	cf 93       	push	r28
+     d6a:	df 93       	push	r29
     static uint8_t open_status,shift_counter;
 
     if(open_status == 0)
-     d58:	80 91 91 01 	lds	r24, 0x0191	; 0x800191 <open_status.2181>
-     d5c:	81 11       	cpse	r24, r1
-     d5e:	0b c0       	rjmp	.+22     	; 0xd76 <LCD_Print+0x22>
+     d6c:	80 91 91 01 	lds	r24, 0x0191	; 0x800191 <open_status.2181>
+     d70:	81 11       	cpse	r24, r1
+     d72:	0b c0       	rjmp	.+22     	; 0xd8a <LCD_Print+0x22>
     {
         shift_counter++;
-     d60:	80 91 90 01 	lds	r24, 0x0190	; 0x800190 <shift_counter.2182>
-     d64:	8f 5f       	subi	r24, 0xFF	; 255
-     d66:	80 93 90 01 	sts	0x0190, r24	; 0x800190 <shift_counter.2182>
+     d74:	80 91 90 01 	lds	r24, 0x0190	; 0x800190 <shift_counter.2182>
+     d78:	8f 5f       	subi	r24, 0xFF	; 255
+     d7a:	80 93 90 01 	sts	0x0190, r24	; 0x800190 <shift_counter.2182>
         if(shift_counter>= 10)
-     d6a:	8a 30       	cpi	r24, 0x0A	; 10
-     d6c:	68 f0       	brcs	.+26     	; 0xd88 <LCD_Print+0x34>
+     d7e:	8a 30       	cpi	r24, 0x0A	; 10
+     d80:	68 f0       	brcs	.+26     	; 0xd9c <LCD_Print+0x34>
         {
             open_status = 1;
-     d6e:	81 e0       	ldi	r24, 0x01	; 1
-     d70:	80 93 91 01 	sts	0x0191, r24	; 0x800191 <open_status.2181>
-     d74:	09 c0       	rjmp	.+18     	; 0xd88 <LCD_Print+0x34>
+     d82:	81 e0       	ldi	r24, 0x01	; 1
+     d84:	80 93 91 01 	sts	0x0191, r24	; 0x800191 <open_status.2181>
+     d88:	09 c0       	rjmp	.+18     	; 0xd9c <LCD_Print+0x34>
         }
     }
     else
     {
         shift_counter--;
-     d76:	80 91 90 01 	lds	r24, 0x0190	; 0x800190 <shift_counter.2182>
-     d7a:	81 50       	subi	r24, 0x01	; 1
-     d7c:	80 93 90 01 	sts	0x0190, r24	; 0x800190 <shift_counter.2182>
+     d8a:	80 91 90 01 	lds	r24, 0x0190	; 0x800190 <shift_counter.2182>
+     d8e:	81 50       	subi	r24, 0x01	; 1
+     d90:	80 93 90 01 	sts	0x0190, r24	; 0x800190 <shift_counter.2182>
         if(shift_counter == 0)
-     d80:	81 11       	cpse	r24, r1
-     d82:	02 c0       	rjmp	.+4      	; 0xd88 <LCD_Print+0x34>
+     d94:	81 11       	cpse	r24, r1
+     d96:	02 c0       	rjmp	.+4      	; 0xd9c <LCD_Print+0x34>
         {
             open_status = 0;
-     d84:	10 92 91 01 	sts	0x0191, r1	; 0x800191 <open_status.2181>
+     d98:	10 92 91 01 	sts	0x0191, r1	; 0x800191 <open_status.2181>
         }
     }
 
     switch(Vending_Machine_status)
-     d88:	80 91 97 01 	lds	r24, 0x0197	; 0x800197 <Vending_Machine_status>
-     d8c:	81 30       	cpi	r24, 0x01	; 1
-     d8e:	09 f4       	brne	.+2      	; 0xd92 <LCD_Print+0x3e>
-     d90:	4f c0       	rjmp	.+158    	; 0xe30 <LCD_Print+0xdc>
-     d92:	38 f0       	brcs	.+14     	; 0xda2 <LCD_Print+0x4e>
-     d94:	82 30       	cpi	r24, 0x02	; 2
-     d96:	09 f4       	brne	.+2      	; 0xd9a <LCD_Print+0x46>
-     d98:	8e c0       	rjmp	.+284    	; 0xeb6 <LCD_Print+0x162>
-     d9a:	84 30       	cpi	r24, 0x04	; 4
-     d9c:	09 f4       	brne	.+2      	; 0xda0 <LCD_Print+0x4c>
-     d9e:	c2 c0       	rjmp	.+388    	; 0xf24 <LCD_Print+0x1d0>
-     da0:	f0 c0       	rjmp	.+480    	; 0xf82 <LCD_Print+0x22e>
+     d9c:	80 91 97 01 	lds	r24, 0x0197	; 0x800197 <Vending_Machine_status>
+     da0:	81 30       	cpi	r24, 0x01	; 1
+     da2:	09 f4       	brne	.+2      	; 0xda6 <LCD_Print+0x3e>
+     da4:	4f c0       	rjmp	.+158    	; 0xe44 <LCD_Print+0xdc>
+     da6:	38 f0       	brcs	.+14     	; 0xdb6 <LCD_Print+0x4e>
+     da8:	82 30       	cpi	r24, 0x02	; 2
+     daa:	09 f4       	brne	.+2      	; 0xdae <LCD_Print+0x46>
+     dac:	8e c0       	rjmp	.+284    	; 0xeca <LCD_Print+0x162>
+     dae:	84 30       	cpi	r24, 0x04	; 4
+     db0:	09 f4       	brne	.+2      	; 0xdb4 <LCD_Print+0x4c>
+     db2:	c2 c0       	rjmp	.+388    	; 0xf38 <LCD_Print+0x1d0>
+     db4:	f0 c0       	rjmp	.+480    	; 0xf96 <LCD_Print+0x22e>
     {
         case VENDING_MACHINE_IDLE :
             Clear_Tx_Buffer();
-     da2:	6a df       	rcall	.-300    	; 0xc78 <Clear_Tx_Buffer>
+     db6:	6a df       	rcall	.-300    	; 0xc8c <Clear_Tx_Buffer>
             LCD_Cursor(0,0);
-     da4:	60 e0       	ldi	r22, 0x00	; 0
-     da6:	80 e0       	ldi	r24, 0x00	; 0
-     da8:	b7 df       	rcall	.-146    	; 0xd18 <LCD_Cursor>
+     db8:	60 e0       	ldi	r22, 0x00	; 0
+     dba:	80 e0       	ldi	r24, 0x00	; 0
+     dbc:	b7 df       	rcall	.-146    	; 0xd2c <LCD_Cursor>
             sprintf(&LCD_Tx_Data[0],"vending machine");   
-     daa:	80 e1       	ldi	r24, 0x10	; 16
-     dac:	e4 e3       	ldi	r30, 0x34	; 52
-     dae:	f1 e0       	ldi	r31, 0x01	; 1
-     db0:	a0 ea       	ldi	r26, 0xA0	; 160
-     db2:	b1 e0       	ldi	r27, 0x01	; 1
-     db4:	01 90       	ld	r0, Z+
-     db6:	0d 92       	st	X+, r0
-     db8:	8a 95       	dec	r24
-     dba:	e1 f7       	brne	.-8      	; 0xdb4 <LCD_Print+0x60>
+     dbe:	80 e1       	ldi	r24, 0x10	; 16
+     dc0:	e4 e3       	ldi	r30, 0x34	; 52
+     dc2:	f1 e0       	ldi	r31, 0x01	; 1
+     dc4:	a0 ea       	ldi	r26, 0xA0	; 160
+     dc6:	b1 e0       	ldi	r27, 0x01	; 1
+     dc8:	01 90       	ld	r0, Z+
+     dca:	0d 92       	st	X+, r0
+     dcc:	8a 95       	dec	r24
+     dce:	e1 f7       	brne	.-8      	; 0xdc8 <LCD_Print+0x60>
             for(uint8_t i = 0;i<16;i++)
-     dbc:	c0 e0       	ldi	r28, 0x00	; 0
-     dbe:	07 c0       	rjmp	.+14     	; 0xdce <LCD_Print+0x7a>
+     dd0:	c0 e0       	ldi	r28, 0x00	; 0
+     dd2:	07 c0       	rjmp	.+14     	; 0xde2 <LCD_Print+0x7a>
             {
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
-     dc0:	ec 2f       	mov	r30, r28
-     dc2:	f0 e0       	ldi	r31, 0x00	; 0
-     dc4:	e0 56       	subi	r30, 0x60	; 96
-     dc6:	fe 4f       	sbci	r31, 0xFE	; 254
-     dc8:	80 81       	ld	r24, Z
-     dca:	ae df       	rcall	.-164    	; 0xd28 <LCD_Transmit_Data>
+     dd4:	ec 2f       	mov	r30, r28
+     dd6:	f0 e0       	ldi	r31, 0x00	; 0
+     dd8:	e0 56       	subi	r30, 0x60	; 96
+     dda:	fe 4f       	sbci	r31, 0xFE	; 254
+     ddc:	80 81       	ld	r24, Z
+     dde:	ae df       	rcall	.-164    	; 0xd3c <LCD_Transmit_Data>
     {
         case VENDING_MACHINE_IDLE :
             Clear_Tx_Buffer();
             LCD_Cursor(0,0);
             sprintf(&LCD_Tx_Data[0],"vending machine");   
             for(uint8_t i = 0;i<16;i++)
-     dcc:	cf 5f       	subi	r28, 0xFF	; 255
-     dce:	c0 31       	cpi	r28, 0x10	; 16
+     de0:	cf 5f       	subi	r28, 0xFF	; 255
+     de2:	c0 31       	cpi	r28, 0x10	; 16
             {
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
             }
             LCD_Cursor(1,0);
-     dd0:	b8 f3       	brcs	.-18     	; 0xdc0 <LCD_Print+0x6c>
-     dd2:	60 e0       	ldi	r22, 0x00	; 0
-     dd4:	81 e0       	ldi	r24, 0x01	; 1
-     dd6:	a0 df       	rcall	.-192    	; 0xd18 <LCD_Cursor>
+     de4:	b8 f3       	brcs	.-18     	; 0xdd4 <LCD_Print+0x6c>
+     de6:	60 e0       	ldi	r22, 0x00	; 0
+     de8:	81 e0       	ldi	r24, 0x01	; 1
+     dea:	a0 df       	rcall	.-192    	; 0xd2c <LCD_Cursor>
             LCD_Tx_Data[16+shift_counter] = '-';
-     dd8:	80 91 90 01 	lds	r24, 0x0190	; 0x800190 <shift_counter.2182>
-     ddc:	90 e0       	ldi	r25, 0x00	; 0
-     dde:	fc 01       	movw	r30, r24
-     de0:	e0 55       	subi	r30, 0x50	; 80
-     de2:	fe 4f       	sbci	r31, 0xFE	; 254
-     de4:	2d e2       	ldi	r18, 0x2D	; 45
-     de6:	20 83       	st	Z, r18
-            LCD_Tx_Data[17+shift_counter] = 'O';
-     de8:	fc 01       	movw	r30, r24
-     dea:	ef 54       	subi	r30, 0x4F	; 79
-     dec:	fe 4f       	sbci	r31, 0xFE	; 254
-     dee:	3f e4       	ldi	r19, 0x4F	; 79
-     df0:	30 83       	st	Z, r19
-            LCD_Tx_Data[18+shift_counter] = 'P';
+     dec:	80 91 90 01 	lds	r24, 0x0190	; 0x800190 <shift_counter.2182>
+     df0:	90 e0       	ldi	r25, 0x00	; 0
      df2:	fc 01       	movw	r30, r24
-     df4:	ee 54       	subi	r30, 0x4E	; 78
+     df4:	e0 55       	subi	r30, 0x50	; 80
      df6:	fe 4f       	sbci	r31, 0xFE	; 254
-     df8:	30 e5       	ldi	r19, 0x50	; 80
-     dfa:	30 83       	st	Z, r19
-            LCD_Tx_Data[19+shift_counter] = 'E';
+     df8:	2d e2       	ldi	r18, 0x2D	; 45
+     dfa:	20 83       	st	Z, r18
+            LCD_Tx_Data[17+shift_counter] = 'O';
      dfc:	fc 01       	movw	r30, r24
-     dfe:	ed 54       	subi	r30, 0x4D	; 77
+     dfe:	ef 54       	subi	r30, 0x4F	; 79
      e00:	fe 4f       	sbci	r31, 0xFE	; 254
-     e02:	35 e4       	ldi	r19, 0x45	; 69
+     e02:	3f e4       	ldi	r19, 0x4F	; 79
      e04:	30 83       	st	Z, r19
-            LCD_Tx_Data[20+shift_counter] = 'N';
+            LCD_Tx_Data[18+shift_counter] = 'P';
      e06:	fc 01       	movw	r30, r24
-     e08:	ec 54       	subi	r30, 0x4C	; 76
+     e08:	ee 54       	subi	r30, 0x4E	; 78
      e0a:	fe 4f       	sbci	r31, 0xFE	; 254
-     e0c:	3e e4       	ldi	r19, 0x4E	; 78
+     e0c:	30 e5       	ldi	r19, 0x50	; 80
      e0e:	30 83       	st	Z, r19
-            LCD_Tx_Data[21+shift_counter] = '-';
+            LCD_Tx_Data[19+shift_counter] = 'E';
      e10:	fc 01       	movw	r30, r24
-     e12:	eb 54       	subi	r30, 0x4B	; 75
+     e12:	ed 54       	subi	r30, 0x4D	; 77
      e14:	fe 4f       	sbci	r31, 0xFE	; 254
-     e16:	20 83       	st	Z, r18
+     e16:	35 e4       	ldi	r19, 0x45	; 69
+     e18:	30 83       	st	Z, r19
+            LCD_Tx_Data[20+shift_counter] = 'N';
+     e1a:	fc 01       	movw	r30, r24
+     e1c:	ec 54       	subi	r30, 0x4C	; 76
+     e1e:	fe 4f       	sbci	r31, 0xFE	; 254
+     e20:	3e e4       	ldi	r19, 0x4E	; 78
+     e22:	30 83       	st	Z, r19
+            LCD_Tx_Data[21+shift_counter] = '-';
+     e24:	fc 01       	movw	r30, r24
+     e26:	eb 54       	subi	r30, 0x4B	; 75
+     e28:	fe 4f       	sbci	r31, 0xFE	; 254
+     e2a:	20 83       	st	Z, r18
             for(uint8_t i = 16;i<32;i++)
-     e18:	c0 e1       	ldi	r28, 0x10	; 16
-     e1a:	07 c0       	rjmp	.+14     	; 0xe2a <LCD_Print+0xd6>
+     e2c:	c0 e1       	ldi	r28, 0x10	; 16
+     e2e:	07 c0       	rjmp	.+14     	; 0xe3e <LCD_Print+0xd6>
             {
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
-     e1c:	ec 2f       	mov	r30, r28
-     e1e:	f0 e0       	ldi	r31, 0x00	; 0
-     e20:	e0 56       	subi	r30, 0x60	; 96
-     e22:	fe 4f       	sbci	r31, 0xFE	; 254
-     e24:	80 81       	ld	r24, Z
-     e26:	80 df       	rcall	.-256    	; 0xd28 <LCD_Transmit_Data>
+     e30:	ec 2f       	mov	r30, r28
+     e32:	f0 e0       	ldi	r31, 0x00	; 0
+     e34:	e0 56       	subi	r30, 0x60	; 96
+     e36:	fe 4f       	sbci	r31, 0xFE	; 254
+     e38:	80 81       	ld	r24, Z
+     e3a:	80 df       	rcall	.-256    	; 0xd3c <LCD_Transmit_Data>
             LCD_Tx_Data[17+shift_counter] = 'O';
             LCD_Tx_Data[18+shift_counter] = 'P';
             LCD_Tx_Data[19+shift_counter] = 'E';
             LCD_Tx_Data[20+shift_counter] = 'N';
             LCD_Tx_Data[21+shift_counter] = '-';
             for(uint8_t i = 16;i<32;i++)
-     e28:	cf 5f       	subi	r28, 0xFF	; 255
-     e2a:	c0 32       	cpi	r28, 0x20	; 32
-     e2c:	b8 f3       	brcs	.-18     	; 0xe1c <LCD_Print+0xc8>
+     e3c:	cf 5f       	subi	r28, 0xFF	; 255
+     e3e:	c0 32       	cpi	r28, 0x20	; 32
+     e40:	b8 f3       	brcs	.-18     	; 0xe30 <LCD_Print+0xc8>
             {
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
             }            
         break;
         case VENDING_MACHINE_INSERT_COIN :
             Clear_Tx_Buffer();
-     e2e:	a9 c0       	rjmp	.+338    	; 0xf82 <LCD_Print+0x22e>
-     e30:	23 df       	rcall	.-442    	; 0xc78 <Clear_Tx_Buffer>
+     e42:	a9 c0       	rjmp	.+338    	; 0xf96 <LCD_Print+0x22e>
+     e44:	23 df       	rcall	.-442    	; 0xc8c <Clear_Tx_Buffer>
             LCD_Cursor(0,0);
-     e32:	60 e0       	ldi	r22, 0x00	; 0
-     e34:	80 e0       	ldi	r24, 0x00	; 0
-     e36:	70 df       	rcall	.-288    	; 0xd18 <LCD_Cursor>
-     e38:	8e e0       	ldi	r24, 0x0E	; 14
+     e46:	60 e0       	ldi	r22, 0x00	; 0
+     e48:	80 e0       	ldi	r24, 0x00	; 0
+     e4a:	70 df       	rcall	.-288    	; 0xd2c <LCD_Cursor>
+     e4c:	8e e0       	ldi	r24, 0x0E	; 14
             sprintf(&LCD_Tx_Data[0]," insert money");
-     e3a:	e4 e4       	ldi	r30, 0x44	; 68
-     e3c:	f1 e0       	ldi	r31, 0x01	; 1
-     e3e:	a0 ea       	ldi	r26, 0xA0	; 160
-     e40:	b1 e0       	ldi	r27, 0x01	; 1
-     e42:	01 90       	ld	r0, Z+
-     e44:	0d 92       	st	X+, r0
-     e46:	8a 95       	dec	r24
-     e48:	e1 f7       	brne	.-8      	; 0xe42 <LCD_Print+0xee>
-     e4a:	c0 e0       	ldi	r28, 0x00	; 0
+     e4e:	e4 e4       	ldi	r30, 0x44	; 68
+     e50:	f1 e0       	ldi	r31, 0x01	; 1
+     e52:	a0 ea       	ldi	r26, 0xA0	; 160
+     e54:	b1 e0       	ldi	r27, 0x01	; 1
+     e56:	01 90       	ld	r0, Z+
+     e58:	0d 92       	st	X+, r0
+     e5a:	8a 95       	dec	r24
+     e5c:	e1 f7       	brne	.-8      	; 0xe56 <LCD_Print+0xee>
+     e5e:	c0 e0       	ldi	r28, 0x00	; 0
             for(uint8_t i = 0;i<16;i++)
-     e4c:	07 c0       	rjmp	.+14     	; 0xe5c <LCD_Print+0x108>
+     e60:	07 c0       	rjmp	.+14     	; 0xe70 <LCD_Print+0x108>
             {
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
-     e4e:	ec 2f       	mov	r30, r28
-     e50:	f0 e0       	ldi	r31, 0x00	; 0
-     e52:	e0 56       	subi	r30, 0x60	; 96
-     e54:	fe 4f       	sbci	r31, 0xFE	; 254
-     e56:	80 81       	ld	r24, Z
-     e58:	67 df       	rcall	.-306    	; 0xd28 <LCD_Transmit_Data>
+     e62:	ec 2f       	mov	r30, r28
+     e64:	f0 e0       	ldi	r31, 0x00	; 0
+     e66:	e0 56       	subi	r30, 0x60	; 96
+     e68:	fe 4f       	sbci	r31, 0xFE	; 254
+     e6a:	80 81       	ld	r24, Z
+     e6c:	67 df       	rcall	.-306    	; 0xd3c <LCD_Transmit_Data>
         break;
         case VENDING_MACHINE_INSERT_COIN :
             Clear_Tx_Buffer();
             LCD_Cursor(0,0);
             sprintf(&LCD_Tx_Data[0]," insert money");
             for(uint8_t i = 0;i<16;i++)
-     e5a:	cf 5f       	subi	r28, 0xFF	; 255
-     e5c:	c0 31       	cpi	r28, 0x10	; 16
-     e5e:	b8 f3       	brcs	.-18     	; 0xe4e <LCD_Print+0xfa>
+     e6e:	cf 5f       	subi	r28, 0xFF	; 255
+     e70:	c0 31       	cpi	r28, 0x10	; 16
+     e72:	b8 f3       	brcs	.-18     	; 0xe62 <LCD_Print+0xfa>
             {
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
             }
             LCD_Cursor(1,0);
-     e60:	60 e0       	ldi	r22, 0x00	; 0
-     e62:	81 e0       	ldi	r24, 0x01	; 1
-     e64:	59 df       	rcall	.-334    	; 0xd18 <LCD_Cursor>
-     e66:	e0 ea       	ldi	r30, 0xA0	; 160
+     e74:	60 e0       	ldi	r22, 0x00	; 0
+     e76:	81 e0       	ldi	r24, 0x01	; 1
+     e78:	59 df       	rcall	.-334    	; 0xd2c <LCD_Cursor>
+     e7a:	e0 ea       	ldi	r30, 0xA0	; 160
             LCD_Tx_Data[17] = Coin_n1000 + 0x30; // 숫자 ASCII 변환
-     e68:	f1 e0       	ldi	r31, 0x01	; 1
-     e6a:	80 91 96 01 	lds	r24, 0x0196	; 0x800196 <Coin_n1000>
-     e6e:	80 5d       	subi	r24, 0xD0	; 208
-     e70:	81 8b       	std	Z+17, r24	; 0x11
-     e72:	80 91 c2 01 	lds	r24, 0x01C2	; 0x8001c2 <Coin_n100>
+     e7c:	f1 e0       	ldi	r31, 0x01	; 1
+     e7e:	80 91 96 01 	lds	r24, 0x0196	; 0x800196 <Coin_n1000>
+     e82:	80 5d       	subi	r24, 0xD0	; 208
+     e84:	81 8b       	std	Z+17, r24	; 0x11
+     e86:	80 91 c2 01 	lds	r24, 0x01C2	; 0x8001c2 <Coin_n100>
             LCD_Tx_Data[18] = Coin_n100 + 0x30; // 숫자 ASCII 변환
-     e76:	80 5d       	subi	r24, 0xD0	; 208
-     e78:	82 8b       	std	Z+18, r24	; 0x12
-     e7a:	80 91 9b 01 	lds	r24, 0x019B	; 0x80019b <Coin_n10>
+     e8a:	80 5d       	subi	r24, 0xD0	; 208
+     e8c:	82 8b       	std	Z+18, r24	; 0x12
+     e8e:	80 91 9b 01 	lds	r24, 0x019B	; 0x80019b <Coin_n10>
             LCD_Tx_Data[19] = Coin_n10 + 0x30; // 숫자 ASCII 변환
-     e7e:	80 5d       	subi	r24, 0xD0	; 208
-     e80:	83 8b       	std	Z+19, r24	; 0x13
-     e82:	80 91 c3 01 	lds	r24, 0x01C3	; 0x8001c3 <Coin_n1>
+     e92:	80 5d       	subi	r24, 0xD0	; 208
+     e94:	83 8b       	std	Z+19, r24	; 0x13
+     e96:	80 91 c3 01 	lds	r24, 0x01C3	; 0x8001c3 <Coin_n1>
             LCD_Tx_Data[20] = Coin_n1 + 0x30; // 숫자 ASCII 변환
-     e86:	80 5d       	subi	r24, 0xD0	; 208
-     e88:	84 8b       	std	Z+20, r24	; 0x14
-     e8a:	e6 eb       	ldi	r30, 0xB6	; 182
+     e9a:	80 5d       	subi	r24, 0xD0	; 208
+     e9c:	84 8b       	std	Z+20, r24	; 0x14
+     e9e:	e6 eb       	ldi	r30, 0xB6	; 182
             sprintf(&LCD_Tx_Data[22],"won");
-     e8c:	f1 e0       	ldi	r31, 0x01	; 1
-     e8e:	87 e7       	ldi	r24, 0x77	; 119
-     e90:	9f e6       	ldi	r25, 0x6F	; 111
-     e92:	91 83       	std	Z+1, r25	; 0x01
-     e94:	80 83       	st	Z, r24
-     e96:	8e e6       	ldi	r24, 0x6E	; 110
-     e98:	90 e0       	ldi	r25, 0x00	; 0
-     e9a:	93 83       	std	Z+3, r25	; 0x03
-     e9c:	82 83       	std	Z+2, r24	; 0x02
+     ea0:	f1 e0       	ldi	r31, 0x01	; 1
+     ea2:	87 e7       	ldi	r24, 0x77	; 119
+     ea4:	9f e6       	ldi	r25, 0x6F	; 111
+     ea6:	91 83       	std	Z+1, r25	; 0x01
+     ea8:	80 83       	st	Z, r24
+     eaa:	8e e6       	ldi	r24, 0x6E	; 110
+     eac:	90 e0       	ldi	r25, 0x00	; 0
+     eae:	93 83       	std	Z+3, r25	; 0x03
+     eb0:	82 83       	std	Z+2, r24	; 0x02
             for(uint8_t i = 16;i<32;i++)
-     e9e:	c0 e1       	ldi	r28, 0x10	; 16
-     ea0:	07 c0       	rjmp	.+14     	; 0xeb0 <LCD_Print+0x15c>
+     eb2:	c0 e1       	ldi	r28, 0x10	; 16
+     eb4:	07 c0       	rjmp	.+14     	; 0xec4 <LCD_Print+0x15c>
             {
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
-     ea2:	ec 2f       	mov	r30, r28
-     ea4:	f0 e0       	ldi	r31, 0x00	; 0
-     ea6:	e0 56       	subi	r30, 0x60	; 96
-     ea8:	fe 4f       	sbci	r31, 0xFE	; 254
-     eaa:	80 81       	ld	r24, Z
+     eb6:	ec 2f       	mov	r30, r28
+     eb8:	f0 e0       	ldi	r31, 0x00	; 0
+     eba:	e0 56       	subi	r30, 0x60	; 96
+     ebc:	fe 4f       	sbci	r31, 0xFE	; 254
+     ebe:	80 81       	ld	r24, Z
             LCD_Tx_Data[17] = Coin_n1000 + 0x30; // 숫자 ASCII 변환
             LCD_Tx_Data[18] = Coin_n100 + 0x30; // 숫자 ASCII 변환
             LCD_Tx_Data[19] = Coin_n10 + 0x30; // 숫자 ASCII 변환
             LCD_Tx_Data[20] = Coin_n1 + 0x30; // 숫자 ASCII 변환
             sprintf(&LCD_Tx_Data[22],"won");
             for(uint8_t i = 16;i<32;i++)
-     eac:	3d df       	rcall	.-390    	; 0xd28 <LCD_Transmit_Data>
-     eae:	cf 5f       	subi	r28, 0xFF	; 255
-     eb0:	c0 32       	cpi	r28, 0x20	; 32
-     eb2:	b8 f3       	brcs	.-18     	; 0xea2 <LCD_Print+0x14e>
+     ec0:	3d df       	rcall	.-390    	; 0xd3c <LCD_Transmit_Data>
+     ec2:	cf 5f       	subi	r28, 0xFF	; 255
+     ec4:	c0 32       	cpi	r28, 0x20	; 32
+     ec6:	b8 f3       	brcs	.-18     	; 0xeb6 <LCD_Print+0x14e>
             {
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
             }   
         break;
         case VENDING_MACHINE_SELECT_ITEM :
             Clear_Tx_Buffer();
-     eb4:	66 c0       	rjmp	.+204    	; 0xf82 <LCD_Print+0x22e>
-     eb6:	e0 de       	rcall	.-576    	; 0xc78 <Clear_Tx_Buffer>
+     ec8:	66 c0       	rjmp	.+204    	; 0xf96 <LCD_Print+0x22e>
+     eca:	e0 de       	rcall	.-576    	; 0xc8c <Clear_Tx_Buffer>
             LCD_Cursor(0,0);
-     eb8:	60 e0       	ldi	r22, 0x00	; 0
-     eba:	80 e0       	ldi	r24, 0x00	; 0
-     ebc:	2d df       	rcall	.-422    	; 0xd18 <LCD_Cursor>
-     ebe:	c0 ea       	ldi	r28, 0xA0	; 160
+     ecc:	60 e0       	ldi	r22, 0x00	; 0
+     ece:	80 e0       	ldi	r24, 0x00	; 0
+     ed0:	2d df       	rcall	.-422    	; 0xd2c <LCD_Cursor>
+     ed2:	c0 ea       	ldi	r28, 0xA0	; 160
             sprintf(&LCD_Tx_Data[0],"selected goods");
-     ec0:	d1 e0       	ldi	r29, 0x01	; 1
-     ec2:	8f e0       	ldi	r24, 0x0F	; 15
-     ec4:	e2 e5       	ldi	r30, 0x52	; 82
-     ec6:	f1 e0       	ldi	r31, 0x01	; 1
-     ec8:	de 01       	movw	r26, r28
-     eca:	01 90       	ld	r0, Z+
-     ecc:	0d 92       	st	X+, r0
-     ece:	8a 95       	dec	r24
-     ed0:	e1 f7       	brne	.-8      	; 0xeca <LCD_Print+0x176>
-     ed2:	8e e3       	ldi	r24, 0x3E	; 62
+     ed4:	d1 e0       	ldi	r29, 0x01	; 1
+     ed6:	8f e0       	ldi	r24, 0x0F	; 15
+     ed8:	e2 e5       	ldi	r30, 0x52	; 82
+     eda:	f1 e0       	ldi	r31, 0x01	; 1
+     edc:	de 01       	movw	r26, r28
+     ede:	01 90       	ld	r0, Z+
+     ee0:	0d 92       	st	X+, r0
+     ee2:	8a 95       	dec	r24
+     ee4:	e1 f7       	brne	.-8      	; 0xede <LCD_Print+0x176>
+     ee6:	8e e3       	ldi	r24, 0x3E	; 62
             LCD_Tx_Data[13] = 0x3E;
-     ed4:	8d 87       	std	Y+13, r24	; 0x0d
+     ee8:	8d 87       	std	Y+13, r24	; 0x0d
             LCD_Tx_Data[14] = Selected_Num + 0x30; // 숫자 ASCII 변환
-     ed6:	80 91 01 01 	lds	r24, 0x0101	; 0x800101 <Selected_Num>
-     eda:	80 5d       	subi	r24, 0xD0	; 208
-     edc:	8e 87       	std	Y+14, r24	; 0x0e
+     eea:	80 91 01 01 	lds	r24, 0x0101	; 0x800101 <Selected_Num>
+     eee:	80 5d       	subi	r24, 0xD0	; 208
+     ef0:	8e 87       	std	Y+14, r24	; 0x0e
             for(uint8_t i = 0;i<16;i++)
-     ede:	c0 e0       	ldi	r28, 0x00	; 0
+     ef2:	c0 e0       	ldi	r28, 0x00	; 0
             {
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
-     ee0:	07 c0       	rjmp	.+14     	; 0xef0 <LCD_Print+0x19c>
-     ee2:	ec 2f       	mov	r30, r28
-     ee4:	f0 e0       	ldi	r31, 0x00	; 0
-     ee6:	e0 56       	subi	r30, 0x60	; 96
-     ee8:	fe 4f       	sbci	r31, 0xFE	; 254
-     eea:	80 81       	ld	r24, Z
-     eec:	1d df       	rcall	.-454    	; 0xd28 <LCD_Transmit_Data>
+     ef4:	07 c0       	rjmp	.+14     	; 0xf04 <LCD_Print+0x19c>
+     ef6:	ec 2f       	mov	r30, r28
+     ef8:	f0 e0       	ldi	r31, 0x00	; 0
+     efa:	e0 56       	subi	r30, 0x60	; 96
+     efc:	fe 4f       	sbci	r31, 0xFE	; 254
+     efe:	80 81       	ld	r24, Z
+     f00:	1d df       	rcall	.-454    	; 0xd3c <LCD_Transmit_Data>
             Clear_Tx_Buffer();
             LCD_Cursor(0,0);
             sprintf(&LCD_Tx_Data[0],"selected goods");
             LCD_Tx_Data[13] = 0x3E;
             LCD_Tx_Data[14] = Selected_Num + 0x30; // 숫자 ASCII 변환
             for(uint8_t i = 0;i<16;i++)
-     eee:	cf 5f       	subi	r28, 0xFF	; 255
-     ef0:	c0 31       	cpi	r28, 0x10	; 16
-     ef2:	b8 f3       	brcs	.-18     	; 0xee2 <LCD_Print+0x18e>
+     f02:	cf 5f       	subi	r28, 0xFF	; 255
+     f04:	c0 31       	cpi	r28, 0x10	; 16
+     f06:	b8 f3       	brcs	.-18     	; 0xef6 <LCD_Print+0x18e>
             {
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
             }
             LCD_Cursor(1,0);
-     ef4:	60 e0       	ldi	r22, 0x00	; 0
-     ef6:	81 e0       	ldi	r24, 0x01	; 1
-     ef8:	0f df       	rcall	.-482    	; 0xd18 <LCD_Cursor>
-     efa:	81 e1       	ldi	r24, 0x11	; 17
+     f08:	60 e0       	ldi	r22, 0x00	; 0
+     f0a:	81 e0       	ldi	r24, 0x01	; 1
+     f0c:	0f df       	rcall	.-482    	; 0xd2c <LCD_Cursor>
+     f0e:	81 e1       	ldi	r24, 0x11	; 17
             sprintf(&LCD_Tx_Data[16],"buyit-A cancel-D");
-     efc:	e1 e6       	ldi	r30, 0x61	; 97
-     efe:	f1 e0       	ldi	r31, 0x01	; 1
-     f00:	a0 eb       	ldi	r26, 0xB0	; 176
-     f02:	b1 e0       	ldi	r27, 0x01	; 1
-     f04:	01 90       	ld	r0, Z+
-     f06:	0d 92       	st	X+, r0
-     f08:	8a 95       	dec	r24
+     f10:	e1 e6       	ldi	r30, 0x61	; 97
+     f12:	f1 e0       	ldi	r31, 0x01	; 1
+     f14:	a0 eb       	ldi	r26, 0xB0	; 176
+     f16:	b1 e0       	ldi	r27, 0x01	; 1
+     f18:	01 90       	ld	r0, Z+
+     f1a:	0d 92       	st	X+, r0
+     f1c:	8a 95       	dec	r24
             for(uint8_t i = 16;i<32;i++)
-     f0a:	e1 f7       	brne	.-8      	; 0xf04 <LCD_Print+0x1b0>
+     f1e:	e1 f7       	brne	.-8      	; 0xf18 <LCD_Print+0x1b0>
             {
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
-     f0c:	c0 e1       	ldi	r28, 0x10	; 16
-     f0e:	07 c0       	rjmp	.+14     	; 0xf1e <LCD_Print+0x1ca>
-     f10:	ec 2f       	mov	r30, r28
-     f12:	f0 e0       	ldi	r31, 0x00	; 0
-     f14:	e0 56       	subi	r30, 0x60	; 96
-     f16:	fe 4f       	sbci	r31, 0xFE	; 254
-     f18:	80 81       	ld	r24, Z
+     f20:	c0 e1       	ldi	r28, 0x10	; 16
+     f22:	07 c0       	rjmp	.+14     	; 0xf32 <LCD_Print+0x1ca>
+     f24:	ec 2f       	mov	r30, r28
+     f26:	f0 e0       	ldi	r31, 0x00	; 0
+     f28:	e0 56       	subi	r30, 0x60	; 96
+     f2a:	fe 4f       	sbci	r31, 0xFE	; 254
+     f2c:	80 81       	ld	r24, Z
             {
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
             }
             LCD_Cursor(1,0);
             sprintf(&LCD_Tx_Data[16],"buyit-A cancel-D");
             for(uint8_t i = 16;i<32;i++)
-     f1a:	06 df       	rcall	.-500    	; 0xd28 <LCD_Transmit_Data>
-     f1c:	cf 5f       	subi	r28, 0xFF	; 255
-     f1e:	c0 32       	cpi	r28, 0x20	; 32
-     f20:	b8 f3       	brcs	.-18     	; 0xf10 <LCD_Print+0x1bc>
+     f2e:	06 df       	rcall	.-500    	; 0xd3c <LCD_Transmit_Data>
+     f30:	cf 5f       	subi	r28, 0xFF	; 255
+     f32:	c0 32       	cpi	r28, 0x20	; 32
+     f34:	b8 f3       	brcs	.-18     	; 0xf24 <LCD_Print+0x1bc>
             {
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
             }   
         break;
         case VENDING_MACHINE_MONEY_ERROR :
             Clear_Tx_Buffer();
-     f22:	2f c0       	rjmp	.+94     	; 0xf82 <LCD_Print+0x22e>
-     f24:	a9 de       	rcall	.-686    	; 0xc78 <Clear_Tx_Buffer>
+     f36:	2f c0       	rjmp	.+94     	; 0xf96 <LCD_Print+0x22e>
+     f38:	a9 de       	rcall	.-686    	; 0xc8c <Clear_Tx_Buffer>
             LCD_Cursor(0,0);        
-     f26:	60 e0       	ldi	r22, 0x00	; 0
-     f28:	80 e0       	ldi	r24, 0x00	; 0
-     f2a:	f6 de       	rcall	.-532    	; 0xd18 <LCD_Cursor>
+     f3a:	60 e0       	ldi	r22, 0x00	; 0
+     f3c:	80 e0       	ldi	r24, 0x00	; 0
+     f3e:	f6 de       	rcall	.-532    	; 0xd2c <LCD_Cursor>
             sprintf(&LCD_Tx_Data[0]," be short of");
-     f2c:	8d e0       	ldi	r24, 0x0D	; 13
-     f2e:	e2 e7       	ldi	r30, 0x72	; 114
-     f30:	f1 e0       	ldi	r31, 0x01	; 1
-     f32:	a0 ea       	ldi	r26, 0xA0	; 160
-     f34:	b1 e0       	ldi	r27, 0x01	; 1
-     f36:	01 90       	ld	r0, Z+
-     f38:	0d 92       	st	X+, r0
-     f3a:	8a 95       	dec	r24
+     f40:	8d e0       	ldi	r24, 0x0D	; 13
+     f42:	e2 e7       	ldi	r30, 0x72	; 114
+     f44:	f1 e0       	ldi	r31, 0x01	; 1
+     f46:	a0 ea       	ldi	r26, 0xA0	; 160
+     f48:	b1 e0       	ldi	r27, 0x01	; 1
+     f4a:	01 90       	ld	r0, Z+
+     f4c:	0d 92       	st	X+, r0
+     f4e:	8a 95       	dec	r24
             for(uint8_t i = 0;i<16;i++)
-     f3c:	e1 f7       	brne	.-8      	; 0xf36 <LCD_Print+0x1e2>
-     f3e:	c0 e0       	ldi	r28, 0x00	; 0
+     f50:	e1 f7       	brne	.-8      	; 0xf4a <LCD_Print+0x1e2>
+     f52:	c0 e0       	ldi	r28, 0x00	; 0
             {
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
-     f40:	07 c0       	rjmp	.+14     	; 0xf50 <LCD_Print+0x1fc>
-     f42:	ec 2f       	mov	r30, r28
-     f44:	f0 e0       	ldi	r31, 0x00	; 0
-     f46:	e0 56       	subi	r30, 0x60	; 96
-     f48:	fe 4f       	sbci	r31, 0xFE	; 254
-     f4a:	80 81       	ld	r24, Z
-     f4c:	ed de       	rcall	.-550    	; 0xd28 <LCD_Transmit_Data>
+     f54:	07 c0       	rjmp	.+14     	; 0xf64 <LCD_Print+0x1fc>
+     f56:	ec 2f       	mov	r30, r28
+     f58:	f0 e0       	ldi	r31, 0x00	; 0
+     f5a:	e0 56       	subi	r30, 0x60	; 96
+     f5c:	fe 4f       	sbci	r31, 0xFE	; 254
+     f5e:	80 81       	ld	r24, Z
+     f60:	ed de       	rcall	.-550    	; 0xd3c <LCD_Transmit_Data>
         break;
         case VENDING_MACHINE_MONEY_ERROR :
             Clear_Tx_Buffer();
             LCD_Cursor(0,0);        
             sprintf(&LCD_Tx_Data[0]," be short of");
             for(uint8_t i = 0;i<16;i++)
-     f4e:	cf 5f       	subi	r28, 0xFF	; 255
-     f50:	c0 31       	cpi	r28, 0x10	; 16
-     f52:	b8 f3       	brcs	.-18     	; 0xf42 <LCD_Print+0x1ee>
+     f62:	cf 5f       	subi	r28, 0xFF	; 255
+     f64:	c0 31       	cpi	r28, 0x10	; 16
+     f66:	b8 f3       	brcs	.-18     	; 0xf56 <LCD_Print+0x1ee>
             {
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
             }
             LCD_Cursor(1,0);        
-     f54:	60 e0       	ldi	r22, 0x00	; 0
-     f56:	81 e0       	ldi	r24, 0x01	; 1
-     f58:	df de       	rcall	.-578    	; 0xd18 <LCD_Cursor>
+     f68:	60 e0       	ldi	r22, 0x00	; 0
+     f6a:	81 e0       	ldi	r24, 0x01	; 1
+     f6c:	df de       	rcall	.-578    	; 0xd2c <LCD_Cursor>
             sprintf(&LCD_Tx_Data[16],"  money.......");
-     f5a:	8f e0       	ldi	r24, 0x0F	; 15
-     f5c:	ef e7       	ldi	r30, 0x7F	; 127
-     f5e:	f1 e0       	ldi	r31, 0x01	; 1
-     f60:	a0 eb       	ldi	r26, 0xB0	; 176
-     f62:	b1 e0       	ldi	r27, 0x01	; 1
-     f64:	01 90       	ld	r0, Z+
-     f66:	0d 92       	st	X+, r0
-     f68:	8a 95       	dec	r24
-     f6a:	e1 f7       	brne	.-8      	; 0xf64 <LCD_Print+0x210>
+     f6e:	8f e0       	ldi	r24, 0x0F	; 15
+     f70:	ef e7       	ldi	r30, 0x7F	; 127
+     f72:	f1 e0       	ldi	r31, 0x01	; 1
+     f74:	a0 eb       	ldi	r26, 0xB0	; 176
+     f76:	b1 e0       	ldi	r27, 0x01	; 1
+     f78:	01 90       	ld	r0, Z+
+     f7a:	0d 92       	st	X+, r0
+     f7c:	8a 95       	dec	r24
+     f7e:	e1 f7       	brne	.-8      	; 0xf78 <LCD_Print+0x210>
             for(uint8_t i = 16;i<32;i++)
-     f6c:	c0 e1       	ldi	r28, 0x10	; 16
-     f6e:	07 c0       	rjmp	.+14     	; 0xf7e <LCD_Print+0x22a>
+     f80:	c0 e1       	ldi	r28, 0x10	; 16
+     f82:	07 c0       	rjmp	.+14     	; 0xf92 <LCD_Print+0x22a>
             {
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
-     f70:	ec 2f       	mov	r30, r28
-     f72:	f0 e0       	ldi	r31, 0x00	; 0
-     f74:	e0 56       	subi	r30, 0x60	; 96
-     f76:	fe 4f       	sbci	r31, 0xFE	; 254
-     f78:	80 81       	ld	r24, Z
-     f7a:	d6 de       	rcall	.-596    	; 0xd28 <LCD_Transmit_Data>
-     f7c:	cf 5f       	subi	r28, 0xFF	; 255
+     f84:	ec 2f       	mov	r30, r28
+     f86:	f0 e0       	ldi	r31, 0x00	; 0
+     f88:	e0 56       	subi	r30, 0x60	; 96
+     f8a:	fe 4f       	sbci	r31, 0xFE	; 254
+     f8c:	80 81       	ld	r24, Z
+     f8e:	d6 de       	rcall	.-596    	; 0xd3c <LCD_Transmit_Data>
+     f90:	cf 5f       	subi	r28, 0xFF	; 255
             {
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
             }
             LCD_Cursor(1,0);        
             sprintf(&LCD_Tx_Data[16],"  money.......");
             for(uint8_t i = 16;i<32;i++)
-     f7e:	c0 32       	cpi	r28, 0x20	; 32
-     f80:	b8 f3       	brcs	.-18     	; 0xf70 <LCD_Print+0x21c>
-     f82:	df 91       	pop	r29
+     f92:	c0 32       	cpi	r28, 0x20	; 32
+     f94:	b8 f3       	brcs	.-18     	; 0xf84 <LCD_Print+0x21c>
+     f96:	df 91       	pop	r29
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
             } 
         break;
     }
 
 }
-     f84:	cf 91       	pop	r28
-     f86:	08 95       	ret
+     f98:	cf 91       	pop	r28
+     f9a:	08 95       	ret
 
-00000f88 <Seven_Segment_Output>:
-     f88:	80 91 8f 01 	lds	r24, 0x018F	; 0x80018f <counter.2284>
+00000f9c <Seven_Segment_Output>:
+     f9c:	80 91 8f 01 	lds	r24, 0x018F	; 0x80018f <counter.2284>
 
 void Seven_Segment_Output(void)
 {
     static uint8_t counter;
 
     counter++;
-     f8c:	8f 5f       	subi	r24, 0xFF	; 255
-     f8e:	80 93 8f 01 	sts	0x018F, r24	; 0x80018f <counter.2284>
+     fa0:	8f 5f       	subi	r24, 0xFF	; 255
+     fa2:	80 93 8f 01 	sts	0x018F, r24	; 0x80018f <counter.2284>
     if(counter>=4)
-     f92:	84 30       	cpi	r24, 0x04	; 4
-     f94:	10 f0       	brcs	.+4      	; 0xf9a <Seven_Segment_Output+0x12>
+     fa6:	84 30       	cpi	r24, 0x04	; 4
+     fa8:	10 f0       	brcs	.+4      	; 0xfae <Seven_Segment_Output+0x12>
     {
         counter = 0;
-     f96:	10 92 8f 01 	sts	0x018F, r1	; 0x80018f <counter.2284>
+     faa:	10 92 8f 01 	sts	0x018F, r1	; 0x80018f <counter.2284>
     }
     
     switch(Vending_Machine_status)
-     f9a:	80 91 97 01 	lds	r24, 0x0197	; 0x800197 <Vending_Machine_status>
-     f9e:	84 30       	cpi	r24, 0x04	; 4
-     fa0:	18 f4       	brcc	.+6      	; 0xfa8 <Seven_Segment_Output+0x20>
-     fa2:	81 30       	cpi	r24, 0x01	; 1
-     fa4:	20 f0       	brcs	.+8      	; 0xfae <Seven_Segment_Output+0x26>
-     fa6:	09 c0       	rjmp	.+18     	; 0xfba <Seven_Segment_Output+0x32>
-     fa8:	85 30       	cpi	r24, 0x05	; 5
-     faa:	39 f0       	breq	.+14     	; 0xfba <Seven_Segment_Output+0x32>
-     fac:	38 c0       	rjmp	.+112    	; 0x101e <__DATA_REGION_LENGTH__+0x1e>
+     fae:	80 91 97 01 	lds	r24, 0x0197	; 0x800197 <Vending_Machine_status>
+     fb2:	84 30       	cpi	r24, 0x04	; 4
+     fb4:	18 f4       	brcc	.+6      	; 0xfbc <Seven_Segment_Output+0x20>
+     fb6:	81 30       	cpi	r24, 0x01	; 1
+     fb8:	20 f0       	brcs	.+8      	; 0xfc2 <Seven_Segment_Output+0x26>
+     fba:	09 c0       	rjmp	.+18     	; 0xfce <Seven_Segment_Output+0x32>
+     fbc:	85 30       	cpi	r24, 0x05	; 5
+     fbe:	39 f0       	breq	.+14     	; 0xfce <Seven_Segment_Output+0x32>
+     fc0:	38 c0       	rjmp	.+112    	; 0x1032 <__DATA_REGION_LENGTH__+0x32>
     {
         case VENDING_MACHINE_IDLE :
             PORTE = 0xF0; // Seven Segment 선택 FND0~3
-     fae:	80 ef       	ldi	r24, 0xF0	; 240
-     fb0:	83 b9       	out	0x03, r24	; 3
+     fc2:	80 ef       	ldi	r24, 0xF0	; 240
+     fc4:	83 b9       	out	0x03, r24	; 3
             PORTB = Seven_Segment_Num[10]; //- - - - 출력
-     fb2:	80 91 33 01 	lds	r24, 0x0133	; 0x800133 <Seven_Segment_Num+0xa>
-     fb6:	88 bb       	out	0x18, r24	; 24
+     fc6:	80 91 33 01 	lds	r24, 0x0133	; 0x800133 <Seven_Segment_Num+0xa>
+     fca:	88 bb       	out	0x18, r24	; 24
         break;
-     fb8:	08 95       	ret
+     fcc:	08 95       	ret
         case VENDING_MACHINE_INSERT_COIN :
         case VENDING_MACHINE_SELECT_ITEM :
         case VENDING_MACHINE_ITEM_SELECTED :
         case VENDING_MACHINE_MONEY_FINISH :
             switch(counter)
-     fba:	80 91 8f 01 	lds	r24, 0x018F	; 0x80018f <counter.2284>
-     fbe:	81 30       	cpi	r24, 0x01	; 1
-     fc0:	81 f0       	breq	.+32     	; 0xfe2 <Seven_Segment_Output+0x5a>
-     fc2:	28 f0       	brcs	.+10     	; 0xfce <Seven_Segment_Output+0x46>
-     fc4:	82 30       	cpi	r24, 0x02	; 2
-     fc6:	b9 f0       	breq	.+46     	; 0xff6 <Seven_Segment_Output+0x6e>
-     fc8:	83 30       	cpi	r24, 0x03	; 3
-     fca:	f9 f0       	breq	.+62     	; 0x100a <__DATA_REGION_LENGTH__+0xa>
-     fcc:	08 95       	ret
+     fce:	80 91 8f 01 	lds	r24, 0x018F	; 0x80018f <counter.2284>
+     fd2:	81 30       	cpi	r24, 0x01	; 1
+     fd4:	81 f0       	breq	.+32     	; 0xff6 <Seven_Segment_Output+0x5a>
+     fd6:	28 f0       	brcs	.+10     	; 0xfe2 <Seven_Segment_Output+0x46>
+     fd8:	82 30       	cpi	r24, 0x02	; 2
+     fda:	b9 f0       	breq	.+46     	; 0x100a <__DATA_REGION_LENGTH__+0xa>
+     fdc:	83 30       	cpi	r24, 0x03	; 3
+     fde:	f9 f0       	breq	.+62     	; 0x101e <__DATA_REGION_LENGTH__+0x1e>
+     fe0:	08 95       	ret
             {
                 case SEVEN_SEGMENT_0 :
                     PORTE = 0x10; //FND0 선택
-     fce:	80 e1       	ldi	r24, 0x10	; 16
-     fd0:	83 b9       	out	0x03, r24	; 3
-                    PORTB = Seven_Segment_Num[Coin_n1]; //첫번째 자리 출력
-     fd2:	e0 91 c3 01 	lds	r30, 0x01C3	; 0x8001c3 <Coin_n1>
-     fd6:	f0 e0       	ldi	r31, 0x00	; 0
-     fd8:	e7 5d       	subi	r30, 0xD7	; 215
-     fda:	fe 4f       	sbci	r31, 0xFE	; 254
-     fdc:	80 81       	ld	r24, Z
-     fde:	88 bb       	out	0x18, r24	; 24
-                break;
-     fe0:	08 95       	ret
-                case SEVEN_SEGMENT_1 :
-                    PORTE = 0x20; //FND1 선택
-     fe2:	80 e2       	ldi	r24, 0x20	; 32
+     fe2:	80 e1       	ldi	r24, 0x10	; 16
      fe4:	83 b9       	out	0x03, r24	; 3
-                    PORTB = Seven_Segment_Num[Coin_n10]; //두번째 자리 출력
-     fe6:	e0 91 9b 01 	lds	r30, 0x019B	; 0x80019b <Coin_n10>
+                    PORTB = Seven_Segment_Num[Coin_n1]; //첫번째 자리 출력
+     fe6:	e0 91 c3 01 	lds	r30, 0x01C3	; 0x8001c3 <Coin_n1>
      fea:	f0 e0       	ldi	r31, 0x00	; 0
      fec:	e7 5d       	subi	r30, 0xD7	; 215
      fee:	fe 4f       	sbci	r31, 0xFE	; 254
@@ -2544,12 +2545,12 @@ void Seven_Segment_Output(void)
      ff2:	88 bb       	out	0x18, r24	; 24
                 break;
      ff4:	08 95       	ret
-                case SEVEN_SEGMENT_2 :
-                    PORTE = 0x40; //FND2 선택
-     ff6:	80 e4       	ldi	r24, 0x40	; 64
+                case SEVEN_SEGMENT_1 :
+                    PORTE = 0x20; //FND1 선택
+     ff6:	80 e2       	ldi	r24, 0x20	; 32
      ff8:	83 b9       	out	0x03, r24	; 3
-                    PORTB = Seven_Segment_Num[Coin_n100]; //세번째 자리 출력
-     ffa:	e0 91 c2 01 	lds	r30, 0x01C2	; 0x8001c2 <Coin_n100>
+                    PORTB = Seven_Segment_Num[Coin_n10]; //두번째 자리 출력
+     ffa:	e0 91 9b 01 	lds	r30, 0x019B	; 0x80019b <Coin_n10>
      ffe:	f0 e0       	ldi	r31, 0x00	; 0
     1000:	e7 5d       	subi	r30, 0xD7	; 215
     1002:	fe 4f       	sbci	r31, 0xFE	; 254
@@ -2557,12 +2558,12 @@ void Seven_Segment_Output(void)
     1006:	88 bb       	out	0x18, r24	; 24
                 break;
     1008:	08 95       	ret
-                case SEVEN_SEGMENT_3 :
-                    PORTE = 0x80; //FND3 선택
-    100a:	80 e8       	ldi	r24, 0x80	; 128
+                case SEVEN_SEGMENT_2 :
+                    PORTE = 0x40; //FND2 선택
+    100a:	80 e4       	ldi	r24, 0x40	; 64
     100c:	83 b9       	out	0x03, r24	; 3
-                    PORTB = Seven_Segment_Num[Coin_n1000]; //네번째 자리 출력
-    100e:	e0 91 96 01 	lds	r30, 0x0196	; 0x800196 <Coin_n1000>
+                    PORTB = Seven_Segment_Num[Coin_n100]; //세번째 자리 출력
+    100e:	e0 91 c2 01 	lds	r30, 0x01C2	; 0x8001c2 <Coin_n100>
     1012:	f0 e0       	ldi	r31, 0x00	; 0
     1014:	e7 5d       	subi	r30, 0xD7	; 215
     1016:	fe 4f       	sbci	r31, 0xFE	; 254
@@ -2570,277 +2571,290 @@ void Seven_Segment_Output(void)
     101a:	88 bb       	out	0x18, r24	; 24
                 break;
     101c:	08 95       	ret
+                case SEVEN_SEGMENT_3 :
+                    PORTE = 0x80; //FND3 선택
+    101e:	80 e8       	ldi	r24, 0x80	; 128
+    1020:	83 b9       	out	0x03, r24	; 3
+                    PORTB = Seven_Segment_Num[Coin_n1000]; //네번째 자리 출력
+    1022:	e0 91 96 01 	lds	r30, 0x0196	; 0x800196 <Coin_n1000>
+    1026:	f0 e0       	ldi	r31, 0x00	; 0
+    1028:	e7 5d       	subi	r30, 0xD7	; 215
+    102a:	fe 4f       	sbci	r31, 0xFE	; 254
+    102c:	80 81       	ld	r24, Z
+    102e:	88 bb       	out	0x18, r24	; 24
+                break;
+    1030:	08 95       	ret
                 default :
                 break;
             }
         break;
         default :
             PORTB = 0xFF;
-    101e:	8f ef       	ldi	r24, 0xFF	; 255
-    1020:	88 bb       	out	0x18, r24	; 24
-    1022:	08 95       	ret
+    1032:	8f ef       	ldi	r24, 0xFF	; 255
+    1034:	88 bb       	out	0x18, r24	; 24
+    1036:	08 95       	ret
 
-00001024 <LED_Output>:
+00001038 <LED_Output>:
     }
 }
 
 void LED_Output(void)
 {
     for(uint8_t i = 0;i<8;i++)
-    1024:	80 e0       	ldi	r24, 0x00	; 0
-    1026:	24 c0       	rjmp	.+72     	; 0x1070 <LED_Output+0x4c>
+    1038:	80 e0       	ldi	r24, 0x00	; 0
+    103a:	24 c0       	rjmp	.+72     	; 0x1084 <LED_Output+0x4c>
     {
         if(Vending_Machine_Count[i]>0)
-    1028:	e8 2f       	mov	r30, r24
-    102a:	f0 e0       	ldi	r31, 0x00	; 0
-    102c:	ef 5d       	subi	r30, 0xDF	; 223
-    102e:	fe 4f       	sbci	r31, 0xFE	; 254
-    1030:	90 81       	ld	r25, Z
-    1032:	99 23       	and	r25, r25
-    1034:	71 f0       	breq	.+28     	; 0x1052 <LED_Output+0x2e>
+    103c:	e8 2f       	mov	r30, r24
+    103e:	f0 e0       	ldi	r31, 0x00	; 0
+    1040:	ef 5d       	subi	r30, 0xDF	; 223
+    1042:	fe 4f       	sbci	r31, 0xFE	; 254
+    1044:	90 81       	ld	r25, Z
+    1046:	99 23       	and	r25, r25
+    1048:	79 f0       	breq	.+30     	; 0x1068 <LED_Output+0x30>
         {
-            sbi(PORTF,i);
-    1036:	e2 e6       	ldi	r30, 0x62	; 98
-    1038:	f0 e0       	ldi	r31, 0x00	; 0
-    103a:	90 81       	ld	r25, Z
-    103c:	21 e0       	ldi	r18, 0x01	; 1
-    103e:	30 e0       	ldi	r19, 0x00	; 0
-    1040:	08 2e       	mov	r0, r24
-    1042:	02 c0       	rjmp	.+4      	; 0x1048 <LED_Output+0x24>
-    1044:	22 0f       	add	r18, r18
-    1046:	33 1f       	adc	r19, r19
-    1048:	0a 94       	dec	r0
-    104a:	e2 f7       	brpl	.-8      	; 0x1044 <LED_Output+0x20>
-    104c:	29 2b       	or	r18, r25
-    104e:	20 83       	st	Z, r18
-    1050:	0e c0       	rjmp	.+28     	; 0x106e <LED_Output+0x4a>
+            cbi(PORTF,i);
+    104a:	e2 e6       	ldi	r30, 0x62	; 98
+    104c:	f0 e0       	ldi	r31, 0x00	; 0
+    104e:	90 81       	ld	r25, Z
+    1050:	21 e0       	ldi	r18, 0x01	; 1
+    1052:	30 e0       	ldi	r19, 0x00	; 0
+    1054:	08 2e       	mov	r0, r24
+    1056:	02 c0       	rjmp	.+4      	; 0x105c <LED_Output+0x24>
+    1058:	22 0f       	add	r18, r18
+    105a:	33 1f       	adc	r19, r19
+    105c:	0a 94       	dec	r0
+    105e:	e2 f7       	brpl	.-8      	; 0x1058 <LED_Output+0x20>
+    1060:	20 95       	com	r18
+    1062:	29 23       	and	r18, r25
+    1064:	20 83       	st	Z, r18
+    1066:	0d c0       	rjmp	.+26     	; 0x1082 <LED_Output+0x4a>
         }
         else
         {
-            cbi(PORTF,i);
-    1052:	e2 e6       	ldi	r30, 0x62	; 98
-    1054:	f0 e0       	ldi	r31, 0x00	; 0
-    1056:	90 81       	ld	r25, Z
-    1058:	21 e0       	ldi	r18, 0x01	; 1
-    105a:	30 e0       	ldi	r19, 0x00	; 0
-    105c:	08 2e       	mov	r0, r24
-    105e:	02 c0       	rjmp	.+4      	; 0x1064 <LED_Output+0x40>
-    1060:	22 0f       	add	r18, r18
-    1062:	33 1f       	adc	r19, r19
-    1064:	0a 94       	dec	r0
-    1066:	e2 f7       	brpl	.-8      	; 0x1060 <LED_Output+0x3c>
-    1068:	20 95       	com	r18
-    106a:	29 23       	and	r18, r25
-    106c:	20 83       	st	Z, r18
+            sbi(PORTF,i);
+    1068:	e2 e6       	ldi	r30, 0x62	; 98
+    106a:	f0 e0       	ldi	r31, 0x00	; 0
+    106c:	90 81       	ld	r25, Z
+    106e:	21 e0       	ldi	r18, 0x01	; 1
+    1070:	30 e0       	ldi	r19, 0x00	; 0
+    1072:	08 2e       	mov	r0, r24
+    1074:	02 c0       	rjmp	.+4      	; 0x107a <LED_Output+0x42>
+    1076:	22 0f       	add	r18, r18
+    1078:	33 1f       	adc	r19, r19
+    107a:	0a 94       	dec	r0
+    107c:	e2 f7       	brpl	.-8      	; 0x1076 <LED_Output+0x3e>
+    107e:	29 2b       	or	r18, r25
+    1080:	20 83       	st	Z, r18
     }
 }
 
 void LED_Output(void)
 {
     for(uint8_t i = 0;i<8;i++)
-    106e:	8f 5f       	subi	r24, 0xFF	; 255
-    1070:	88 30       	cpi	r24, 0x08	; 8
-    1072:	d0 f2       	brcs	.-76     	; 0x1028 <LED_Output+0x4>
+    1082:	8f 5f       	subi	r24, 0xFF	; 255
+    1084:	88 30       	cpi	r24, 0x08	; 8
+    1086:	d0 f2       	brcs	.-76     	; 0x103c <LED_Output+0x4>
         else
         {
-            cbi(PORTF,i);
+            sbi(PORTF,i);
         }
     }
 }
-    1074:	08 95       	ret
+    1088:	08 95       	ret
 
-00001076 <main>:
+0000108a <main>:
 void Send_Char(char data);
 /*************************************/
 
 int main(void)
 {
     Port_Init();
-    1076:	42 d8       	rcall	.-3964   	; 0xfc <Port_Init>
+    108a:	38 d8       	rcall	.-3984   	; 0xfc <Port_Init>
     LCD_Init();
-    1078:	21 de       	rcall	.-958    	; 0xcbc <LCD_Init>
+    108c:	21 de       	rcall	.-958    	; 0xcd0 <LCD_Init>
     Timer1_Init();
-    107a:	4e d8       	rcall	.-3940   	; 0x118 <Timer1_Init>
+    108e:	44 d8       	rcall	.-3960   	; 0x118 <Timer1_Init>
     Timer3_Init();
-    107c:	55 d8       	rcall	.-3926   	; 0x128 <Timer3_Init>
-    107e:	60 d8       	rcall	.-3904   	; 0x140 <ISR_Init>
+    1090:	4b d8       	rcall	.-3946   	; 0x128 <Timer3_Init>
+    1092:	56 d8       	rcall	.-3924   	; 0x140 <ISR_Init>
     ISR_Init();
-    1080:	80 91 9f 01 	lds	r24, 0x019F	; 0x80019f <Timer_10ms_flag>
+    1094:	80 91 9f 01 	lds	r24, 0x019F	; 0x80019f <Timer_10ms_flag>
     while (1) 
     {
         if(Timer_10ms_flag == 1)
-    1084:	81 30       	cpi	r24, 0x01	; 1
-    1086:	39 f4       	brne	.+14     	; 0x1096 <main+0x20>
+    1098:	81 30       	cpi	r24, 0x01	; 1
+    109a:	39 f4       	brne	.+14     	; 0x10aa <main+0x20>
         {
             Timer_10ms_flag = 0;
-    1088:	10 92 9f 01 	sts	0x019F, r1	; 0x80019f <Timer_10ms_flag>
+    109c:	10 92 9f 01 	sts	0x019F, r1	; 0x80019f <Timer_10ms_flag>
             Key_Scan(); // 키패드 스캔 함수
-    108c:	60 d8       	rcall	.-3904   	; 0x14e <Key_Scan>
+    10a0:	56 d8       	rcall	.-3924   	; 0x14e <Key_Scan>
             Switch_Scan(); // 코인 Input 스위치 스캔 함수
-    108e:	f9 d8       	rcall	.-3598   	; 0x282 <Switch_Scan>
-    1090:	8a da       	rcall	.-2796   	; 0x5a6 <Vending_Machine_Mode>
+    10a2:	ef d8       	rcall	.-3618   	; 0x282 <Switch_Scan>
+    10a4:	80 da       	rcall	.-2816   	; 0x5a6 <Vending_Machine_Mode>
             Vending_Machine_Mode(); // 자판기 동작 모드 결정 함수
-    1092:	3d db       	rcall	.-2438   	; 0x70e <Melody_Update>
-    1094:	79 df       	rcall	.-270    	; 0xf88 <Seven_Segment_Output>
+    10a6:	3d db       	rcall	.-2438   	; 0x722 <Melody_Update>
+    10a8:	79 df       	rcall	.-270    	; 0xf9c <Seven_Segment_Output>
             Melody_Update(); // 멜로디 출력 함수
-    1096:	80 91 c0 01 	lds	r24, 0x01C0	; 0x8001c0 <Timer_100ms_flag>
+    10aa:	80 91 c0 01 	lds	r24, 0x01C0	; 0x8001c0 <Timer_100ms_flag>
             Seven_Segment_Output(); // Seven Segment 출력 함수
-    109a:	81 30       	cpi	r24, 0x01	; 1
+    10ae:	81 30       	cpi	r24, 0x01	; 1
         }
 
         if(Timer_100ms_flag == 1)
-    109c:	89 f7       	brne	.-30     	; 0x1080 <main+0xa>
-    109e:	10 92 c0 01 	sts	0x01C0, r1	; 0x8001c0 <Timer_100ms_flag>
-    10a2:	c0 df       	rcall	.-128    	; 0x1024 <LED_Output>
+    10b0:	89 f7       	brne	.-30     	; 0x1094 <main+0xa>
+    10b2:	10 92 c0 01 	sts	0x01C0, r1	; 0x8001c0 <Timer_100ms_flag>
+    10b6:	c0 df       	rcall	.-128    	; 0x1038 <LED_Output>
         {
             Timer_100ms_flag = 0;
-    10a4:	57 de       	rcall	.-850    	; 0xd54 <LCD_Print>
-    10a6:	ec cf       	rjmp	.-40     	; 0x1080 <main+0xa>
+    10b8:	57 de       	rcall	.-850    	; 0xd68 <LCD_Print>
+    10ba:	ec cf       	rjmp	.-40     	; 0x1094 <main+0xa>
 
-000010a8 <__vector_12>:
+000010bc <__vector_12>:
             LED_Output(); // 상품 재고 LED 출력 함수
-    10a8:	1f 92       	push	r1
-    10aa:	0f 92       	push	r0
+    10bc:	1f 92       	push	r1
+    10be:	0f 92       	push	r0
             LCD_Print(); // LCD 출력 함수
-    10ac:	0f b6       	in	r0, 0x3f	; 63
-    10ae:	0f 92       	push	r0
-    10b0:	11 24       	eor	r1, r1
+    10c0:	0f b6       	in	r0, 0x3f	; 63
+    10c2:	0f 92       	push	r0
+    10c4:	11 24       	eor	r1, r1
         }
     }
 }
 
 ISR(TIMER1_COMPA_vect)
 {
-    10b2:	8f 93       	push	r24
+    10c6:	8f 93       	push	r24
     Timer_10ms_flag = 1; //10ms 마다 flag set
-    10b4:	81 e0       	ldi	r24, 0x01	; 1
-    10b6:	80 93 9f 01 	sts	0x019F, r24	; 0x80019f <Timer_10ms_flag>
+    10c8:	81 e0       	ldi	r24, 0x01	; 1
+    10ca:	80 93 9f 01 	sts	0x019F, r24	; 0x80019f <Timer_10ms_flag>
     Timer_10ms_counter++;
-    10ba:	80 91 c5 01 	lds	r24, 0x01C5	; 0x8001c5 <Timer_10ms_counter>
-    10be:	8f 5f       	subi	r24, 0xFF	; 255
-    10c0:	80 93 c5 01 	sts	0x01C5, r24	; 0x8001c5 <Timer_10ms_counter>
+    10ce:	80 91 c5 01 	lds	r24, 0x01C5	; 0x8001c5 <Timer_10ms_counter>
+    10d2:	8f 5f       	subi	r24, 0xFF	; 255
+    10d4:	80 93 c5 01 	sts	0x01C5, r24	; 0x8001c5 <Timer_10ms_counter>
     if(Timer_10ms_counter>=10)
-    10c4:	8a 30       	cpi	r24, 0x0A	; 10
-    10c6:	28 f0       	brcs	.+10     	; 0x10d2 <__vector_12+0x2a>
+    10d8:	8a 30       	cpi	r24, 0x0A	; 10
+    10da:	28 f0       	brcs	.+10     	; 0x10e6 <__vector_12+0x2a>
     {
         Timer_10ms_counter = 0;
-    10c8:	10 92 c5 01 	sts	0x01C5, r1	; 0x8001c5 <Timer_10ms_counter>
+    10dc:	10 92 c5 01 	sts	0x01C5, r1	; 0x8001c5 <Timer_10ms_counter>
         Timer_100ms_flag = 1; // 100ms 마다 flag set
-    10cc:	81 e0       	ldi	r24, 0x01	; 1
-    10ce:	80 93 c0 01 	sts	0x01C0, r24	; 0x8001c0 <Timer_100ms_flag>
+    10e0:	81 e0       	ldi	r24, 0x01	; 1
+    10e2:	80 93 c0 01 	sts	0x01C0, r24	; 0x8001c0 <Timer_100ms_flag>
     }
 }
-    10d2:	8f 91       	pop	r24
-    10d4:	0f 90       	pop	r0
-    10d6:	0f be       	out	0x3f, r0	; 63
-    10d8:	0f 90       	pop	r0
-    10da:	1f 90       	pop	r1
-    10dc:	18 95       	reti
+    10e6:	8f 91       	pop	r24
+    10e8:	0f 90       	pop	r0
+    10ea:	0f be       	out	0x3f, r0	; 63
+    10ec:	0f 90       	pop	r0
+    10ee:	1f 90       	pop	r1
+    10f0:	18 95       	reti
 
-000010de <__vector_26>:
+000010f2 <__vector_26>:
 
 ISR(TIMER3_COMPA_vect)
 {
-    10de:	1f 92       	push	r1
-    10e0:	0f 92       	push	r0
-    10e2:	0f b6       	in	r0, 0x3f	; 63
-    10e4:	0f 92       	push	r0
-    10e6:	11 24       	eor	r1, r1
-    10e8:	0b b6       	in	r0, 0x3b	; 59
-    10ea:	0f 92       	push	r0
-    10ec:	8f 93       	push	r24
-    10ee:	ef 93       	push	r30
-    10f0:	ff 93       	push	r31
+    10f2:	1f 92       	push	r1
+    10f4:	0f 92       	push	r0
+    10f6:	0f b6       	in	r0, 0x3f	; 63
+    10f8:	0f 92       	push	r0
+    10fa:	11 24       	eor	r1, r1
+    10fc:	0b b6       	in	r0, 0x3b	; 59
+    10fe:	0f 92       	push	r0
+    1100:	8f 93       	push	r24
+    1102:	ef 93       	push	r30
+    1104:	ff 93       	push	r31
     static uint8_t flag;
     if((Melody_status != MELODY_STATUS_START)&&(Melody_status != MELODY_STATUS_FINISHED))
-    10f2:	80 91 c7 01 	lds	r24, 0x01C7	; 0x8001c7 <Melody_status>
-    10f6:	88 23       	and	r24, r24
-    10f8:	b9 f0       	breq	.+46     	; 0x1128 <__stack+0x29>
-    10fa:	88 30       	cpi	r24, 0x08	; 8
-    10fc:	a9 f0       	breq	.+42     	; 0x1128 <__stack+0x29>
+    1106:	80 91 c7 01 	lds	r24, 0x01C7	; 0x8001c7 <Melody_status>
+    110a:	88 23       	and	r24, r24
+    110c:	b9 f0       	breq	.+46     	; 0x113c <__stack+0x3d>
+    110e:	88 30       	cpi	r24, 0x08	; 8
+    1110:	a9 f0       	breq	.+42     	; 0x113c <__stack+0x3d>
     {
         if(flag == 0)
-    10fe:	80 91 8e 01 	lds	r24, 0x018E	; 0x80018e <__data_end>
-    1102:	81 11       	cpse	r24, r1
-    1104:	09 c0       	rjmp	.+18     	; 0x1118 <__stack+0x19>
+    1112:	80 91 8e 01 	lds	r24, 0x018E	; 0x80018e <__data_end>
+    1116:	81 11       	cpse	r24, r1
+    1118:	09 c0       	rjmp	.+18     	; 0x112c <__stack+0x2d>
         {
             sbi(PORTG,4);
-    1106:	e5 e6       	ldi	r30, 0x65	; 101
-    1108:	f0 e0       	ldi	r31, 0x00	; 0
-    110a:	80 81       	ld	r24, Z
-    110c:	80 61       	ori	r24, 0x10	; 16
-    110e:	80 83       	st	Z, r24
+    111a:	e5 e6       	ldi	r30, 0x65	; 101
+    111c:	f0 e0       	ldi	r31, 0x00	; 0
+    111e:	80 81       	ld	r24, Z
+    1120:	80 61       	ori	r24, 0x10	; 16
+    1122:	80 83       	st	Z, r24
             flag = 1;
-    1110:	81 e0       	ldi	r24, 0x01	; 1
-    1112:	80 93 8e 01 	sts	0x018E, r24	; 0x80018e <__data_end>
-    1116:	0f c0       	rjmp	.+30     	; 0x1136 <__stack+0x37>
+    1124:	81 e0       	ldi	r24, 0x01	; 1
+    1126:	80 93 8e 01 	sts	0x018E, r24	; 0x80018e <__data_end>
+    112a:	0f c0       	rjmp	.+30     	; 0x114a <__stack+0x4b>
         }
         else
         {
             cbi(PORTG,4);
-    1118:	e5 e6       	ldi	r30, 0x65	; 101
-    111a:	f0 e0       	ldi	r31, 0x00	; 0
-    111c:	80 81       	ld	r24, Z
-    111e:	8f 7e       	andi	r24, 0xEF	; 239
-    1120:	80 83       	st	Z, r24
+    112c:	e5 e6       	ldi	r30, 0x65	; 101
+    112e:	f0 e0       	ldi	r31, 0x00	; 0
+    1130:	80 81       	ld	r24, Z
+    1132:	8f 7e       	andi	r24, 0xEF	; 239
+    1134:	80 83       	st	Z, r24
             flag = 0;
-    1122:	10 92 8e 01 	sts	0x018E, r1	; 0x80018e <__data_end>
-    1126:	07 c0       	rjmp	.+14     	; 0x1136 <__stack+0x37>
+    1136:	10 92 8e 01 	sts	0x018E, r1	; 0x80018e <__data_end>
+    113a:	07 c0       	rjmp	.+14     	; 0x114a <__stack+0x4b>
         }
     }
     else
     {
         cbi(PORTG,4);
-    1128:	e5 e6       	ldi	r30, 0x65	; 101
-    112a:	f0 e0       	ldi	r31, 0x00	; 0
-    112c:	80 81       	ld	r24, Z
-    112e:	8f 7e       	andi	r24, 0xEF	; 239
-    1130:	80 83       	st	Z, r24
+    113c:	e5 e6       	ldi	r30, 0x65	; 101
+    113e:	f0 e0       	ldi	r31, 0x00	; 0
+    1140:	80 81       	ld	r24, Z
+    1142:	8f 7e       	andi	r24, 0xEF	; 239
+    1144:	80 83       	st	Z, r24
         flag = 0;
-    1132:	10 92 8e 01 	sts	0x018E, r1	; 0x80018e <__data_end>
+    1146:	10 92 8e 01 	sts	0x018E, r1	; 0x80018e <__data_end>
     }
 }
-    1136:	ff 91       	pop	r31
-    1138:	ef 91       	pop	r30
-    113a:	8f 91       	pop	r24
-    113c:	0f 90       	pop	r0
-    113e:	0b be       	out	0x3b, r0	; 59
-    1140:	0f 90       	pop	r0
-    1142:	0f be       	out	0x3f, r0	; 63
-    1144:	0f 90       	pop	r0
-    1146:	1f 90       	pop	r1
-    1148:	18 95       	reti
-
-0000114a <__tablejump2__>:
-    114a:	ee 0f       	add	r30, r30
-    114c:	ff 1f       	adc	r31, r31
-    114e:	00 24       	eor	r0, r0
-    1150:	00 1c       	adc	r0, r0
+    114a:	ff 91       	pop	r31
+    114c:	ef 91       	pop	r30
+    114e:	8f 91       	pop	r24
+    1150:	0f 90       	pop	r0
     1152:	0b be       	out	0x3b, r0	; 59
-    1154:	07 90       	elpm	r0, Z+
-    1156:	f6 91       	elpm	r31, Z
-    1158:	e0 2d       	mov	r30, r0
-    115a:	09 94       	ijmp
+    1154:	0f 90       	pop	r0
+    1156:	0f be       	out	0x3f, r0	; 63
+    1158:	0f 90       	pop	r0
+    115a:	1f 90       	pop	r1
+    115c:	18 95       	reti
 
-0000115c <__umulhisi3>:
-    115c:	a2 9f       	mul	r26, r18
-    115e:	b0 01       	movw	r22, r0
-    1160:	b3 9f       	mul	r27, r19
-    1162:	c0 01       	movw	r24, r0
-    1164:	a3 9f       	mul	r26, r19
-    1166:	70 0d       	add	r23, r0
-    1168:	81 1d       	adc	r24, r1
-    116a:	11 24       	eor	r1, r1
-    116c:	91 1d       	adc	r25, r1
-    116e:	b2 9f       	mul	r27, r18
-    1170:	70 0d       	add	r23, r0
-    1172:	81 1d       	adc	r24, r1
-    1174:	11 24       	eor	r1, r1
-    1176:	91 1d       	adc	r25, r1
-    1178:	08 95       	ret
+0000115e <__tablejump2__>:
+    115e:	ee 0f       	add	r30, r30
+    1160:	ff 1f       	adc	r31, r31
+    1162:	00 24       	eor	r0, r0
+    1164:	00 1c       	adc	r0, r0
+    1166:	0b be       	out	0x3b, r0	; 59
+    1168:	07 90       	elpm	r0, Z+
+    116a:	f6 91       	elpm	r31, Z
+    116c:	e0 2d       	mov	r30, r0
+    116e:	09 94       	ijmp
 
-0000117a <_exit>:
-    117a:	f8 94       	cli
+00001170 <__umulhisi3>:
+    1170:	a2 9f       	mul	r26, r18
+    1172:	b0 01       	movw	r22, r0
+    1174:	b3 9f       	mul	r27, r19
+    1176:	c0 01       	movw	r24, r0
+    1178:	a3 9f       	mul	r26, r19
+    117a:	70 0d       	add	r23, r0
+    117c:	81 1d       	adc	r24, r1
+    117e:	11 24       	eor	r1, r1
+    1180:	91 1d       	adc	r25, r1
+    1182:	b2 9f       	mul	r27, r18
+    1184:	70 0d       	add	r23, r0
+    1186:	81 1d       	adc	r24, r1
+    1188:	11 24       	eor	r1, r1
+    118a:	91 1d       	adc	r25, r1
+    118c:	08 95       	ret
 
-0000117c <__stop_program>:
-    117c:	ff cf       	rjmp	.-2      	; 0x117c <__stop_program>
+0000118e <_exit>:
+    118e:	f8 94       	cli
+
+00001190 <__stop_program>:
+    1190:	ff cf       	rjmp	.-2      	; 0x1190 <__stop_program>
