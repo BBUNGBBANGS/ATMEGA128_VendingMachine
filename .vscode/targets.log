@@ -1,0 +1,299 @@
+make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-pc-mingw32
+ 
+
+# ����ũ ����Ÿ���̽�, Thu Jun 16 21:02:44 2022
+�� ǥ��
+# ����
+
+# �ڵ�
+<D = $(patsubst %/,%,$(dir $<))
+# �ڵ�
+?F = $(notdir $?)
+# ȯ��
+CARBON_MEM_DISABLE = 1
+# ����ũ����
+MAKEFLAGS = Rrqp
+# ȯ��
+VSCODE_LOG_NATIVE = false
+# �ڵ�
+?D = $(patsubst %/,%,$(dir $?))
+# �ڵ�
+@D = $(patsubst %/,%,$(dir $@))
+# ȯ��
+HOMEDRIVE = C:
+# �ڵ�
+@F = $(notdir $@)
+# �ڵ�
+^D = $(patsubst %/,%,$(dir $^))
+# ����ũ����
+CURDIR := d:/1.Project_workspace/ATMEGA128_VendingMachine
+# �⺻��
+SHELL := D:/3.tools/Git/bin/sh.exe
+# ȯ��
+WINDIR = C:\Windows
+# ȯ��
+VSCODE_NLS_CONFIG = {"locale":"ko","availableLanguages":{"*":"ko"},"_languagePackId":"26f3b44ea4f1e942cca002e9545643cc.ko","_translationsConfigFile":"C:\\Users\\jisu8\\AppData\\Roaming\\Code\\clp\\26f3b44ea4f1e942cca002e9545643cc.ko\\tcf.json","_cacheRoot":"C:\\Users\\jisu8\\AppData\\Roaming\\Code\\clp\\26f3b44ea4f1e942cca002e9545643cc.ko","_resolvedLanguagePackCoreLocation":"C:\\Users\\jisu8\\AppData\\Roaming\\Code\\clp\\26f3b44ea4f1e942cca002e9545643cc.ko\\4af164ea3a06f701fe3e89a2bcbb421d2026b68f","_corruptedFile":"C:\\Users\\jisu8\\AppData\\Roaming\\Code\\clp\\26f3b44ea4f1e942cca002e9545643cc.ko\\corrupted.info","_languagePackSupport":true}
+# ȯ��
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+# ����ũ����
+MAKEFILE_LIST := 
+# ȯ��
+TMP = C:\Users\jisu8\AppData\Local\Temp
+# ȯ��
+VSCODE_VERBOSE_LOGGING = true
+# ȯ��
+PROGRAMW6432 = C:\Program Files
+# ȯ��
+PROGRAMDATA = C:\ProgramData
+# ȯ��
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-ba5f7d8d-7023-4e48-b127-e34dd26217bb-sock
+# ȯ��
+VSCODE_CWD = C:\Users\jisu8\AppData\Local\Programs\Microsoft VS Code
+# ȯ��
+PATH = C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\NAT Service;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\3.tools\Git\cmd;C:\Program Files\Microchip\xc8\v2.31\bin;C:\Program Files\MATLAB\MATLAB Production Server\R2015a\runtime\win64;C:\Program Files\MATLAB\MATLAB Production Server\R2015a\bin;C:\Program Files\MATLAB\MATLAB Production Server\R2015a\polyspace\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\STMicroelectronics\STM32 ST-LINK Utility\ST-LINK Utility;D:\3.tools\ARM_GCC_ToolChain\bin;C:\Users\jisu8\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\jisu8\AppData\Local\Programs\Python\Python39\;C:\Users\jisu8\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Bandizip\;C:\Users\jisu8\AppData\Local\Programs\Microsoft VS Code\bin;%ARMGCC_DIR%;D:\3.tools\make-3.81\bin;D:\3.tools\openocd-20210625\OpenOCD-20210625-0.11.0\bin;D:\3.tools\Git\bin;D:\3.tools\Git\usr\bin;D:\3.tools\mingw\mingw32\bin;D:\3.tools\cmake\bin;C:\Users\jisu8\AppData\Roaming\npm;D:\3.tools\mingw\mingw64\bin;
+# ȯ��
+COMMONPROGRAMW6432 = C:\Program Files\Common Files
+# ȯ��
+PROCESSOR_ARCHITECTURE = x86
+# ȯ��
+USERPROFILE = C:\Users\jisu8
+# ȯ��
+ALLUSERSPROFILE = C:\ProgramData
+# ȯ��
+VSCODE_LOG_STACK = false
+# ȯ��
+NUMBER_OF_PROCESSORS = 24
+# ȯ��
+ELECTRON_RUN_AS_NODE = 1
+# �⺻��
+.FEATURES := target-specific order-only second-expansion else-if archives
+# ȯ��
+PICO_TOOLCHAIN_PATH = D:\3.tools\ARM_GCC_ToolChain\bin\
+# �ڵ�
+%F = $(notdir $%)
+# ȯ��
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_23480_DINVCRDNVPWOYJOS
+# ȯ��
+VSCODE_PIPE_LOGGING = true
+# ȯ��
+COMPUTERNAME = DESKTOP-3B19SQP
+# ȯ��
+PROGRAMFILES = C:\Program Files (x86)
+# ȯ��
+DRIVERDATA = C:\Windows\System32\Drivers\DriverData
+# ȯ��
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# ȯ��
+USERNAME = ������
+# ȯ��
+PUBLIC = C:\Users\Public
+# ȯ��
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# ȯ��
+VSCODE_CODE_CACHE_PATH = C:\Users\jisu8\AppData\Roaming\Code\CachedData\4af164ea3a06f701fe3e89a2bcbb421d2026b68f
+# ȯ��
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# ȯ��
+COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
+# ȯ��
+LOGONSERVER = \\DESKTOP-3B19SQP
+# ȯ��
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# ȯ��
+USERDOMAIN = DESKTOP-3B19SQP
+# �⺻��
+MAKE = $(MAKE_COMMAND)
+# �⺻��
+MAKECMDGOALS := all
+# �⺻��
+MAKE_VERSION := 3.81
+# ȯ��
+LXKSERVER = licensing-as.labcenter.com:8884/pcls/KoreaPolyUni/
+# ����ũ����
+.DEFAULT_GOAL := 
+# ȯ��
+PROGRAMFILES(X86) = C:\Program Files (x86)
+# �ڵ�
+%D = $(patsubst %/,%,$(dir $%))
+# ȯ��
+LOCALAPPDATA = C:\Users\jisu8\AppData\Local
+# ȯ��
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+# �⺻��
+MAKE_COMMAND := make.exe
+# ȯ��
+PROCESSOR_ARCHITEW6432 = AMD64
+# �⺻��
+.VARIABLES := 
+# �ڵ�
+*F = $(notdir $*)
+# ȯ��
+PROCESSOR_IDENTIFIER = AMD64 Family 25 Model 33 Stepping 0, AuthenticAMD
+# ȯ��
+OS = Windows_NT
+# ȯ��
+VSCODE_IPC_HOOK = \\.\pipe\caa75e2a4979fa74b9bb9bb2cca010c5-1.68.0-main-sock
+# ȯ��
+HOMEPATH = \Users\jisu8
+# ȯ��
+COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
+# ȯ��
+PROMPT = $P$G
+# ȯ��
+MFLAGS = -Rrqp
+# �ڵ�
+*D = $(patsubst %/,%,$(dir $*))
+# ȯ��
+SYSTEMROOT = C:\Windows
+# �ڵ�
++D = $(patsubst %/,%,$(dir $+))
+# �ڵ�
++F = $(notdir $+)
+# ȯ��
+APPDATA = C:\Users\jisu8\AppData\Roaming
+# ȯ��
+TEMP = C:\Users\jisu8\AppData\Local\Temp
+# ȯ��
+COMSPEC = C:\Windows\system32\cmd.exe
+# �⺻��
+MAKEFILES := 
+# �ڵ�
+<F = $(notdir $<)
+# ȯ��
+LC_ALL = C
+# �ڵ�
+^F = $(notdir $^)
+# �⺻��
+SUFFIXES := 
+# ȯ��
+SYSTEMDRIVE = C:
+# ȯ��
+SESSIONNAME = Console
+# ȯ��
+PROCESSOR_REVISION = 2100
+# ȯ��
+VS140COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\
+# ȯ��
+MAKELEVEL := 0
+# ȯ��
+PICO_SDK_PATH = D:\1.Project_workspace\Pico_SDK 
+\pico-sdk
+# ȯ��
+LANG = C
+# ȯ��
+PROCESSOR_LEVEL = 25
+# ȯ��
+VSCODE_PID = 23480
+# ȯ��
+USERDOMAIN_ROAMINGPROFILE = DESKTOP-3B19SQP
+# variable set hash-table stats:
+# Load=90/1024=9%, Rehash=0, Collisions=9/106=8%
+
+# Pattern-specific Variable Values
+
+# ������ ���� ���� ������ �����ϴ�.
+
+# ���丮
+
+# C:\Users\jisu8\AppData\Local\Programs\Python\Python39\ (Ű C:/Users/jisu8/AppData/Local/Programs/Python/Python39/, ����ð� 1625390021): 18 ����, 0�� �Ұ���.
+# C:\Users\jisu8\AppData\Local\Microsoft\WindowsApps (Ű C:/Users/jisu8/AppData/Local/Microsoft/WindowsApps, ����ð� 1655079586): 17 ����, 0�� �Ұ���.
+# C:\Program Files\Bandizip\ (Ű C:/Program Files/Bandizip/, ����ð� 1650364392): 21 ����, 0�� �Ұ���.
+# C:\Users\jisu8\AppData\Local\Programs\Python\Python39\Scripts\ (Ű C:/Users/jisu8/AppData/Local/Programs/Python/Python39/Scripts/, ����ð� 1625641826): 18 ����, 0�� �Ұ���.
+# C:\Program Files\MATLAB\MATLAB Production Server\R2015a\runtime\win64 (Ű C:/Program Files/MATLAB/MATLAB Production Server/R2015a/runtime/win64, ����ð� 1639221848): 7 ����, 0�� �Ұ���.
+# C:\Windows\System32\WindowsPowerShell\v1.0\ (Ű C:/Windows/System32/WindowsPowerShell/v1.0/, ����ð� 1617976687): 31 ����, 0�� �Ұ���.
+# D:\3.tools\ARM_GCC_ToolChain\bin (Ű D:/3.tools/ARM_GCC_ToolChain/bin, ����ð� 1654489529): 35 ����, 0�� �Ұ���.
+# C:\Windows\System32\Wbem (Ű C:/Windows/System32/Wbem, ����ð� 1654445066): 171 ����, 0�� �Ұ���.
+# . (Ű d:/1.Project_workspace/ATMEGA128_VendingMachine, ����ð� 1655380899): 10 ����, 0�� �Ұ���.
+# C:\Program Files\Microchip\xc8\v2.31\bin (Ű C:/Program Files/Microchip/xc8/v2.31/bin, ����ð� 1638598163): 11 ����, 0�� �Ұ���.
+# C:\Program Files (x86)\STMicroelectronics\STM32 ST-LINK Utility\ST-LINK Utility (Ű C:/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility, ����ð� 1642477264): 11 ����, 0�� �Ұ���.
+# C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common (Ű C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common, ����ð� 1622523877): 10 ����, 0�� �Ұ���.
+# C:\Program Files\nodejs\ (Ű C:/Program Files/nodejs/, ����ð� 1641724761): 13 ����, 0�� �Ұ���.
+# C:\Windows\System32\OpenSSH\: stat�� �� �� �������ϴ�.
+# C:\Program Files (x86)\Common Files\Oracle\Java\javapath (Ű C:/Program Files (x86)/Common Files/Oracle/Java/javapath, ����ð� 1651885355): 5 ����, 0�� �Ұ���.
+# C:\Program Files (x86)\NAT Service (Ű C:/Program Files (x86)/NAT Service, ����ð� 1644426961): 10 ����, 0�� �Ұ���.
+# C:\Windows (Ű C:/Windows, ����ð� 1655295555): 132 ����, 0�� �Ұ���.
+# C:\Program Files\MATLAB\MATLAB Production Server\R2015a\polyspace\bin (Ű C:/Program Files/MATLAB/MATLAB Production Server/R2015a/polyspace/bin, ����ð� 1639221888): 58 ����, 0�� �Ұ���.
+# %ARMGCC_DIR%: stat�� �� �� �������ϴ�.
+# C:\Program Files\MATLAB\MATLAB Production Server\R2015a\bin (Ű C:/Program Files/MATLAB/MATLAB Production Server/R2015a/bin, ����ð� 1639221827): 21 ����, 0�� �Ұ���.
+# C:\Users\jisu8\AppData\Local\Programs\Microsoft VS Code\bin (Ű C:/Users/jisu8/AppData/Local/Programs/Microsoft VS Code/bin, ����ð� 1654849949): 4 ����, 0�� �Ұ���.
+# D:\3.tools\Git\bin (Ű D:/3.tools/Git/bin, ����ð� 1654489706): 5 ����, 0�� �Ұ��� ���ݱ���.
+# D:\3.tools\Git\cmd (Ű D:/3.tools/Git/cmd, ����ð� 1654489706): 8 ����, 0�� �Ұ���.
+# C:\Windows\system32 (Ű C:/Windows/system32, ����ð� 1655339918): 3188 ����, 0�� �Ұ���.
+# D:\3.tools\make-3.81\bin (Ű D:/3.tools/make-3.81/bin, ����ð� 1654489754): 5 ����, 0�� �Ұ���.
+# D:\3.tools\openocd-20210625\OpenOCD-20210625-0.11.0\bin (Ű D:/3.tools/openocd-20210625/OpenOCD-20210625-0.11.0/bin, ����ð� 1654489971): 7 ����, 0�� �Ұ���.
+# C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR (Ű C:/Program Files/NVIDIA Corporation/NVIDIA NvDLISR, ����ð� 1622523887): 5 ����, 0�� �Ұ���.
+
+# 3821 ����, 0�� impossibilities in 27 directories.
+
+# Implicit Rules
+
+# ������ ��Ģ ����.
+
+# ����
+
+# Ÿ���� �ƴ�:
+all:
+#  ������ Ÿ��.
+#  ������ ��Ģ Ž���� �Ϸ�Ǿ����ϴ�.
+#  ������ �������� �ʽ��ϴ�.
+#  ������ ���ŵ��� �ʾҽ��ϴ�.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Ÿ���� �ƴ�:
+.DEFAULT:
+#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
+#  ���� �ð��� ���� �˻���� �ʾ���.
+#  ������ ���ŵ��� �ʾҽ��ϴ�.
+
+# Ÿ���� �ƴ�:
+makefile:
+#  A default, MAKEFILES, or -include/sinclude makefile.
+#  ������ ��Ģ Ž���� �Ϸ�Ǿ����ϴ�.
+#  ������ �������� �ʽ��ϴ�.
+#  ������ ���ŵǾ����ϴ�.
+#  ���ſ� ������.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Ÿ���� �ƴ�:
+.SUFFIXES:
+#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
+#  ���� �ð��� ���� �˻���� �ʾ���.
+#  ������ ���ŵ��� �ʾҽ��ϴ�.
+
+# Ÿ���� �ƴ�:
+GNUmakefile:
+#  A default, MAKEFILES, or -include/sinclude makefile.
+#  ������ ��Ģ Ž���� �Ϸ�Ǿ����ϴ�.
+#  ������ �������� �ʽ��ϴ�.
+#  ������ ���ŵǾ����ϴ�.
+#  ���ſ� ������.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# files hash-table stats:
+# Load=5/1024=0%, Rehash=0, Collisions=0/16=0%
+# VPATH Ž�� ���
+
+# `vpath' Ž�� ��ΰ� ����.
+
+# �Ϲ����� (`VPATH' ����) Ž�� ��ΰ� ����.
+
+# # of strings in strcache: 0
+# # of strcache buffers: 0
+# strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
+# strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
+
+# ����ũ ����Ÿ ���̽� ��ħ, Thu Jun 16 21:02:44 2022
+����
+ 
+make.exe: *** Ÿ�� `all'�� ���� ��Ģ�� ����.  ����.
+
