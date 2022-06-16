@@ -159,18 +159,18 @@ int main(void)
         if(Timer_10ms_flag == 1)
         {
             Timer_10ms_flag = 0;
-            Key_Scan();
-            Switch_Scan();
-            Vending_Machine_Mode();
-            Melody_Update();
-            Seven_Segment_Output();
+            Key_Scan(); // 키패드 스캔 함수
+            Switch_Scan(); // 코인 Input 스위치 스캔 함수
+            Vending_Machine_Mode(); // 자판기 동작 모드 결정 함수
+            Melody_Update(); // 멜로디 출력 함수
+            Seven_Segment_Output(); // Seven Segment 출력 함수
         }
 
         if(Timer_100ms_flag == 1)
         {
             Timer_100ms_flag = 0;
-            LED_Output();
-            LCD_Print();
+            LED_Output(); // 상품 재고 LED 출력 함수
+            LCD_Print(); // LCD 출력 함수
         }
     }
 }
@@ -237,7 +237,7 @@ void Key_Scan(void)
     switch(row)
     {
         case 0 :
-            PORTC = 0xFE;
+            PORTC = 0xFE; 
         break;
         case 1 :
             PORTC = 0xFD;
@@ -403,11 +403,11 @@ void Vending_Machine_Mode(void)
             }
         break;
         case VENDING_MACHINE_SELECT_ITEM : 
-            if(Keypad_Num == '9')//'A')
+            if(Keypad_Num == 'A')
             {
                 Vending_Machine_status = VENDING_MACHINE_ITEM_SELECTED; //'A' 키패드 버튼이 들어왔을 경우, Select Item 모드로 변경
             }
-            else if(Keypad_Num == '0')//'D')
+            else if(Keypad_Num == 'D')
             {
                 Vending_Machine_status = VENDING_MACHINE_CANCEL; //'D' 키패드 버튼이 입력될 경우, Cancel 모드로 변경
             }
@@ -417,7 +417,7 @@ void Vending_Machine_Mode(void)
             {
                 Vending_Machine_status = VENDING_MACHINE_MONEY_ERROR;
             }            
-            else if(Keypad_Num == '0')//'D')
+            else if(Keypad_Num == 'D')
             {
                 Vending_Machine_status = VENDING_MACHINE_CANCEL; //'D' 키패드 버튼이 입력될 경우, Cancel 모드로 변경
             }
@@ -436,12 +436,13 @@ void Vending_Machine_Mode(void)
             }
         break;
         case VENDING_MACHINE_MONEY_ERROR :
-            if(Keypad_Num == '0')//'D')
+            if(Keypad_Num == 'D')
             {
                 Vending_Machine_status = VENDING_MACHINE_CANCEL; //'D' 키패드 버튼이 입력될 경우, Cancel 모드로 변경
             }
         break;
         case VENDING_MACHINE_MONEY_FINISH :
+            /* 멜로디 출력 이후 초기 모드로 복귀 */
             if(Melody_status == MELODY_STATUS_FINISHED)
             {
                 Vending_Machine_status = VENDING_MACHINE_IDLE;
@@ -455,6 +456,7 @@ void Vending_Machine_Mode(void)
             }
         break;
         case VENDING_MACHINE_CANCEL :
+            /* 멜로디 출력 이후 초기 모드로 복귀 */
             if(Melody_status == MELODY_STATUS_FINISHED)
             {
                 Vending_Machine_status = VENDING_MACHINE_IDLE;
@@ -495,10 +497,7 @@ void LCD_Print(void)
         case VENDING_MACHINE_IDLE :
             Clear_Tx_Buffer();
             LCD_Cursor(0,0);
-            sprintf(&LCD_Tx_Data[0],"vending machine");
-            LCD_Tx_Data[15] = '\n';
-            Send_String(&LCD_Tx_Data[0],16);
-            
+            sprintf(&LCD_Tx_Data[0],"vending machine");   
             for(uint8_t i = 0;i<16;i++)
             {
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
@@ -510,8 +509,6 @@ void LCD_Print(void)
             LCD_Tx_Data[19+shift_counter] = 'E';
             LCD_Tx_Data[20+shift_counter] = 'N';
             LCD_Tx_Data[21+shift_counter] = '-';
-            LCD_Tx_Data[31] = '\n';
-            Send_String(&LCD_Tx_Data[16],16);
             for(uint8_t i = 16;i<32;i++)
             {
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
@@ -521,8 +518,6 @@ void LCD_Print(void)
             Clear_Tx_Buffer();
             LCD_Cursor(0,0);
             sprintf(&LCD_Tx_Data[0]," insert money");
-            LCD_Tx_Data[15] = '\n';
-            Send_String(&LCD_Tx_Data[0],16);
             for(uint8_t i = 0;i<16;i++)
             {
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
@@ -533,8 +528,6 @@ void LCD_Print(void)
             LCD_Tx_Data[19] = Coin_n10 + 0x30; // 숫자 ASCII 변환
             LCD_Tx_Data[20] = Coin_n1 + 0x30; // 숫자 ASCII 변환
             sprintf(&LCD_Tx_Data[22],"won");
-            LCD_Tx_Data[31] = '\n';
-            Send_String(&LCD_Tx_Data[16],16);
             for(uint8_t i = 16;i<32;i++)
             {
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
@@ -546,16 +539,12 @@ void LCD_Print(void)
             sprintf(&LCD_Tx_Data[0],"selected goods");
             LCD_Tx_Data[13] = 0x3E;
             LCD_Tx_Data[14] = Selected_Num + 0x30; // 숫자 ASCII 변환
-            LCD_Tx_Data[15] = '\n';
-            Send_String(&LCD_Tx_Data[0],16);
             for(uint8_t i = 0;i<16;i++)
             {
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
             }
             LCD_Cursor(1,0);
             sprintf(&LCD_Tx_Data[16],"buyit-A cancel-D");
-            LCD_Tx_Data[31] = '\n';
-            Send_String(&LCD_Tx_Data[16],16);
             for(uint8_t i = 16;i<32;i++)
             {
                 LCD_Transmit_Data(LCD_Tx_Data[i]);
@@ -565,12 +554,16 @@ void LCD_Print(void)
             Clear_Tx_Buffer();
             LCD_Cursor(0,0);        
             sprintf(&LCD_Tx_Data[0]," be short of");
-            LCD_Tx_Data[15] = '\n';
-            Send_String(&LCD_Tx_Data[0],16);            
+            for(uint8_t i = 0;i<16;i++)
+            {
+                LCD_Transmit_Data(LCD_Tx_Data[i]);
+            }
             LCD_Cursor(1,0);        
             sprintf(&LCD_Tx_Data[16],"  money.......");
-            LCD_Tx_Data[32] = '\n';
-            Send_String(&LCD_Tx_Data[16],16);
+            for(uint8_t i = 16;i<32;i++)
+            {
+                LCD_Transmit_Data(LCD_Tx_Data[i]);
+            } 
         break;
     }
 
